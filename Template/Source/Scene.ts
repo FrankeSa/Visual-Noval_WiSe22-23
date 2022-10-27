@@ -11,12 +11,13 @@ namespace Template {
         text3: "Hi",
 
       }
-    }
+    };
 
     ƒS.Speech.hide();
     await ƒS.Location.show(locations.beachDay);
     await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(100, 70))
     await ƒS.update();
+    await ƒS.Speech.tell(characters.aisake, text.Aisaka.text1);
 
 
 
