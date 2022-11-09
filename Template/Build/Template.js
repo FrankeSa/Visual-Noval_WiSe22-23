@@ -19,7 +19,7 @@ var Template;
     Template.locations = {
         beachDay: {
             name: "beachDay",
-            background: "Backgrounds/Beach_day.png"
+            background: "Template/Backgrounds/Beach_day.png"
         }
     };
     Template.characters = {
@@ -57,7 +57,7 @@ var Template;
 var Template;
 (function (Template) {
     async function Scene() {
-        console.log("FudgeStory Template 1Scene starting");
+        console.log("FudgeStory Template Scene starting");
         let text = {
             Aisaka: {
                 text1: "Hi",
