@@ -57,7 +57,7 @@ var Template;
 var Template;
 (function (Template) {
     async function Scene() {
-        console.log("FudgeStory Template Scene starting");
+        console.log("FudgeStory Template 1Scene starting");
         let text = {
             Aisaka: {
                 text1: "Hi",
