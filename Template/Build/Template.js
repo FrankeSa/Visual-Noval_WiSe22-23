@@ -19,7 +19,7 @@ var Template;
     Template.locations = {
         beachDay: {
             name: "beachDay",
-            background: "Template/Backgrounds/Beach_day.png"
+            background: "Template/Images/Backgrounds/Beach_day.png"
         }
     };
     Template.characters = {
@@ -57,7 +57,7 @@ var Template;
 var Template;
 (function (Template) {
     async function Scene() {
-        console.log("FudgeStory Template Scene1 starting");
+        console.log("FudgeStory Template Sarah starting");
         let text = {
             Aisaka: {
                 text1: "Hi",
@@ -68,8 +68,35 @@ var Template;
         Template.ƒS.Speech.hide();
         await Template.ƒS.Location.show(Template.locations.beachDay);
         await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positionPercent(100, 70));
-        await Template.ƒS.update();
+        // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
         await Template.ƒS.Speech.tell(Template.characters.aisake, text.Aisaka.text1);
+        await Template.ƒS.update(2); // Die Zahl in der Klammer zeigt an, wie schnell (in sek.) der Character erscheint 
+        let dialogue = {
+            isayYes: "Yes",
+            isaydNo: "No",
+            isayBla: "Bla",
+            isayOK: "Ok"
+        };
+        let dialogueElement = await Template.ƒS.Menu.getInput(dialogue, "choicesCSSClass"); // Die choicesCSSClass wird in der CSS Datei dann angelegt und gestyled
+        switch (dialogueElement) {
+            case dialogue.isayYes:
+                // continue path here
+                console.log("iSay Yes");
+                break;
+            case dialogue.isaydNo:
+                // continue path here
+                console.log("iSay No");
+                await Template.ƒS.Speech.tell(Template.characters.aisake, "Ich sage Nein");
+                break;
+            case dialogue.isayBla:
+                // continue path here
+                console.log("iSay Bla");
+                break;
+            case dialogue.isayOK:
+                // continue path here
+                console.log("iSay OK");
+                break;
+        }
     }
     Template.Scene = Scene;
 })(Template || (Template = {}));

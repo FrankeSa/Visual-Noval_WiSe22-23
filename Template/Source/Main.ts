@@ -23,7 +23,7 @@ namespace Template {
   export let locations = {
     beachDay: {
       name: "beachDay",
-      background: "Template/Backgrounds/Beach_day.png"
+      background: "Template/Images/Backgrounds/Beach_day.png"
 
     }
   };
