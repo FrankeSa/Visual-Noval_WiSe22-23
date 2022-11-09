@@ -7,8 +7,8 @@ namespace Template {
       Aisaka: {
 
         text1: "Hi",
-        text2: "Hi",
-        text3: "Hi",
+        text2: "Hallo",
+        text3: "Hoi"
 
       }
     };

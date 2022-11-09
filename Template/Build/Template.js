@@ -58,6 +58,18 @@ var Template;
 (function (Template) {
     async function Scene() {
         console.log("FudgeStory Template Scene starting");
+        let text = {
+            Aisaka: {
+                text1: "Hi",
+                text2: "Hallo",
+                text3: "Hoi"
+            }
+        };
+        Template.ƒS.Speech.hide();
+        await Template.ƒS.Location.show(Template.locations.beachDay);
+        await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positionPercent(100, 70));
+        await Template.ƒS.update();
+        await Template.ƒS.Speech.tell(Template.characters.aisake, text.Aisaka.text1);
     }
     Template.Scene = Scene;
 })(Template || (Template = {}));
