@@ -17,13 +17,13 @@ namespace Template {
     //background themes
 
     //SFX
-    drop: "Audio\drop.mp3"
+    drop: "Audio/drop.mp3"
   };
 
   export let locations = {
     beachDay: {
       name: "beachDay",
-      background: "Backgrounds\Beach_day.png"
+      background: "Backgrounds/Beach_day.png"
 
     }
   };
@@ -39,9 +39,9 @@ namespace Template {
       name: "Aisaka",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        angry: "Characters\aisaka_angry.png",
-        happy: "Characters\aisaka_happy.png",
-        upset: "Characters\aisaka_upset.png"
+        angry: "Characters/aisaka_angry.png",
+        happy: "Characters/aisaka_happy.png",
+        upset: "Characters/aisaka_upset.png"
       }
     }
   };
