@@ -15,7 +15,9 @@ namespace Template {
 
     ƒS.Speech.hide();
     await ƒS.Location.show(locations.beachDay);
-    await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(100, 70));
+    await ƒS.update();
+    await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
+    await ƒS.update();
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
     await ƒS.Speech.tell(characters.aisake, text.Aisaka.text1);
     await ƒS.update(2); // Die Zahl in der Klammer zeigt an, wie schnell (in sek.) der Character erscheint 

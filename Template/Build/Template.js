@@ -19,7 +19,7 @@ var Template;
     Template.locations = {
         beachDay: {
             name: "beachDay",
-            background: "Template/Images/Backgrounds/Beach_day.png"
+            background: "Images/Backgrounds/Beach_day.png"
         }
     };
     Template.characters = {
@@ -67,7 +67,9 @@ var Template;
         };
         Template.ƒS.Speech.hide();
         await Template.ƒS.Location.show(Template.locations.beachDay);
-        await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positionPercent(100, 70));
+        await Template.ƒS.update();
+        await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positionPercent(70, 100));
+        await Template.ƒS.update();
         // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
         await Template.ƒS.Speech.tell(Template.characters.aisake, text.Aisaka.text1);
         await Template.ƒS.update(2); // Die Zahl in der Klammer zeigt an, wie schnell (in sek.) der Character erscheint 
