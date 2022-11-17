@@ -14,6 +14,7 @@ namespace Template {
     };
 
     ƒS.Speech.hide();
+    // await ƒS.Transition. **********TRANSITION EINFÜGEN AUSPROBIEREN!!!!!!**********
     await ƒS.Location.show(locations.beachDay);
     await ƒS.update();
     await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
@@ -57,6 +58,18 @@ namespace Template {
 
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

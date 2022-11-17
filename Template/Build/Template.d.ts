@@ -37,7 +37,12 @@ declare namespace Template {
     let dataForSave: {
         nameProtagonist: string;
     };
+    function animation(): ƒS.AnimationDefinition;
+    function getAnimation(): ƒS.AnimationDefinition;
 }
 declare namespace Template {
     function Scene(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Scene_2(): ƒS.SceneReturn;
 }

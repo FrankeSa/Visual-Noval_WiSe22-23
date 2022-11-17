@@ -4,6 +4,14 @@ var Template;
     Template.ƒ = FudgeCore;
     Template.ƒS = FudgeStory;
     console.log("FudgeStory template starting");
+    // Menu
+    let gameMenu;
+    let menuIsOpen = true;
+    let inGameMenuBtn = {
+        save: "Save",
+        load: "Load",
+        close: "Close"
+    };
     Template.transition = {
         puzzle: {
             duration: 1,
@@ -43,10 +51,73 @@ var Template;
     Template.dataForSave = {
         nameProtagonist: ""
     };
+    function animation() {
+        return {
+            start: { translation: Template.ƒS.positions.bottomcenter, color: Template.ƒS.Color.CSS("blue", 1) },
+            end: { translation: Template.ƒS.positions.bottomright, color: Template.ƒS.Color.CSS("blue", 0) },
+            duration: 3,
+            playmode: Template.ƒS.ANIMATION_PLAYMODE.LOOP
+        };
+    }
+    Template.animation = animation;
+    function getAnimation() {
+        return {
+            start: { translation: Template.ƒS.positions.bottomleft, rotation: -20, scaling: new Template.ƒS.Position(0.5, 1.5), color: Template.ƒS.Color.CSS("white", 0.3) },
+            end: { translation: Template.ƒS.positions.bottomright, rotation: 20, scaling: new Template.ƒS.Position(1.5, 0.5), color: Template.ƒS.Color.CSS("red") },
+            duration: 1,
+            playmode: Template.ƒS.ANIMATION_PLAYMODE.LOOP
+        };
+    }
+    Template.getAnimation = getAnimation;
+    async function btnFunctionalities(_option) {
+        console.log(_option);
+        switch (_option) {
+            case inGameMenuBtn.save:
+                await Template.ƒS.Progress.save();
+                break;
+            case inGameMenuBtn.load:
+                await Template.ƒS.Progress.load();
+                break;
+            case inGameMenuBtn.close:
+                gameMenu.close();
+                menuIsOpen = false;
+                break;
+        }
+    }
+    // Menu Shortcuts
+    document.addEventListener("keydown", hdlKeyPress);
+    async function hdlKeyPress(_event) {
+        switch (_event.code) {
+            case Template.ƒ.KEYBOARD_CODE.S:
+                console.log("Save Scene");
+                await Template.ƒS.Progress.save();
+                break;
+            case Template.ƒ.KEYBOARD_CODE.L:
+                console.log("Load Scene");
+                await Template.ƒS.Progress.load();
+                break;
+            case Template.ƒ.KEYBOARD_CODE.M:
+                if (menuIsOpen) {
+                    console.log("Menu is closed");
+                    gameMenu.close();
+                    menuIsOpen = false;
+                }
+                else {
+                    console.log("Menu is open");
+                    gameMenu.open();
+                    menuIsOpen = true;
+                }
+                break;
+        }
+    }
     window.addEventListener("load", start);
     function start(_event) {
+        gameMenu = Template.ƒS.Menu.create(inGameMenuBtn, btnFunctionalities, "gameMenuCSS");
+        btnFunctionalities("Close");
+        //****Szenen Hirarchie
         let scenes = [
-            { scene: Template.Scene, name: "Scene" }
+            { scene: Template.Scene, name: "Scene" },
+            { scene: Template.Scene_2, name: "Scene_2" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
@@ -66,6 +137,7 @@ var Template;
             }
         };
         Template.ƒS.Speech.hide();
+        // await ƒS.Transition. **********TRANSITION EINFÜGEN AUSPROBIEREN!!!!!!**********
         await Template.ƒS.Location.show(Template.locations.beachDay);
         await Template.ƒS.update();
         await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positionPercent(70, 100));
@@ -101,5 +173,15 @@ var Template;
         }
     }
     Template.Scene = Scene;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function Scene_2() {
+        console.log("FudgeStory Template Sarah starting");
+        await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positions.bottomcenter);
+        Template.ƒS.update();
+        await Template.ƒS.Character.animate(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.animation());
+    }
+    Template.Scene_2 = Scene_2;
 })(Template || (Template = {}));
 //# sourceMappingURL=Template.js.map
