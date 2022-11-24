@@ -139,7 +139,8 @@ var Template;
         Template.ƒS.Speech.hide();
         // await ƒS.Transition. **********TRANSITION EINFÜGEN AUSPROBIEREN!!!!!!**********
         await Template.ƒS.Location.show(Template.locations.beachDay);
-        await Template.ƒS.update();
+        // await ƒS.Sound.play(sound.drop, 1);
+        await Template.ƒS.update(Template.transition.puzzle.duration, Template.transition.puzzle.alpha, Template.transition.puzzle.edge);
         await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positionPercent(70, 100));
         await Template.ƒS.update();
         // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);

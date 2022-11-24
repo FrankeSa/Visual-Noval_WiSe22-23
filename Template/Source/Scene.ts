@@ -16,7 +16,8 @@ namespace Template {
     ƒS.Speech.hide();
     // await ƒS.Transition. **********TRANSITION EINFÜGEN AUSPROBIEREN!!!!!!**********
     await ƒS.Location.show(locations.beachDay);
-    await ƒS.update();
+    // await ƒS.Sound.play(sound.drop, 1);
+    await ƒS.update(transition.puzzle.duration, transition.puzzle.alpha, transition.puzzle.edge);
     await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
     await ƒS.update();
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
