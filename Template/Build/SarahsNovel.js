@@ -1,8 +1,8 @@
 "use strict";
-var Template;
-(function (Template) {
-    Template.ƒ = FudgeCore;
-    Template.ƒS = FudgeStory;
+var SarahsNovel;
+(function (SarahsNovel) {
+    SarahsNovel.ƒ = FudgeCore;
+    SarahsNovel.ƒS = FudgeStory;
     console.log("FudgeStory template starting");
     // Menu
     let gameMenu;
@@ -12,25 +12,25 @@ var Template;
         load: "Load",
         close: "Close"
     };
-    Template.transition = {
+    SarahsNovel.transition = {
         puzzle: {
             duration: 2,
             alpha: "Transitions/Others/035.jpg",
             edge: 1
         }
     };
-    Template.sound = {
+    SarahsNovel.sound = {
         //background themes
         //SFX
         drop: "Audio/drop.mp3"
     };
-    Template.locations = {
+    SarahsNovel.locations = {
         beachDay: {
             name: "beachDay",
             background: "Images/Backgrounds/Beach_day.png"
         }
     };
-    Template.characters = {
+    SarahsNovel.characters = {
         narrator: {
             name: ""
         },
@@ -39,7 +39,7 @@ var Template;
         },
         aisake: {
             name: "Aisaka",
-            origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
+            origin: SarahsNovel.ƒS.ORIGIN.BOTTOMCENTER,
             pose: {
                 angry: "Characters/aisaka_angry.png",
                 happy: "Characters/aisaka_happy.png",
@@ -48,35 +48,35 @@ var Template;
         }
     };
     //Data that will be saved (game progress)
-    Template.dataForSave = {
+    SarahsNovel.dataForSave = {
         nameProtagonist: ""
     };
     function animation() {
         return {
-            start: { translation: Template.ƒS.positions.bottomcenter, color: Template.ƒS.Color.CSS("blue", 1) },
-            end: { translation: Template.ƒS.positions.bottomright, color: Template.ƒS.Color.CSS("blue", 0) },
+            start: { translation: SarahsNovel.ƒS.positions.bottomcenter, color: SarahsNovel.ƒS.Color.CSS("blue", 1) },
+            end: { translation: SarahsNovel.ƒS.positions.bottomright, color: SarahsNovel.ƒS.Color.CSS("blue", 0) },
             duration: 3,
-            playmode: Template.ƒS.ANIMATION_PLAYMODE.LOOP
+            playmode: SarahsNovel.ƒS.ANIMATION_PLAYMODE.LOOP
         };
     }
-    Template.animation = animation;
+    SarahsNovel.animation = animation;
     function getAnimation() {
         return {
-            start: { translation: Template.ƒS.positions.bottomleft, rotation: -20, scaling: new Template.ƒS.Position(0.5, 1.5), color: Template.ƒS.Color.CSS("white", 0.3) },
-            end: { translation: Template.ƒS.positions.bottomright, rotation: 20, scaling: new Template.ƒS.Position(1.5, 0.5), color: Template.ƒS.Color.CSS("red") },
+            start: { translation: SarahsNovel.ƒS.positions.bottomleft, rotation: -20, scaling: new SarahsNovel.ƒS.Position(0.5, 1.5), color: SarahsNovel.ƒS.Color.CSS("white", 0.3) },
+            end: { translation: SarahsNovel.ƒS.positions.bottomright, rotation: 20, scaling: new SarahsNovel.ƒS.Position(1.5, 0.5), color: SarahsNovel.ƒS.Color.CSS("red") },
             duration: 1,
-            playmode: Template.ƒS.ANIMATION_PLAYMODE.LOOP
+            playmode: SarahsNovel.ƒS.ANIMATION_PLAYMODE.LOOP
         };
     }
-    Template.getAnimation = getAnimation;
+    SarahsNovel.getAnimation = getAnimation;
     async function btnFunctionalities(_option) {
         console.log(_option);
         switch (_option) {
             case inGameMenuBtn.save:
-                await Template.ƒS.Progress.save();
+                await SarahsNovel.ƒS.Progress.save();
                 break;
             case inGameMenuBtn.load:
-                await Template.ƒS.Progress.load();
+                await SarahsNovel.ƒS.Progress.load();
                 break;
             case inGameMenuBtn.close:
                 gameMenu.close();
@@ -88,15 +88,15 @@ var Template;
     document.addEventListener("keydown", hdlKeyPress);
     async function hdlKeyPress(_event) {
         switch (_event.code) {
-            case Template.ƒ.KEYBOARD_CODE.S:
+            case SarahsNovel.ƒ.KEYBOARD_CODE.S:
                 console.log("Save Scene");
-                await Template.ƒS.Progress.save();
+                await SarahsNovel.ƒS.Progress.save();
                 break;
-            case Template.ƒ.KEYBOARD_CODE.L:
+            case SarahsNovel.ƒ.KEYBOARD_CODE.L:
                 console.log("Load Scene");
-                await Template.ƒS.Progress.load();
+                await SarahsNovel.ƒS.Progress.load();
                 break;
-            case Template.ƒ.KEYBOARD_CODE.M:
+            case SarahsNovel.ƒ.KEYBOARD_CODE.M:
                 if (menuIsOpen) {
                     console.log("Menu is closed");
                     gameMenu.close();
@@ -112,21 +112,21 @@ var Template;
     }
     window.addEventListener("load", start);
     function start(_event) {
-        gameMenu = Template.ƒS.Menu.create(inGameMenuBtn, btnFunctionalities, "gameMenuCSS");
+        gameMenu = SarahsNovel.ƒS.Menu.create(inGameMenuBtn, btnFunctionalities, "gameMenuCSS");
         btnFunctionalities("Close");
         //****Szenen Hirarchie
         let scenes = [
-            { scene: Template.Scene, name: "Scene" },
-            { scene: Template.Scene_2, name: "Scene_2" }
+            { scene: SarahsNovel.Scene, name: "Scene" },
+            { scene: SarahsNovel.Scene_2, name: "Scene_2" }
         ];
         let uiElement = document.querySelector("[type=interface]");
-        Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
+        SarahsNovel.dataForSave = SarahsNovel.ƒS.Progress.setData(SarahsNovel.dataForSave, uiElement);
         // start the sequence
-        Template.ƒS.Progress.go(scenes);
+        SarahsNovel.ƒS.Progress.go(scenes);
     }
-})(Template || (Template = {}));
-var Template;
-(function (Template) {
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
     async function Scene() {
         console.log("FudgeStory Template Sarah starting");
         let text = {
@@ -136,23 +136,22 @@ var Template;
                 text3: "Hoi"
             }
         };
-        Template.ƒS.Speech.hide();
-        // await ƒS.Transition. **********TRANSITION EINFÜGEN AUSPROBIEREN!!!!!!**********
-        await Template.ƒS.Location.show(Template.locations.beachDay);
+        SarahsNovel.ƒS.Speech.hide();
+        await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.beachDay);
         // await ƒS.Sound.play(sound.drop, 1);
-        await Template.ƒS.update(Template.transition.puzzle.duration, Template.transition.puzzle.alpha, Template.transition.puzzle.edge);
-        await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positionPercent(70, 100));
-        await Template.ƒS.update();
+        await SarahsNovel.ƒS.update(SarahsNovel.transition.puzzle.duration, SarahsNovel.transition.puzzle.alpha, SarahsNovel.transition.puzzle.edge);
+        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.aisake, SarahsNovel.characters.aisake.pose.happy, SarahsNovel.ƒS.positionPercent(70, 100));
+        await SarahsNovel.ƒS.update();
         // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
-        await Template.ƒS.Speech.tell(Template.characters.aisake, text.Aisaka.text1);
-        await Template.ƒS.update(2); // Die Zahl in der Klammer zeigt an, wie schnell (in sek.) der Character erscheint 
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.aisake, text.Aisaka.text1);
+        await SarahsNovel.ƒS.update(2); // Die Zahl in der Klammer zeigt an, wie schnell (in sek.) der Character erscheint 
         let dialogue = {
             isayYes: "Yes",
             isaydNo: "No",
             isayBla: "Bla",
             isayOK: "Ok"
         };
-        let dialogueElement = await Template.ƒS.Menu.getInput(dialogue, "choicesCSSClass"); // Die choicesCSSClass wird in der CSS Datei dann angelegt und gestyled
+        let dialogueElement = await SarahsNovel.ƒS.Menu.getInput(dialogue, "choicesCSSClass"); // Die choicesCSSClass wird in der CSS Datei dann angelegt und gestyled
         switch (dialogueElement) {
             case dialogue.isayYes:
                 // continue path here
@@ -161,7 +160,7 @@ var Template;
             case dialogue.isaydNo:
                 // continue path here
                 console.log("iSay No");
-                await Template.ƒS.Speech.tell(Template.characters.aisake, "Ich sage Nein");
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.aisake, "Ich sage Nein");
                 break;
             case dialogue.isayBla:
                 // continue path here
@@ -173,16 +172,16 @@ var Template;
                 break;
         }
     }
-    Template.Scene = Scene;
-})(Template || (Template = {}));
-var Template;
-(function (Template) {
+    SarahsNovel.Scene = Scene;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
     async function Scene_2() {
         console.log("FudgeStory Template Sarah starting");
-        await Template.ƒS.Character.show(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.ƒS.positions.bottomcenter);
-        Template.ƒS.update();
-        await Template.ƒS.Character.animate(Template.characters.aisake, Template.characters.aisake.pose.happy, Template.animation());
+        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.aisake, SarahsNovel.characters.aisake.pose.happy, SarahsNovel.ƒS.positions.bottomcenter);
+        SarahsNovel.ƒS.update();
+        await SarahsNovel.ƒS.Character.animate(SarahsNovel.characters.aisake, SarahsNovel.characters.aisake.pose.happy, SarahsNovel.animation());
     }
-    Template.Scene_2 = Scene_2;
-})(Template || (Template = {}));
-//# sourceMappingURL=Template.js.map
+    SarahsNovel.Scene_2 = Scene_2;
+})(SarahsNovel || (SarahsNovel = {}));
+//# sourceMappingURL=SarahsNovel.js.map

@@ -1,4 +1,4 @@
-namespace Template {
+namespace SarahsNovel {
   export async function Scene(): ƒS.SceneReturn {
     console.log("FudgeStory Template Sarah starting");
 
@@ -14,7 +14,7 @@ namespace Template {
     };
 
     ƒS.Speech.hide();
-    // await ƒS.Transition. **********TRANSITION EINFÜGEN AUSPROBIEREN!!!!!!**********
+  
     await ƒS.Location.show(locations.beachDay);
     // await ƒS.Sound.play(sound.drop, 1);
     await ƒS.update(transition.puzzle.duration, transition.puzzle.alpha, transition.puzzle.edge);

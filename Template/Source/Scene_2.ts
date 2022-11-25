@@ -1,4 +1,4 @@
-namespace Template {
+namespace SarahsNovel {
     export async function Scene_2(): ƒS.SceneReturn {
         console.log("FudgeStory Template Sarah starting");
 

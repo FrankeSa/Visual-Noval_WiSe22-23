@@ -1,4 +1,4 @@
-namespace Template {
+namespace SarahsNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
 
@@ -15,8 +15,8 @@ namespace Template {
   export let transition = {
 
     puzzle: {
-      duration: 1,
-      alpha: "",
+      duration: 2,
+      alpha: "Transitions/Others/035.jpg",
       edge: 1
     }
   };
