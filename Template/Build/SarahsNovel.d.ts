@@ -16,6 +16,10 @@ declare namespace SarahsNovel {
             name: string;
             background: string;
         };
+        school: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         narrator: {
@@ -36,12 +40,27 @@ declare namespace SarahsNovel {
     };
     let dataForSave: {
         nameProtagonist: string;
+        affectionScore: number;
     };
-    function animation(): ƒS.AnimationDefinition;
+    let items: {
+        firstItem: {
+            name: string;
+            description: string;
+            image: string;
+            static: boolean;
+        };
+        secondItem: {
+            name: string;
+            description: string;
+            image: string;
+            static: boolean;
+        };
+    };
     function getAnimation(): ƒS.AnimationDefinition;
+    function credits(): void;
 }
 declare namespace SarahsNovel {
-    function Scene(): ƒS.SceneReturn;
+    function Scene_1(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene_2(): ƒS.SceneReturn;

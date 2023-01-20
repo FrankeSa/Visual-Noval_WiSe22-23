@@ -2,22 +2,24 @@ namespace SarahsNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
 
-  console.log("FudgeStory template starting");
+  console.log("Scene_1 is starting");
   // Menu
   let gameMenu: ƒS.Menu;
   let menuIsOpen: boolean = true;
+
   let inGameMenuBtn = {
     save: "Save",
     load: "Load",
-    close: "Close"
+    close: "Close",
+    credits: "Credits"
   };
 
   export let transition = {
 
     puzzle: {
       duration: 2,
-      alpha: "Transitions/Others/035.jpg",
-      edge: 1
+      alpha: "Transitions/Others/wet.jpg",
+      edge: 2
     }
   };
 
@@ -32,14 +34,16 @@ namespace SarahsNovel {
     beachDay: {
       name: "beachDay",
       background: "Images/Backgrounds/Beach_day.png"
-
-
+    },
+    school: {
+      name: "school",
+      background: "Images/Backgrounds/01.png"
     }
   };
 
   export let characters = {
     narrator: {
-      name: ""
+      name: "Erzähler"
     },
     protagonist: {
       name: ""
@@ -58,30 +62,49 @@ namespace SarahsNovel {
   //Data that will be saved (game progress)
 
   export let dataForSave = {
-    nameProtagonist: ""
+    nameProtagonist: "",
+    affectionScore: 0
   };
 
-  export function animation(): ƒS.AnimationDefinition {
-    return {
-      start: { translation: ƒS.positions.bottomcenter, color: ƒS.Color.CSS("blue", 1) },
-      end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("blue", 0) },
-      duration: 3,
-      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+  export let items = {
+    firstItem: {
+      name: "Ein Kürbis zum Schutz vor Regen ",
+      description: " ",
+      image: "Images/tile_0004.png",
+      static: false //wenn true dann kann das Item verwendet werden
+    },
+    secondItem: {
+      name: "Eine Blume ",
+      description: "sieht schön aus ",
+      image: "Images/tile_0020.png",
+      static: false
+    }
+  };
 
-    };
-    
-  }
+  // export function animation(): ƒS.AnimationDefinition {
+  //   return {
+  //     start: { translation: ƒS.positions.bottomcenter, color: ƒS.Color.CSS("blue", 1) },
+  //     end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("blue", 0) },
+  //     duration: 3,
+  //     playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+
+  //   };
+
+  // }
 
   export function getAnimation(): ƒS.AnimationDefinition {
     return {
-    start: { translation: ƒS.positions.bottomleft, rotation: -20, scaling: new ƒS.Position(0.5, 1.5), color: ƒS.Color.CSS("white", 0.3) },
-    end: { translation: ƒS.positions.bottomright, rotation: 20, scaling: new ƒS.Position(1.5, 0.5), color: ƒS.Color.CSS("red") },
-    duration: 1,
-    playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+      start: { translation: ƒS.positionPercent(70, 100) },
+      end: { translation: ƒS.positionPercent(60, 100) },
+      duration: 4,
+      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
     };
-    }
+  }
 
-
+  export function credits(): void {
+    ƒS.Text.print("Hier könnten Ihre Credits stehen");
+    
+  }
 
   async function btnFunctionalities(_option: string): Promise<void> {
     console.log(_option);
@@ -96,8 +119,11 @@ namespace SarahsNovel {
         gameMenu.close();
         menuIsOpen = false;
         break;
+      case inGameMenuBtn.credits:
+        credits();
     }
   }
+
 
   // Menu Shortcuts
   document.addEventListener("keydown", hdlKeyPress);
@@ -112,6 +138,10 @@ namespace SarahsNovel {
       case ƒ.KEYBOARD_CODE.L:
         console.log("Load Scene");
         await ƒS.Progress.load();
+        break;
+      case ƒ.KEYBOARD_CODE.C:
+        console.log("Show Credits");
+        await credits();
         break;
       case ƒ.KEYBOARD_CODE.M:
 
@@ -130,17 +160,20 @@ namespace SarahsNovel {
     }
   }
 
+
   window.addEventListener("load", start);
+
 
   function start(_event: Event): void {
     gameMenu = ƒS.Menu.create(inGameMenuBtn, btnFunctionalities, "gameMenuCSS");
     btnFunctionalities("Close");
 
+
     //****Szenen Hirarchie
 
     let scenes: ƒS.Scenes = [
-      { scene: Scene, name: "Scene" },
-      { scene: Scene_2, name: "Scene_2" }
+      { scene: Scene_1, name: "In deinem Kinderzimmer" },
+      // { scene: Scene_2, name: "Scene_2" }
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
