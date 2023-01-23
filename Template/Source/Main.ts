@@ -33,11 +33,11 @@ namespace SarahsNovel {
   export let locations = {
     beachDay: {
       name: "beachDay",
-      background: "Images/Backgrounds/Beach_day.png"
+      background: "Images/Backgrounds/oma_mit_kind_vesper.png"
     },
     school: {
       name: "school",
-      background: "Images/Backgrounds/01.png"
+      background: "Images/Backgrounds/oma_mit_kind_vesper.png"
     }
   };
 
@@ -50,10 +50,10 @@ namespace SarahsNovel {
     },
     aisake: {
       name: "Aisaka",
-      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
         angry: "Characters/aisaka_angry.png",
-        happy: "Characters/aisaka_happy.png",
+        happy: "Images/Characters/Child/Kind_mit_Arme_nach_oben_2.png",
         upset: "Characters/aisaka_upset.png"
       }
     }

@@ -21,13 +21,13 @@ namespace SarahsNovel {
     await ƒS.Location.show(locations.beachDay);
     // await ƒS.Sound.play(sound.drop, 1);
     await ƒS.update(transition.puzzle.duration, transition.puzzle.alpha, transition.puzzle.edge);
+    // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.right);
 
-
-    // await ƒS.update(1);
+    await ƒS.update(1);
  
     await ƒS.Speech.tell(characters.narrator, text.Aisaka.text1 + dataForSave.nameProtagonist);
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
-    await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.right);
+   
     signalDelay();
 
     //******INVENTAR******** */

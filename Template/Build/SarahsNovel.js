@@ -28,11 +28,11 @@ var SarahsNovel;
     SarahsNovel.locations = {
         beachDay: {
             name: "beachDay",
-            background: "Images/Backgrounds/Beach_day.png"
+            background: "Images/Backgrounds/oma_mit_kind_vesper.png"
         },
         school: {
             name: "school",
-            background: "Images/Backgrounds/01.png"
+            background: "Images/Backgrounds/oma_mit_kind_vesper.png"
         }
     };
     SarahsNovel.characters = {
@@ -44,10 +44,10 @@ var SarahsNovel;
         },
         aisake: {
             name: "Aisaka",
-            origin: SarahsNovel.ƒS.ORIGIN.BOTTOMCENTER,
+            origin: SarahsNovel.ƒS.ORIGIN.BOTTOMRIGHT,
             pose: {
                 angry: "Characters/aisaka_angry.png",
-                happy: "Characters/aisaka_happy.png",
+                happy: "Images/Characters/Child/Kind_mit_Arme_nach_oben_2.png",
                 upset: "Characters/aisaka_upset.png"
             }
         }
@@ -172,10 +172,10 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.beachDay);
         // await ƒS.Sound.play(sound.drop, 1);
         await SarahsNovel.ƒS.update(SarahsNovel.transition.puzzle.duration, SarahsNovel.transition.puzzle.alpha, SarahsNovel.transition.puzzle.edge);
-        // await ƒS.update(1);
+        // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.right);
+        await SarahsNovel.ƒS.update(1);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Aisaka.text1 + SarahsNovel.dataForSave.nameProtagonist);
         // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
-        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.aisake, SarahsNovel.characters.aisake.pose.happy, SarahsNovel.ƒS.positions.right);
         signalDelay();
         //******INVENTAR******** */
         // ƒS.Inventory.add(items.firstItem);
