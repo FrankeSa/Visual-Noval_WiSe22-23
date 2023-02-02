@@ -2,10 +2,11 @@ namespace SarahsNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
 
-  console.log("Scene_1 is starting");
+  console.log("Scene_1 In deinem Zimmer is starting");
   // Menu
   let gameMenu: ƒS.Menu;
   let menuIsOpen: boolean = true;
+  export let affectionScore: number;
 
   let inGameMenuBtn = {
     save: "Save",
@@ -14,12 +15,17 @@ namespace SarahsNovel {
     credits: "Credits"
   };
 
-  export let transition = {
+  export let transitions = {
 
-    puzzle: {
-      duration: 2,
-      alpha: "Transitions/Others/wet.jpg",
+    beginning: {
+      duration: 3,
+      alpha: "Transitions/Others/039.jpg",
       edge: 2
+    },
+    crossingGeneral: {
+      duration: 4,
+      alpha: "Transitions/WipesAndOther/17.png",
+      edge: 1
     }
   };
 
@@ -31,13 +37,73 @@ namespace SarahsNovel {
   };
 
   export let locations = {
-    beachDay: {
-      name: "beachDay",
-      background: "Images/Backgrounds/oma_mit_kind_vesper.png"
+    yourRoom: {
+      name: "in your nursery",
+      background: "Images/Hintergruende/kinderzimmer.png"
     },
-    school: {
-      name: "school",
-      background: "Images/Backgrounds/oma_mit_kind_vesper.png"
+    getLunchbox: {
+      name: "get your lunchbox from your Grandmother",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    meetThePenguin: {
+      name: "you meet the penguin in front of your door",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    thePenguin: {
+      name: "look at the penguin",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    wayToSchool: {
+      name: "walk to school with penguin",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    schoolyard: {
+      name: "penguin on schoolyard",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    nightSky: {
+      name: "you look in the night sky",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    lafOffice: {
+      name: "at the lost and found office",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    badEnding: {
+      name: "the penguin is captured",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    atThePark: {
+      name: "you and the penguin at the park",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    atTheHarbor: {
+      name: "you and the penguin at the harbor",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    atSee: {
+      name: "you and the penguin on your way to the South Pole",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    bigWave: {
+      name: "big Wave",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    atSouthPole: {
+      name: "SouthPole",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    happyEnd: {
+      name: "Happy End",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    bgBrown: {
+      name: "brown background",
+      background: "Images/Hintergruende/koffer_packen.png"
+    },
+    bgBlue: {
+      name: "blue background",
+      background: "Images/Hintergruende/koffer_packen.png"
     }
   };
 
@@ -48,13 +114,22 @@ namespace SarahsNovel {
     protagonist: {
       name: ""
     },
-    aisake: {
-      name: "Aisaka",
+    kind: {
+      name: "Kind",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
-        angry: "Characters/aisaka_angry.png",
-        happy: "Images/Characters/Child/Kind_mit_Arme_nach_oben_2.png",
-        upset: "Characters/aisaka_upset.png"
+        liestBuch: "Images/Charaktere/Kind/kind_liest_buch.png",
+        hatIdee: "Images/Charaktere/Kind/kind_idee.png",
+        umarmtPinguin: "Images/Charaktere/Kind/umarmung.png"
+      }
+    },
+    pinguin: {
+      name: "",
+      origin: ƒS.ORIGIN.BOTTOMRIGHT,
+      pose: {
+        angry: "",
+        // happy: "Images/Characters/Pinguin/pinguin_ht.png",
+        upset: ""
       }
     }
   };
@@ -70,13 +145,19 @@ namespace SarahsNovel {
     firstItem: {
       name: "Ein Kürbis zum Schutz vor Regen ",
       description: " ",
-      image: "Images/tile_0004.png",
+      image: "Images/Equipment/schirm.png",
       static: false //wenn true dann kann das Item verwendet werden
     },
     secondItem: {
       name: "Eine Blume ",
       description: "sieht schön aus ",
-      image: "Images/tile_0020.png",
+      image: "Images/Equipment/taschenlampe.png",
+      static: false
+    },
+    thirdItem: {
+      name: "Schaal ",
+      description: "hält warm ",
+      image: "Images/Equipment/schaal.png",
       static: false
     }
   };
@@ -94,16 +175,16 @@ namespace SarahsNovel {
 
   export function getAnimation(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(70, 100) },
-      end: { translation: ƒS.positionPercent(60, 100) },
-      duration: 4,
-      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+      start: { translation: ƒS.positionPercent(50, 74) },
+      end: { translation: ƒS.positionPercent(49, 74) },
+      duration: 2,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };
   }
 
   export function credits(): void {
     ƒS.Text.print("Hier könnten Ihre Credits stehen");
-    
+
   }
 
   async function btnFunctionalities(_option: string): Promise<void> {
@@ -173,7 +254,7 @@ namespace SarahsNovel {
 
     let scenes: ƒS.Scenes = [
       { scene: Scene_1, name: "In deinem Kinderzimmer" },
-      // { scene: Scene_2, name: "Scene_2" }
+      { scene: Scene_2, name: "Oma überreicht dir deine Brotbox" }
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
