@@ -19,19 +19,31 @@ namespace SarahsNovel {
 
     beginning: {
       duration: 3,
-      alpha: "Transitions/Others/039.jpg",
+      alpha: "Transitions/WipesAndOther/circlewipe-ccw.jpg",
       edge: 2
     },
     crossingGeneral: {
       duration: 4,
       alpha: "Transitions/WipesAndOther/17.png",
       edge: 1
+    },
+    fadeSky: {
+      duration: 4,
+      alpha: "Transitions/WipesAndOther/4.jpg",
+      edge: 1
+    },
+    swirl: {
+      duration: 4,
+      alpha: "Transitions/Others/swirl.png",
+      edge: 1
     }
+
   };
 
   export let audio = {
     //background themes
-    nursery: "Audio/birds_and_piano.mp3",
+    nursery: "Audio/birds_in_the_morning.mp3",
+    cityTraffic: "Audio/city_traffic_outdoor.mp3",
     //SFX
     shipHorn: "Audio/ship_horn.mp3"
   };
@@ -177,7 +189,7 @@ namespace SarahsNovel {
 
   // }
 
-  export function getAnimation(): ƒS.AnimationDefinition {
+  export function moveBackAnimation(): ƒS.AnimationDefinition {
     return {
       start: { translation: ƒS.positionPercent(50, 74) },
       end: { translation: ƒS.positionPercent(49, 74) },
@@ -185,6 +197,7 @@ namespace SarahsNovel {
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };
   }
+
 
   export function credits(): void {
     ƒS.Text.print("Hier könnten Ihre Credits stehen");
@@ -257,8 +270,17 @@ namespace SarahsNovel {
     //****Szenen Hirarchie
 
     let scenes: ƒS.Scenes = [
-      { scene: Scene01, name: "In deinem Kinderzimmer" },
-      { scene: Scene02, name: "Oma überreicht dir deine Brotbox" }
+      // { id: "s00", scene: Scene00, name: "Vorwort", next: "s01" },
+      { id: "s01", scene: Scene01, name: "In deinem Kinderzimmer", next: "s02" },
+      { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+      { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
+      { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+      { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
+      { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+      { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+      { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" }
+
+
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");

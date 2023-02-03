@@ -84,7 +84,7 @@ namespace SarahsNovel {
       case dialogue.isayYes:
         // continue path here
         console.log("iSay Yes");
-        await ƒS.Character.animate(characters.kind, characters.kind.pose.idea, getAnimation());
+        await ƒS.Character.animate(characters.kind, characters.kind.pose.idea, moveBackAnimation());
         break;
       case dialogue.isaydNo:
         // continue path here

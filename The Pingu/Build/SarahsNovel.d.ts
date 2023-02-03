@@ -13,9 +13,20 @@ declare namespace SarahsNovel {
             alpha: string;
             edge: number;
         };
+        fadeSky: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
+        swirl: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
     };
     let audio: {
         nursery: string;
+        cityTraffic: string;
         shipHorn: string;
     };
     let locations: {
@@ -141,14 +152,35 @@ declare namespace SarahsNovel {
             static: boolean;
         };
     };
-    function getAnimation(): ƒS.AnimationDefinition;
+    function moveBackAnimation(): ƒS.AnimationDefinition;
     function credits(): void;
+}
+declare namespace SarahsNovel {
+    function Scene00(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene01(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene02(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene03(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene04(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene05(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene06(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene07(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene08(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene_1(): ƒS.SceneReturn;
