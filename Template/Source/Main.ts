@@ -43,68 +43,69 @@ namespace SarahsNovel {
     },
     getLunchbox: {
       name: "get your lunchbox from your Grandmother",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/oma_mit_kind_vesper.png"
     },
     meetThePenguin: {
       name: "you meet the penguin in front of your door",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/an_der_haustuer.png"
     },
-    thePenguin: {
-      name: "look at the penguin",
-      background: "Images/Hintergruende/koffer_packen.png"
-    },
-    wayToSchool: {
+     wayToSchool: {
       name: "walk to school with penguin",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/schulweg.png"
     },
     schoolyard: {
       name: "penguin on schoolyard",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/auf_dem_schulhof.png"
     },
     nightSky: {
       name: "you look in the night sky",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/nachthimmel.png"
     },
     lafOffice: {
       name: "at the lost and found office",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/im_fundbuero.png"
     },
     badEnding: {
       name: "the penguin is captured",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/pinguin_im_kaefig.png"
     },
     atThePark: {
       name: "you and the penguin at the park",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/im_park.png"
     },
     atTheHarbor: {
       name: "you and the penguin at the harbor",
+      background: "Images/Hintergruende/am_hafen.png"
+    },
+    packSuitcase: {
+      name: "get ready for adventure",
       background: "Images/Hintergruende/koffer_packen.png"
     },
     atSee: {
       name: "you and the penguin on your way to the South Pole",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/meer.png"
     },
     bigWave: {
       name: "big Wave",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/große_welle.png"
     },
     atSouthPole: {
       name: "SouthPole",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/am_suedpol.png"
     },
     happyEnd: {
       name: "Happy End",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/happy_end.png"
     },
     bgBrown: {
       name: "brown background",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/bg_allgemein.png"
     },
     bgBlue: {
       name: "blue background",
-      background: "Images/Hintergruende/koffer_packen.png"
+      background: "Images/Hintergruende/bg_rueckkehr_pinguin.png"
     }
+  
   };
 
   export let characters = {
