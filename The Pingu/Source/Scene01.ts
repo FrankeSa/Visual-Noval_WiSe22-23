@@ -4,7 +4,7 @@ namespace SarahsNovel {
     console.log("FudgeStory Template Sarah starting");
     // ƒS.Sound.play(audio.nursery, 0.05, false);
     document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
-
+    ƒS.Sound.play(audio.nursery, 0.07, false);
 
     let text = {
       Erzähler: {
@@ -28,6 +28,7 @@ namespace SarahsNovel {
     ƒS.Speech.clear();
     ƒS.Speech.hide();
     ƒS.Sound.fade(audio.nursery, 0, 1, true); //Audio faded out to null
+    await ƒS.update();
 
   }
 

@@ -2,7 +2,7 @@ namespace SarahsNovel {
     export async function Scene02(): ƒS.SceneReturn {
         console.log("Scene02 Oma überreicht Brotbox starting");
 
-        ƒS.Sound.play(audio.nursery, 0.07, false);
+        ƒS.Sound.play(audio.atHome, 0.07, false);
         let text = {
             Erzähler: {
                 text01: "Deine Oma küsst dich, wie jeden Morgen, liebevoll auf die Stirn.",
@@ -27,8 +27,10 @@ namespace SarahsNovel {
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
         ƒS.Speech.clear();
         ƒS.Speech.hide();
+        ƒS.Sound.fade(audio.atHome, 0, 1, true); //Audio faded out to null
 
-        // await ƒS.Character.animate(characters.aisake, characters.aisake.pose.happy, animation());
+
+
 
 
 

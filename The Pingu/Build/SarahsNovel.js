@@ -39,13 +39,15 @@ var SarahsNovel;
         //background themes
         nursery: "Audio/birds_in_the_morning.mp3",
         cityTraffic: "Audio/city_traffic_outdoor.mp3",
+        playground: "Audio/playground.mp3",
+        atHome: "Audio/mother.mp3",
         //SFX
         shipHorn: "Audio/ship_horn.mp3"
     };
     SarahsNovel.locations = {
         yourRoom: {
             name: "in your nursery",
-            background: "Images/Hintergruende/kinderzimmer.png"
+            background: "Images/Hintergruende/test.png"
         },
         getLunchbox: {
             name: "get your lunchbox from your Grandmother",
@@ -61,7 +63,7 @@ var SarahsNovel;
         },
         schoolyard: {
             name: "penguin on schoolyard",
-            background: "Images/Hintergruende/auf_dem_schulhof.png"
+            background: "Images/Hintergruende/auf_dem_schulhof.jpg"
         },
         nightSky: {
             name: "you look in the night sky",
@@ -139,6 +141,20 @@ var SarahsNovel;
                 sad: "Images/Charaktere/Pinguin/pinguin_traurig.png",
                 happy: "Images/Charaktere/Pinguin/ruerckkehr_pinguin.png"
             }
+        },
+        bigstar: {
+            name: "big star",
+            origin: SarahsNovel.ƒS.ORIGIN.BOTTOMRIGHT,
+            pose: {
+                shining: "Images/Charaktere/Sonstige/big_star.png"
+            }
+        },
+        littlestar: {
+            name: "little star",
+            origin: SarahsNovel.ƒS.ORIGIN.CENTER,
+            pose: {
+                shining: "Images/Charaktere/Sonstige/little_star.png"
+            }
         }
     };
     //Data that will be saved in game progress
@@ -166,14 +182,15 @@ var SarahsNovel;
             static: false
         }
     };
-    // export function animation(): ƒS.AnimationDefinition {
-    //   return {
-    //     start: { translation: ƒS.positions.bottomcenter, color: ƒS.Color.CSS("blue", 1) },
-    //     end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("blue", 0) },
-    //     duration: 3,
-    //     playmode: ƒS.ANIMATION_PLAYMODE.LOOP
-    //   };
-    // }
+    function bigStarShining() {
+        return {
+            start: { translation: SarahsNovel.ƒS.positions.bottomcenter, color: SarahsNovel.ƒS.Color.CSS("", 1) },
+            end: { translation: SarahsNovel.ƒS.positions.bottomright, color: SarahsNovel.ƒS.Color.CSS("", 0) },
+            duration: 3,
+            playmode: SarahsNovel.ƒS.ANIMATION_PLAYMODE.LOOP
+        };
+    }
+    SarahsNovel.bigStarShining = bigStarShining;
     function moveBackAnimation() {
         return {
             start: { translation: SarahsNovel.ƒS.positionPercent(50, 74) },
@@ -275,6 +292,7 @@ var SarahsNovel;
         console.log("FudgeStory Template Sarah starting");
         // ƒS.Sound.play(audio.nursery, 0.05, false);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.nursery, 0.07, false);
         let text = {
             Erzähler: {
                 text01: "Ein neuer Tag hat begonnen. Die Sonne ist gerade aufgegangen und draußen zwitschern die Vögel eifrig um die Wette.",
@@ -295,6 +313,7 @@ var SarahsNovel;
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.nursery, 0, 1, true); //Audio faded out to null
+        await SarahsNovel.ƒS.update();
     }
     SarahsNovel.Scene01 = Scene01;
 })(SarahsNovel || (SarahsNovel = {}));
@@ -302,7 +321,7 @@ var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene02() {
         console.log("Scene02 Oma überreicht Brotbox starting");
-        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.nursery, 0.07, false);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.atHome, 0.07, false);
         let text = {
             Erzähler: {
                 text01: "Deine Oma küsst dich, wie jeden Morgen, liebevoll auf die Stirn.",
@@ -322,7 +341,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
-        // await ƒS.Character.animate(characters.aisake, characters.aisake.pose.happy, animation());
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.atHome, 0, 1, true); //Audio faded out to null
     }
     SarahsNovel.Scene02 = Scene02;
 })(SarahsNovel || (SarahsNovel = {}));
@@ -388,6 +407,19 @@ var SarahsNovel;
         SarahsNovel.ƒS.Speech.hide();
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.wayToSchool);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
+        let text = {
+            Erzähler: {
+                text01: "Du läufst los und als ein bisschen Abstand zwischen euch ist, tapst der Pinguin ebenfalls los und folgt dir.",
+                text02: "Immer wieder bleibst du stehen und erklärst ihm, dass du jetzt zur Schule musst.",
+                text03: "Doch der Pinguin folgt dir hartnäckig."
+            }
+        };
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
+        SarahsNovel.ƒS.Speech.clear();
+        SarahsNovel.ƒS.Speech.hide();
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.cityTraffic, 0, 1, true); //Audio faded out to null
     }
     SarahsNovel.Scene04 = Scene04;
 })(SarahsNovel || (SarahsNovel = {}));
@@ -395,8 +427,30 @@ var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene05() {
         console.log("FudgeStory Scene05 starting");
-        // await ƒS.Location.show(locations.bgBrown);
-        // await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.playground, 0.07, false);
+        await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.schoolyard);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
+        let text = {
+            Erzähler: {
+                text01: "Auf dem Schulhof haben sich deine Freunde und Mitschüler um den Pinguin versammelt.",
+                text02: "Begeistert mustern sie ihn. So nahe waren sie einem Pinguin noch nie.",
+                text03: "Du überlegst dir, ob er sich vielleicht unwohl fühlen könnte, umringt von den ganzen Kindern.",
+                text04: "Doch es scheint so, als würde der Pinguin die Aufmerksamkeit genießen."
+            }
+        };
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
+        // await ƒS.Character.show(
+        //     characters.bigstar,
+        //     characters.bigstar.pose.shining,
+        //     ƒS.positionPercent(50, 44)
+        // );
+        // await ƒS.update(2);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
+        SarahsNovel.ƒS.Speech.clear();
+        SarahsNovel.ƒS.Speech.hide();
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.cityTraffic, 0, 1, true); //Audio faded out to null
     }
     SarahsNovel.Scene05 = Scene05;
 })(SarahsNovel || (SarahsNovel = {}));
@@ -404,9 +458,9 @@ var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene06() {
         console.log("FudgeStory Scene06 starting");
-        // ƒS.Speech.hide();
-        // await ƒS.Location.show(locations.atSee);
-        // await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
+        SarahsNovel.ƒS.Speech.hide();
+        await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.atSee);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
     }
     SarahsNovel.Scene06 = Scene06;
 })(SarahsNovel || (SarahsNovel = {}));

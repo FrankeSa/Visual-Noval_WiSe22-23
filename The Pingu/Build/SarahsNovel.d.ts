@@ -27,6 +27,8 @@ declare namespace SarahsNovel {
     let audio: {
         nursery: string;
         cityTraffic: string;
+        playground: string;
+        atHome: string;
         shipHorn: string;
     };
     let locations: {
@@ -127,6 +129,20 @@ declare namespace SarahsNovel {
                 happy: string;
             };
         };
+        bigstar: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                shining: string;
+            };
+        };
+        littlestar: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                shining: string;
+            };
+        };
     };
     let dataForSave: {
         nameProtagonist: string;
@@ -152,6 +168,7 @@ declare namespace SarahsNovel {
             static: boolean;
         };
     };
+    function bigStarShining(): ƒS.AnimationDefinition;
     function moveBackAnimation(): ƒS.AnimationDefinition;
     function credits(): void;
 }

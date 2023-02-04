@@ -44,6 +44,8 @@ namespace SarahsNovel {
     //background themes
     nursery: "Audio/birds_in_the_morning.mp3",
     cityTraffic: "Audio/city_traffic_outdoor.mp3",
+    playground: "Audio/playground.mp3",
+    atHome: "Audio/mother.mp3",
     //SFX
     shipHorn: "Audio/ship_horn.mp3"
   };
@@ -51,7 +53,7 @@ namespace SarahsNovel {
   export let locations = {
     yourRoom: {
       name: "in your nursery",
-      background: "Images/Hintergruende/kinderzimmer.png"
+      background: "Images/Hintergruende/test.png"
     },
     getLunchbox: {
       name: "get your lunchbox from your Grandmother",
@@ -67,7 +69,7 @@ namespace SarahsNovel {
     },
     schoolyard: {
       name: "penguin on schoolyard",
-      background: "Images/Hintergruende/auf_dem_schulhof.png"
+      background: "Images/Hintergruende/auf_dem_schulhof.jpg"
     },
     nightSky: {
       name: "you look in the night sky",
@@ -147,6 +149,20 @@ namespace SarahsNovel {
         sad: "Images/Charaktere/Pinguin/pinguin_traurig.png",
         happy: "Images/Charaktere/Pinguin/ruerckkehr_pinguin.png"
       }
+    },
+    bigstar: {
+      name: "big star",
+      origin: ƒS.ORIGIN.BOTTOMRIGHT,
+      pose: {
+        shining: "Images/Charaktere/Sonstige/big_star.png"
+      }
+    },
+    littlestar: {
+      name: "little star",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        shining: "Images/Charaktere/Sonstige/little_star.png"
+      }
     }
   };
 
@@ -178,16 +194,16 @@ namespace SarahsNovel {
     }
   };
 
-  // export function animation(): ƒS.AnimationDefinition {
-  //   return {
-  //     start: { translation: ƒS.positions.bottomcenter, color: ƒS.Color.CSS("blue", 1) },
-  //     end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("blue", 0) },
-  //     duration: 3,
-  //     playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+  export function bigStarShining(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positions.bottomcenter, color: ƒS.Color.CSS("", 1) },
+      end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("", 0) },
+      duration: 3,
+      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
 
-  //   };
+    };
 
-  // }
+  }
 
   export function moveBackAnimation(): ƒS.AnimationDefinition {
     return {
