@@ -29,6 +29,7 @@ declare namespace SarahsNovel {
         cityTraffic: string;
         playground: string;
         atHome: string;
+        moonSong: string;
         shipHorn: string;
     };
     let locations: {
@@ -49,6 +50,10 @@ declare namespace SarahsNovel {
             background: string;
         };
         schoolyard: {
+            name: string;
+            background: string;
+        };
+        giveSandwich: {
             name: string;
             background: string;
         };
@@ -108,10 +113,10 @@ declare namespace SarahsNovel {
         protagonist: {
             name: string;
         };
-        oma: {
+        grandmother: {
             name: string;
         };
-        kind: {
+        child: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -119,7 +124,7 @@ declare namespace SarahsNovel {
                 idea: string;
             };
         };
-        pinguin: {
+        penguin: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -129,6 +134,9 @@ declare namespace SarahsNovel {
                 happy: string;
             };
         };
+        Karl: {
+            name: string;
+        };
         bigstar: {
             name: string;
             origin: ƒ.ORIGIN2D;
@@ -137,6 +145,20 @@ declare namespace SarahsNovel {
             };
         };
         littlestar: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                shining: string;
+            };
+        };
+        speechBubble_wow: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                shining: string;
+            };
+        };
+        speechBubble_sueß: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -169,6 +191,7 @@ declare namespace SarahsNovel {
         };
     };
     function bigStarShining(): ƒS.AnimationDefinition;
+    function littleStarShining(): ƒS.AnimationDefinition;
     function moveBackAnimation(): ƒS.AnimationDefinition;
     function credits(): void;
 }

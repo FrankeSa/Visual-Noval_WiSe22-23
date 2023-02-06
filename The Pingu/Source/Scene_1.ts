@@ -34,7 +34,7 @@ namespace SarahsNovel {
     await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01 + dataForSave.nameProtagonist);
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.right);
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
-    await ƒS.Character.show(characters.kind, characters.kind.pose.idea, ƒS.positionPercent(70, 100));
+    await ƒS.Character.show(characters.child, characters.child.pose.idea, ƒS.positionPercent(70, 100));
 
     // signalDelay();
 
@@ -84,12 +84,12 @@ namespace SarahsNovel {
       case dialogue.isayYes:
         // continue path here
         console.log("iSay Yes");
-        await ƒS.Character.animate(characters.kind, characters.kind.pose.idea, moveBackAnimation());
+        await ƒS.Character.animate(characters.child, characters.child.pose.idea, moveBackAnimation());
         break;
       case dialogue.isaydNo:
         // continue path here
         console.log("iSay No");
-        await ƒS.Speech.tell(characters.kind, "Dein Name ist also" + characters.protagonist.name);
+        await ƒS.Speech.tell(characters.child, "Dein Name ist also" + characters.protagonist.name);
         break;
       case dialogue.isayBla:
         // continue path here

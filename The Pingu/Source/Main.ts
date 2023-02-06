@@ -46,6 +46,7 @@ namespace SarahsNovel {
     cityTraffic: "Audio/city_traffic_outdoor.mp3",
     playground: "Audio/playground.mp3",
     atHome: "Audio/mother.mp3",
+    moonSong: "Audio/moon_song.mp3",
     //SFX
     shipHorn: "Audio/ship_horn.mp3"
   };
@@ -53,7 +54,7 @@ namespace SarahsNovel {
   export let locations = {
     yourRoom: {
       name: "in your nursery",
-      background: "Images/Hintergruende/test.png"
+      background: "Images/Hintergruende/kinderzimmer.png"
     },
     getLunchbox: {
       name: "get your lunchbox from your Grandmother",
@@ -61,7 +62,7 @@ namespace SarahsNovel {
     },
     meetThePenguin: {
       name: "you meet the penguin in front of your door",
-      background: "Images/Hintergruende/an_der_haustuer.png"
+      background: "Images/Hintergruende/an_der_Haustuer.png"
     },
     wayToSchool: {
       name: "walk to school with penguin",
@@ -69,7 +70,11 @@ namespace SarahsNovel {
     },
     schoolyard: {
       name: "penguin on schoolyard",
-      background: "Images/Hintergruende/auf_dem_schulhof.jpg"
+      background: "Images/Hintergruende/auf_dem_schulhof.png"
+    },
+    giveSandwich: {
+      name: "you look in the night sky",
+      background: "Images/Hintergruende/pinguin_sandwich.png"
     },
     nightSky: {
       name: "you look in the night sky",
@@ -129,10 +134,10 @@ namespace SarahsNovel {
     protagonist: {
       name: "Protagonist"
     },
-    oma: {
+    grandmother: {
       name: "Oma"
     },
-    kind: {
+    child: {
       name: "Kind",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
@@ -140,7 +145,7 @@ namespace SarahsNovel {
         idea: "Images/Charaktere/Kind/kind_idee.png"
       }
     },
-    pinguin: {
+    penguin: {
       name: "",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
@@ -150,6 +155,10 @@ namespace SarahsNovel {
         happy: "Images/Charaktere/Pinguin/ruerckkehr_pinguin.png"
       }
     },
+    Karl: {
+      name: "Karl"
+    },
+
     bigstar: {
       name: "big star",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
@@ -162,6 +171,20 @@ namespace SarahsNovel {
       origin: ƒS.ORIGIN.CENTER,
       pose: {
         shining: "Images/Charaktere/Sonstige/little_star.png"
+      }
+    },
+    speechBubble_wow: {
+      name: "Speech Bubble WOW",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        shining: "Images/Charaktere/Sonstige/sprechblase_wow.png"
+      }
+    },
+    speechBubble_sueß: {
+      name: "Speech Bubble süß",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        shining: "Images/Charaktere/Sonstige/sprechblase_wie_suess.png"
       }
     }
   };
@@ -196,10 +219,22 @@ namespace SarahsNovel {
 
   export function bigStarShining(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positions.bottomcenter, color: ƒS.Color.CSS("", 1) },
-      end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("", 0) },
+      start: { translation: ƒS.positionPercent(45, 60), color: ƒS.Color.CSS("", 1) },
+      end: { translation: ƒS.positionPercent(45, 60), color: ƒS.Color.CSS("", 0) },
       duration: 3,
-      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+      playmode: ƒS.ANIMATION_PLAYMODE.REVERSELOOP
+
+    };
+
+  }
+
+
+  export function littleStarShining(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(66, 40), color: ƒS.Color.CSS("", 1) },
+      end: { translation: ƒS.positionPercent(66, 40), color: ƒS.Color.CSS("", 0) },
+      duration: 2.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.REVERSELOOP
 
     };
 

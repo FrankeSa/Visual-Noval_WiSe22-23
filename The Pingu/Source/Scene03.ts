@@ -1,8 +1,7 @@
 namespace SarahsNovel {
     export async function Scene03(): ƒS.SceneReturn {
         console.log("FudgeStory Scene03 starting");
-
-
+        ƒS.Sound.play(audio.nursery, 0.07, false);
         let text = {
             Erzähler: {
                 text01: "Doch nanu, wer steht da vor der Tür...? Verdutzt bleibst du stehen.",
@@ -20,11 +19,12 @@ namespace SarahsNovel {
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
 
         await ƒS.Character.show(
-            characters.pinguin,
-            characters.pinguin.pose.side,
+            characters.penguin,
+            characters.penguin.pose.side,
             ƒS.positionPercent(50, 74)
         );
         await ƒS.update(2);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false); // false die meta wird angezeigt, true sie wird nicht angezeigt.
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);
@@ -46,20 +46,21 @@ namespace SarahsNovel {
             case options.touch:
                 // continue path here
                 console.log("Anfassen");
-                await ƒS.Character.animate(characters.pinguin, characters.pinguin.pose.side, moveBackAnimation());
+                await ƒS.Character.animate(characters.penguin, characters.penguin.pose.side, moveBackAnimation());
                 await ƒS.Speech.tell(characters.narrator, "Du versuchst ihn anzufassen aber der Pinguin weicht skeptisch zurück.");
                 break;
             case options.scareAway:
                 // continue path here
                 console.log("Verscheuchen");
-                await ƒS.Speech.tell(characters.narrator, "Du versuchst den Pinguin zu verscheuchen <b><i>„Kusch...Kusch!“</i></b> Doch der Pinguin weicht nicht von der Stelle.")
+                await ƒS.Speech.tell(characters.narrator, "Du versuchst den Pinguin zu verscheuchen <b><i>„Kusch...Kusch!“</i></b> Doch der Pinguin weicht nicht von der Stelle.");
                 break;
             case options.ignore:
                 // continue path here
-                await ƒS.Speech.tell(characters.narrator, "Du beschließt den Pinguin zu ignorieren. Du schiebst dich an ihm vorbei und machst dich auf den Weg zur Schule.")
+                await ƒS.Speech.tell(characters.narrator, "Du beschließt den Pinguin zu ignorieren. Du schiebst dich an ihm vorbei und machst dich auf den Weg zur Schule.");
                 break;
         }
-        ƒS.Character.hide(characters.pinguin);
+        ƒS.Sound.fade(audio.nursery, 0, 1, true);
+        ƒS.Character.hide(characters.penguin);
         ƒS.Speech.clear();
         ƒS.Speech.hide();
 

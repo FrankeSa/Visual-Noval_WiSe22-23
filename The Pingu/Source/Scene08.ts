@@ -3,9 +3,9 @@ namespace SarahsNovel {
         console.log("FudgeStory Scene08 starting");
 
 
-        // ƒS.Speech.hide();
-        // await ƒS.Location.show(locations.atSee);
-        // await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
+        ƒS.Speech.hide();
+        await ƒS.Location.show(locations.lafOffice);
+        await ƒS.update(transitions.beginning.duration, transitions.beginning.alpha, transitions.beginning.edge);
 
 
 
