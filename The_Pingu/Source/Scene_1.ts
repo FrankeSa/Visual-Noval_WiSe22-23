@@ -15,7 +15,7 @@ namespace SarahsNovel {
     await ƒS.Sound.fade(audio.nursery, 0.07, 0.1, false);
     await ƒS.Location.show(locations.yourRoom);
     await ƒS.update(1);
-    await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01 + dataForSave.nameProtagonist);
+    await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01 + dataForSave.namePingu);
     // ƒS.Speech.setTickerDelays(70, 0);
     // let signalDelay: ƒS.Signal = ƒS.Progress.defineSignal([() => ƒS.Progress.delay(3)]);
 
@@ -31,7 +31,7 @@ namespace SarahsNovel {
 
     await ƒS.update(1);
 
-    await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01 + dataForSave.nameProtagonist);
+    await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01 + dataForSave.namePingu);
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.right);
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
     await ƒS.Character.show(characters.child, characters.child.pose.idea, ƒS.positionPercent(70, 100));
@@ -44,8 +44,8 @@ namespace SarahsNovel {
     // for (let i: number = 0; i < 5; i++) {
     //   ƒS.Inventory.add(items.firstItem);
     // }
-    dataForSave.nameProtagonist = await ƒS.Speech.getInput();
-    characters.protagonist.name = dataForSave.nameProtagonist;
+    dataForSave.namePingu = await ƒS.Speech.getInput();
+    characters.penguin.name = dataForSave.namePingu;
 
 
     // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
@@ -89,7 +89,7 @@ namespace SarahsNovel {
       case dialogue.isaydNo:
         // continue path here
         console.log("iSay No");
-        await ƒS.Speech.tell(characters.child, "Dein Name ist also" + characters.protagonist.name);
+        await ƒS.Speech.tell(characters.child, "Dein Name ist also" + characters.penguin.name);
         break;
       case dialogue.isayBla:
         // continue path here

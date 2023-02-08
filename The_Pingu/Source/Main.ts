@@ -47,6 +47,7 @@ namespace SarahsNovel {
     playground: "Audio/playground.mp3",
     atHome: "Audio/mother.mp3",
     moonSong: "Audio/moon_song.mp3",
+    pidgeonsPark: "Audio/pidgeons_cooing_city_park.mp3",
     //SFX
     shipHorn: "Audio/ship_horn.mp3"
   };
@@ -131,9 +132,9 @@ namespace SarahsNovel {
     narrator: {
       name: "Erzähler"
     },
-    protagonist: {
-      name: "Protagonist"
-    },
+    // protagonist: {
+    //   name: "Protagonist"
+    // },
     grandmother: {
       name: "Oma"
     },
@@ -186,13 +187,35 @@ namespace SarahsNovel {
       pose: {
         shining: "Images/Charaktere/Sonstige/sprechblase_wie_suess.png"
       }
+    },
+    littledove: {
+      name: "littel dove",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        normal: "Images/Charaktere/Sonstige/kleine_taube.png"
+      }
+    },
+    bigdove: {
+      name: "Taube",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        injured: "Images/Charaktere/Sonstige/taube_verletzt.png"
+      }
+    },
+    doveWithPevement: {
+      name: "",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        withPavement: "Images/Charaktere/Sonstige/taube_mit_pflaster.png"
+      }
     }
+
   };
 
   //Data that will be saved in game progress
 
   export let dataForSave = {
-    nameProtagonist: "",
+    namePingu: "",
     affectionScore: 0
   };
 
@@ -322,14 +345,18 @@ namespace SarahsNovel {
 
     let scenes: ƒS.Scenes = [
       // { id: "s00", scene: Scene00, name: "Vorwort", next: "s01" },
-      { id: "s01", scene: Scene01, name: "In deinem Kinderzimmer", next: "s02" },
-      { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-      { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
-      { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
-      { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
-      { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
-      { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-      { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" }
+      // { id: "s01", scene: Scene01, name: "In deinem Kinderzimmer", next: "s02" },
+      // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+      // { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
+      // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+      // { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
+      // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+      // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+      // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
+      { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
+      { id: "s10", scene: Scene10, name: "Kind ließt Buch", next: "s11" },
+      { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
+      { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" }
 
 
     ];

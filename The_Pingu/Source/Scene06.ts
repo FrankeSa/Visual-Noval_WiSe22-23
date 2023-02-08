@@ -64,10 +64,10 @@ namespace SarahsNovel {
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text09);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text10);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text11);
-        dataForSave.nameProtagonist = await ƒS.Speech.getInput();
-        characters.protagonist.name = dataForSave.nameProtagonist;
+        dataForSave.namePingu = await ƒS.Speech.getInput();
+        characters.penguin.name = dataForSave.namePingu;
 
-        await ƒS.Speech.tell(characters.narrator, "Doch " + characters.protagonist.name + " antwortet nicht...");
+        await ƒS.Speech.tell(characters.narrator, "Doch " + characters.penguin.name + " antwortet nicht...");
         ƒS.Sound.fade(audio.cityTraffic, 0, 1, true);
 
 

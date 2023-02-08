@@ -25,20 +25,20 @@ namespace SarahsNovel {
         await ƒS.Character.animate(characters.bigstar, characters.bigstar.pose.shining, bigStarShining());
         // await ƒS.update();
         await ƒS.Character.animate(characters.littlestar, characters.littlestar.pose.shining, littleStarShining());
-
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text05);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text06);
-        await ƒS.update();
+        await ƒS.update(1);
         ƒS.Speech.clear();
         ƒS.Character.hide(characters.bigstar);
         ƒS.Character.hide(characters.littlestar);
         ƒS.Speech.hide();
         ƒS.Sound.fade(audio.moonSong, 0, 1, true);
-
+        await ƒS.update(1);
 
 
 

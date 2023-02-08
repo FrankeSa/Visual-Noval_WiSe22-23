@@ -42,6 +42,7 @@ var SarahsNovel;
         playground: "Audio/playground.mp3",
         atHome: "Audio/mother.mp3",
         moonSong: "Audio/moon_song.mp3",
+        pidgeonsPark: "Audio/pidgeons_cooing_city_park.mp3",
         //SFX
         shipHorn: "Audio/ship_horn.mp3"
     };
@@ -123,9 +124,9 @@ var SarahsNovel;
         narrator: {
             name: "Erzähler"
         },
-        protagonist: {
-            name: "Protagonist"
-        },
+        // protagonist: {
+        //   name: "Protagonist"
+        // },
         grandmother: {
             name: "Oma"
         },
@@ -177,11 +178,32 @@ var SarahsNovel;
             pose: {
                 shining: "Images/Charaktere/Sonstige/sprechblase_wie_suess.png"
             }
+        },
+        littledove: {
+            name: "littel dove",
+            origin: SarahsNovel.ƒS.ORIGIN.CENTER,
+            pose: {
+                normal: "Images/Charaktere/Sonstige/kleine_taube.png"
+            }
+        },
+        bigdove: {
+            name: "Taube",
+            origin: SarahsNovel.ƒS.ORIGIN.CENTER,
+            pose: {
+                injured: "Images/Charaktere/Sonstige/taube_verletzt.png"
+            }
+        },
+        doveWithPevement: {
+            name: "",
+            origin: SarahsNovel.ƒS.ORIGIN.CENTER,
+            pose: {
+                withPavement: "Images/Charaktere/Sonstige/taube_mit_pflaster.png"
+            }
         }
     };
     //Data that will be saved in game progress
     SarahsNovel.dataForSave = {
-        nameProtagonist: "",
+        namePingu: "",
         affectionScore: 0
     };
     SarahsNovel.items = {
@@ -289,14 +311,18 @@ var SarahsNovel;
         //****Szenen Hirarchie
         let scenes = [
             // { id: "s00", scene: Scene00, name: "Vorwort", next: "s01" },
-            { id: "s01", scene: SarahsNovel.Scene01, name: "In deinem Kinderzimmer", next: "s02" },
-            { id: "s02", scene: SarahsNovel.Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-            { id: "s03", scene: SarahsNovel.Scene03, name: "An der Haustür", next: "s04" },
-            { id: "s04", scene: SarahsNovel.Scene04, name: "Schulweg", next: "s05" },
-            { id: "s05", scene: SarahsNovel.Scene05, name: "Auf dem Schulhof", next: "s06" },
-            { id: "s06", scene: SarahsNovel.Scene06, name: "Der traurige Pinguin", next: "s07" },
-            { id: "s07", scene: SarahsNovel.Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-            { id: "s08", scene: SarahsNovel.Scene08, name: "Im Fundbüro", next: "s09" }
+            // { id: "s01", scene: Scene01, name: "In deinem Kinderzimmer", next: "s02" },
+            // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+            // { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
+            // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+            // { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
+            // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+            // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+            // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
+            { id: "s09", scene: SarahsNovel.Scene09, name: "Im Park", next: "s10" },
+            { id: "s10", scene: SarahsNovel.Scene10, name: "Kind ließt Buch", next: "s11" },
+            { id: "s11", scene: SarahsNovel.Scene11, name: "Koffer packen", next: "s12" },
+            { id: "s12", scene: SarahsNovel.Scene12, name: "Am Hafen", next: "s13" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         SarahsNovel.dataForSave = SarahsNovel.ƒS.Progress.setData(SarahsNovel.dataForSave, uiElement);
@@ -344,7 +370,7 @@ var SarahsNovel;
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.nursery, 0, 1, true); //Audio faded out to null
-        await SarahsNovel.ƒS.update();
+        // await ƒS.update();
     }
     SarahsNovel.Scene01 = Scene01;
 })(SarahsNovel || (SarahsNovel = {}));
@@ -414,6 +440,7 @@ var SarahsNovel;
                 // continue path here
                 console.log("Anfassen");
                 await SarahsNovel.ƒS.Character.animate(SarahsNovel.characters.penguin, SarahsNovel.characters.penguin.pose.side, SarahsNovel.moveBackAnimation());
+                SarahsNovel.ƒS.update();
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Du versuchst ihn anzufassen aber der Pinguin weicht skeptisch zurück.");
                 break;
             case options.scareAway:
@@ -462,6 +489,7 @@ var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene05() {
         console.log("FudgeStory Scene05 starting");
+        // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.playground, 0.07, false);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.schoolyard);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
@@ -475,8 +503,13 @@ var SarahsNovel;
         };
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
-        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.speechBubble_wow, SarahsNovel.characters.speechBubble_wow.pose.shining, SarahsNovel.ƒS.positionPercent(50, 44));
+        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.speechBubble_wow, SarahsNovel.characters.speechBubble_wow.pose.shining, SarahsNovel.ƒS.positionPercent(43, 20));
         await SarahsNovel.ƒS.update(2);
+        await SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.speechBubble_wow),
+            await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.speechBubble_sueß, SarahsNovel.characters.speechBubble_sueß.pose.shining, SarahsNovel.ƒS.positionPercent(75, 20));
+        await SarahsNovel.ƒS.update(2);
+        await SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.speechBubble_sueß),
+            await SarahsNovel.ƒS.update(2);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
         SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.speechBubble_wow);
@@ -545,9 +578,9 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text09);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text10);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text11);
-        SarahsNovel.dataForSave.nameProtagonist = await SarahsNovel.ƒS.Speech.getInput();
-        SarahsNovel.characters.protagonist.name = SarahsNovel.dataForSave.nameProtagonist;
-        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Doch " + SarahsNovel.characters.protagonist.name + " antwortet nicht...");
+        SarahsNovel.dataForSave.namePingu = await SarahsNovel.ƒS.Speech.getInput();
+        SarahsNovel.characters.penguin.name = SarahsNovel.dataForSave.namePingu;
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Doch " + SarahsNovel.characters.penguin.name + " antwortet nicht...");
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.cityTraffic, 0, 1, true);
     }
     SarahsNovel.Scene06 = Scene06;
@@ -574,18 +607,20 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Character.animate(SarahsNovel.characters.bigstar, SarahsNovel.characters.bigstar.pose.shining, SarahsNovel.bigStarShining());
         // await ƒS.update();
         await SarahsNovel.ƒS.Character.animate(SarahsNovel.characters.littlestar, SarahsNovel.characters.littlestar.pose.shining, SarahsNovel.littleStarShining());
+        await SarahsNovel.ƒS.update(1);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text05);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text06);
-        await SarahsNovel.ƒS.update();
+        await SarahsNovel.ƒS.update(1);
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.bigstar);
         SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.littlestar);
         SarahsNovel.ƒS.Speech.hide();
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.moonSong, 0, 1, true);
+        await SarahsNovel.ƒS.update(1);
     }
     SarahsNovel.Scene07 = Scene07;
 })(SarahsNovel || (SarahsNovel = {}));
@@ -596,8 +631,210 @@ var SarahsNovel;
         SarahsNovel.ƒS.Speech.hide();
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.lafOffice);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
+        let text = {
+            Erzähler: {
+                text01: "Am nächsten Morgen beschließt du in einem Fundbüro nachzufragen, ob vielleicht jemand einen Pinguin vermisst.",
+                text02: "Du erklärst ihm, dass er sich verirrt hat und du ihm versprochen hast, sein zu Hause zu finden, du aber nicht weißt, wo das ist.",
+                text03: "Nach langem Überlegen stimmst du zu " + SarahsNovel.characters.penguin.name + " in den Zoo zu geben.",
+                text04: "Karl geht nach hinten und kommt mit einem großen Käfig wieder.",
+                text05: "Er packt den Pinguin und hebt ihn hoch.",
+                text06: SarahsNovel.characters.penguin.name + " strampelt mit den Füßchen und versucht verzweifelt sich aus seinem Griff zu befreien.",
+                text07: "Doch Karl ist viel stärker und mit einem kräftigen Ruck zwängt er" + SarahsNovel.characters.penguin.name + " schließlich in den Käfig",
+                text08: "Große Tränen kullern über das Gesicht des Pinguins.",
+                text09: "Trotz deines mulmigen Gefühls, sagst du dir, dass es das Richtige ist.",
+                text10: "<i>„Solche Tiere gehören nun mal in den Zoo.“"
+            },
+            Karl: {
+                text01: "„Einen Pinguin? Mein liebes Kind, keiner vermisst einen Pinguin.“",
+                text02: "„Nun, vermutlich gehört er in irgendeinen Zoo.“ „Ich denke, dort ist er am besten aufgehoben.“",
+                text03: "„Soll ich ihn für dich in einen Zoo bringen?“"
+            }
+        };
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.Karl, text.Karl.text01);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.Karl, text.Karl.text02);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.Karl, text.Karl.text03);
+        let options = {
+            yes: "Ja",
+            no: "Nein"
+        };
+        let dialogueElement = await SarahsNovel.ƒS.Menu.getInput(options, "choices");
+        switch (dialogueElement) {
+            case options.yes:
+                console.log("in den Zoo geben");
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text05);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text06);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text07);
+                await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.badEnding);
+                await SarahsNovel.ƒS.update(SarahsNovel.transitions.swirl.duration, SarahsNovel.transitions.swirl.alpha, SarahsNovel.transitions.swirl.edge);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text08);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text09);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text10);
+                SarahsNovel.ƒS.Text.print("Bad Ending! Probier es gerne nochmal von neuem.");
+                break;
+            case options.no:
+                console.log("Nicht in den Zoo geben");
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Ohne zu zögern lehnst du ab.");
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Dir ist klar, dass " + SarahsNovel.characters.penguin.name + "´s zu Hause auf garkeinen Fall ein Zoo sein kann.");
+                SarahsNovel.dataForSave.affectionScore += 10;
+                break;
+        }
+        SarahsNovel.ƒS.Speech.clear();
+        SarahsNovel.ƒS.Speech.hide();
     }
     SarahsNovel.Scene08 = Scene08;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene09() {
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.pidgeonsPark, 0.7, true);
+        await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.atThePark);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
+        let text = {
+            Erzähler: {
+                text01: "Draußen im Park fragst du ein paar Tauben, die gurrend auf den Bäumen sitzen.",
+                text02: "<i><b>„Wisst ihr woher dieser Pinguin kommt?“</i></b> rufst du zu ihnen hoch.",
+                text03: "Doch sie ignorieren dich...",
+                text04: "Da hüpft plötzlich eine kleine Taube auf " + SarahsNovel.characters.penguin.name + " zu.",
+                text05: "Sie scheint verletzt zu sein...",
+                text06: "<i><b>„Hallo, kleine Taube. Weißt du, woher dieser Pinguin kommt?“</i></b> fragst du die Taube.",
+                text07: "Überrascht fragst du die Taube <i><b>„Warum hast du denn ein Loch in deinem Flügel?“</i></b>",
+                text08: "Ungläubig erwiderst du <i><b>„Aber warum sollte er auf dich schießen, du hast ihm ja nichts getan?“</i></b>",
+                text09: "<i><b>„Du armes kleines Geschöpf, das ist ja furchtbar.“</i></b> gibst du bedauernd zurück.",
+                text10: "Du kramst in deiner Hosentasche und findest ein Pflaster, das du der Taube auf den Flügel klebst.",
+                text11: "<i><b>„Tut mir leid, aber ich habe gerade andere Sorgen“</i></b> erklärst du der Taube.",
+                text12: "Langsam wird es dunkel und du und " + SarahsNovel.characters.penguin.name + " macht euch auf den Weg nach Hause."
+            },
+            Taube: {
+                text01: "„Nein, das weiß ich leider nicht. Aber kannst du mir bitte helfen?",
+                text02: "„In meinem Flügel ist ein Loch und jetzt kann ich nicht mehr fliegen.“",
+                text03: "„Ein Mann hat mit einem Luftgewehr auf mich geschossen, als ich auf seinem Hof nach Essen gesucht habe.“",
+                text04: "„Das war vor drei Tagen und seitdem habe ich große Schmerzen.“",
+                text05: "„Die Menschen denken, dass wir Krankheiten verbreiten und sie verjagen uns, wegen unseren Hinterlassenschaften.“",
+                text06: "„Weil wir in der Natur kaum mehr natürliches Futter finden, suchen wir uns das Essen eben von den Menschen zusammen.“",
+                text07: "„Aber, weil das Brot oder die Pommes der Menschen uns nicht guttun, bekommen wir davon Bauchweh und unsere Hinterlassenschaften sehen dann unschön aus.“",
+                text08: "„Kannst du mir nun helfen oder nicht?“"
+            }
+        };
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
+        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.littledove, SarahsNovel.characters.littledove.pose.normal, SarahsNovel.ƒS.positionPercent(24, 78));
+        SarahsNovel.ƒS.update(2);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text05);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text06);
+        SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.littledove);
+        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.bigdove, SarahsNovel.characters.bigdove.pose.injured, SarahsNovel.ƒS.positionPercent(45, 63));
+        SarahsNovel.ƒS.update(2);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text01);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text02);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text07);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text03);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text04);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text08);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text05);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text06);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text07);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, text.Taube.text08);
+        let options = {
+            help: "Helfen",
+            nohelp: "Nicht helfen"
+        };
+        let dialogueElement = await SarahsNovel.ƒS.Menu.getInput(options, "choices");
+        switch (dialogueElement) {
+            case options.help:
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text09);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text10);
+                SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.bigdove);
+                await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.doveWithPevement, SarahsNovel.characters.doveWithPevement.pose.withPavement, SarahsNovel.ƒS.positionPercent(45, 63));
+                SarahsNovel.ƒS.update(1);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, "„Vielen Dank, das ist sehr nett von dir.“ Ich hoffe du findest das zu Hause deines Pinguins.");
+                SarahsNovel.dataForSave.affectionScore += 10;
+                break;
+            case options.nohelp:
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text11);
+                SarahsNovel.dataForSave.affectionScore -= 10;
+                break;
+        }
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text12);
+        SarahsNovel.ƒS.Character.hideAll();
+        SarahsNovel.ƒS.Speech.clear();
+        SarahsNovel.ƒS.Speech.hide();
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.pidgeonsPark, 0, 1, true); //Audio faded out to null
+    }
+    SarahsNovel.Scene09 = Scene09;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene10() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+        await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.bgBrown);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
+    }
+    SarahsNovel.Scene10 = Scene10;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene11() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene11 = Scene11;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene12() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene12 = Scene12;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene13() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene13 = Scene13;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene14() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene14 = Scene14;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene15() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene15 = Scene15;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene16() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene16 = Scene16;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene17() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene17 = Scene17;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene18() {
+        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+    }
+    SarahsNovel.Scene18 = Scene18;
 })(SarahsNovel || (SarahsNovel = {}));
 var SarahsNovel;
 (function (SarahsNovel) {
@@ -614,7 +851,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.nursery, 0.07, 0.1, false);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.yourRoom);
         await SarahsNovel.ƒS.update(1);
-        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01 + SarahsNovel.dataForSave.nameProtagonist);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01 + SarahsNovel.dataForSave.namePingu);
         // ƒS.Speech.setTickerDelays(70, 0);
         // let signalDelay: ƒS.Signal = ƒS.Progress.defineSignal([() => ƒS.Progress.delay(3)]);
         SarahsNovel.ƒS.Speech.hide();
@@ -622,7 +859,7 @@ var SarahsNovel;
         // await ƒS.Character.show(characters.kind, characters.kind.pose.happy, ƒS.positionPercent(50, 74));
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
         await SarahsNovel.ƒS.update(1);
-        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01 + SarahsNovel.dataForSave.nameProtagonist);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01 + SarahsNovel.dataForSave.namePingu);
         // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.right);
         // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
         await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.child, SarahsNovel.characters.child.pose.idea, SarahsNovel.ƒS.positionPercent(70, 100));
@@ -632,8 +869,8 @@ var SarahsNovel;
         // for (let i: number = 0; i < 5; i++) {
         //   ƒS.Inventory.add(items.firstItem);
         // }
-        SarahsNovel.dataForSave.nameProtagonist = await SarahsNovel.ƒS.Speech.getInput();
-        SarahsNovel.characters.protagonist.name = SarahsNovel.dataForSave.nameProtagonist;
+        SarahsNovel.dataForSave.namePingu = await SarahsNovel.ƒS.Speech.getInput();
+        SarahsNovel.characters.penguin.name = SarahsNovel.dataForSave.namePingu;
         // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
         await SarahsNovel.ƒS.update(1); // Die Zahl in der Klammer zeigt an, wie schnell (in sek.) der Character erscheint 
         SarahsNovel.ƒS.Speech.clear();
@@ -670,7 +907,7 @@ var SarahsNovel;
             case dialogue.isaydNo:
                 // continue path here
                 console.log("iSay No");
-                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.child, "Dein Name ist also" + SarahsNovel.characters.protagonist.name);
+                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.child, "Dein Name ist also" + SarahsNovel.characters.penguin.name);
                 break;
             case dialogue.isayBla:
                 // continue path here

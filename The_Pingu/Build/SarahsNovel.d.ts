@@ -30,6 +30,7 @@ declare namespace SarahsNovel {
         playground: string;
         atHome: string;
         moonSong: string;
+        pidgeonsPark: string;
         shipHorn: string;
     };
     let locations: {
@@ -110,9 +111,6 @@ declare namespace SarahsNovel {
         narrator: {
             name: string;
         };
-        protagonist: {
-            name: string;
-        };
         grandmother: {
             name: string;
         };
@@ -165,9 +163,30 @@ declare namespace SarahsNovel {
                 shining: string;
             };
         };
+        littledove: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        bigdove: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                injured: string;
+            };
+        };
+        doveWithPevement: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                withPavement: string;
+            };
+        };
     };
     let dataForSave: {
-        nameProtagonist: string;
+        namePingu: string;
         affectionScore: number;
     };
     let items: {
@@ -221,6 +240,36 @@ declare namespace SarahsNovel {
 }
 declare namespace SarahsNovel {
     function Scene08(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene09(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene10(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene11(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene12(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene13(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene14(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene15(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene16(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene17(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene18(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene_1(): ƒS.SceneReturn;

@@ -1,7 +1,7 @@
 namespace SarahsNovel {
     export async function Scene05(): ƒS.SceneReturn {
         console.log("FudgeStory Scene05 starting");
-
+        // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
         ƒS.Sound.play(audio.playground, 0.07, false);
 
         await ƒS.Location.show(locations.schoolyard);
@@ -19,10 +19,19 @@ namespace SarahsNovel {
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
         await ƒS.Character.show(
-            characters. speechBubble_wow,
-            characters. speechBubble_wow.pose.shining,
-            ƒS.positionPercent(50, 44)
+            characters.speechBubble_wow,
+            characters.speechBubble_wow.pose.shining,
+            ƒS.positionPercent(43, 20)
         );
+        await ƒS.update(2);
+        await ƒS.Character.hide(characters.speechBubble_wow),
+            await ƒS.Character.show(
+                characters.speechBubble_sueß,
+                characters.speechBubble_sueß.pose.shining,
+                ƒS.positionPercent(75, 20)
+            );
+        await ƒS.update(2);
+        await ƒS.Character.hide(characters.speechBubble_sueß),
         await ƒS.update(2);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);
