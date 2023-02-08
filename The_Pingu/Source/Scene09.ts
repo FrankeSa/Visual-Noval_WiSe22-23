@@ -13,7 +13,7 @@ namespace SarahsNovel {
                 text03: "Doch sie ignorieren dich...",
                 text04: "Da hüpft plötzlich eine kleine Taube auf " + characters.penguin.name + " zu.",
                 text05: "Sie scheint verletzt zu sein...",
-                text06: "<i><b>„Hallo, kleine Taube. Weißt du, woher dieser Pinguin kommt?“</i></b> fragst du die Taube.",
+                text06: "<i><b>„Hallo, kleine Taube. Weißt du, woher dieser Pinguin kommt?“</i></b> fragst du sie.",
                 text07: "Überrascht fragst du die Taube <i><b>„Warum hast du denn ein Loch in deinem Flügel?“</i></b>",
                 text08: "Ungläubig erwiderst du <i><b>„Aber warum sollte er auf dich schießen, du hast ihm ja nichts getan?“</i></b>",
                 text09: "<i><b>„Du armes kleines Geschöpf, das ist ja furchtbar.“</i></b> gibst du bedauernd zurück.",

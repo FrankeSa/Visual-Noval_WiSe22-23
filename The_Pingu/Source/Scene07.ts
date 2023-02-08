@@ -7,7 +7,7 @@ namespace SarahsNovel {
 
         ƒS.Speech.hide();
         await ƒS.Location.show(locations.nightSky);
-        await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
+        await ƒS.update(transitions.fadeSky.duration, transitions.fadeSky.alpha, transitions.fadeSky.edge);
 
         let text = {
             Erzähler: {

@@ -11,7 +11,7 @@ namespace SarahsNovel {
         let text = {
             Erzähler: {
                 text01: "Am nächsten Morgen beschließt du in einem Fundbüro nachzufragen, ob vielleicht jemand einen Pinguin vermisst.",
-                text02: "Du erklärst ihm, dass er sich verirrt hat und du ihm versprochen hast, sein zu Hause zu finden, du aber nicht weißt, wo das ist.",
+                text02: "Du erklärst Karl, dass er sich verirrt hat und du ihm versprochen hast, sein zu Hause zu finden, du aber nicht weißt, wo das ist.",
                 text03: "Nach langem Überlegen stimmst du zu " + characters.penguin.name + " in den Zoo zu geben.",
                 text04: "Karl geht nach hinten und kommt mit einem großen Käfig wieder.",
                 text05: "Er packt den Pinguin und hebt ihn hoch.",

@@ -23,6 +23,16 @@ declare namespace SarahsNovel {
             alpha: string;
             edge: number;
         };
+        wave: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
+        wet: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
     };
     let audio: {
         nursery: string;
@@ -31,6 +41,10 @@ declare namespace SarahsNovel {
         atHome: string;
         moonSong: string;
         pidgeonsPark: string;
+        shipAtHarbor: string;
+        atSea: string;
+        stormyWeather: string;
+        articWind: string;
         shipHorn: string;
     };
     let locations: {
@@ -120,6 +134,7 @@ declare namespace SarahsNovel {
             pose: {
                 reading: string;
                 idea: string;
+                talking: string;
             };
         };
         penguin: {
@@ -182,6 +197,13 @@ declare namespace SarahsNovel {
             origin: ƒ.ORIGIN2D;
             pose: {
                 withPavement: string;
+            };
+        };
+        iceFloe: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                floating: string;
             };
         };
     };
@@ -264,12 +286,6 @@ declare namespace SarahsNovel {
 }
 declare namespace SarahsNovel {
     function Scene16(): ƒS.SceneReturn;
-}
-declare namespace SarahsNovel {
-    function Scene17(): ƒS.SceneReturn;
-}
-declare namespace SarahsNovel {
-    function Scene18(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene_1(): ƒS.SceneReturn;

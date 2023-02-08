@@ -36,8 +36,17 @@ namespace SarahsNovel {
       duration: 4,
       alpha: "Transitions/Others/swirl.png",
       edge: 1
+    },
+    wave: {
+      duration: 4,
+      alpha: "Transitions/WipesAndOther/25.png",
+      edge: 1
+    },
+    wet: {
+      duration: 4,
+      alpha: "Transitions/Others/wet.jpg",
+      edge: 1
     }
-
   };
 
   export let audio = {
@@ -48,6 +57,10 @@ namespace SarahsNovel {
     atHome: "Audio/mother.mp3",
     moonSong: "Audio/moon_song.mp3",
     pidgeonsPark: "Audio/pidgeons_cooing_city_park.mp3",
+    shipAtHarbor: "Audio/boat_at_harbor.mp3",
+    atSea: "Audio/waves.mp3",
+    stormyWeather: "Audio/rain_and_thunder.mp3",
+    articWind: "Audio/wind_artic_cold.mp3",
     //SFX
     shipHorn: "Audio/ship_horn.mp3"
   };
@@ -143,7 +156,8 @@ namespace SarahsNovel {
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
         reading: "Images/Charaktere/Kind/kind_liest_buch.png",
-        idea: "Images/Charaktere/Kind/kind_idee.png"
+        idea: "Images/Charaktere/Kind/kind_idee.png",
+        talking: "Images/Charaktere/Kind/kind_redet.png"
       }
     },
     penguin: {
@@ -208,11 +222,18 @@ namespace SarahsNovel {
       pose: {
         withPavement: "Images/Charaktere/Sonstige/taube_mit_pflaster.png"
       }
+    },
+    iceFloe: {
+      name: "ice floe",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        floating: "Images/Charaktere/Sonstige/eisberg.png"
+      }
     }
 
   };
 
-  //Data that will be saved in game progress
+  //Data that will be saved in game progress  
 
   export let dataForSave = {
     namePingu: "",
@@ -233,9 +254,9 @@ namespace SarahsNovel {
       static: false
     },
     thirdItem: {
-      name: "Schaal ",
+      name: "Schal ",
       description: "hält schön warm ",
-      image: "Images/Equipment/schaal.png",
+      image: "Images/Equipment/schal.png",
       static: false
     }
   };
@@ -302,7 +323,10 @@ namespace SarahsNovel {
   async function hdlKeyPress(_event: KeyboardEvent): Promise<void> {
 
     switch (_event.code) {
-
+      case ƒ.KEYBOARD_CODE.I:
+        console.log("Inventory");
+        await ƒS.Inventory.open();
+        break;
       case ƒ.KEYBOARD_CODE.S:
         console.log("Save Scene");
         await ƒS.Progress.save();
@@ -344,8 +368,7 @@ namespace SarahsNovel {
     //****Szenen Hirarchie
 
     let scenes: ƒS.Scenes = [
-      // { id: "s00", scene: Scene00, name: "Vorwort", next: "s01" },
-      // { id: "s01", scene: Scene01, name: "In deinem Kinderzimmer", next: "s02" },
+      
       // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
       // { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
       // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
@@ -353,10 +376,14 @@ namespace SarahsNovel {
       // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
       // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
       // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
-      { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
-      { id: "s10", scene: Scene10, name: "Kind ließt Buch", next: "s11" },
-      { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
-      { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" }
+      // { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
+      // { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
+      // { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
+      // { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
+      // { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
+      // { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
+      { id: "s15", scene: Scene15, name: "Am Südpol", next: "s16" },
+      { id: "s16", scene: Scene16, name: "HappyEnd", next: "s17" }
 
 
     ];

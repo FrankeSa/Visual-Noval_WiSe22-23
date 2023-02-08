@@ -17,7 +17,7 @@ namespace SarahsNovel {
                 text05: "<i>„Vielleicht hat er hunger?“</i> überlegst du.",
                 text06: "Du hast noch etwas von deinem Sandwich übrig, das du ihm anbieten könntest.",
                 text07: "Dann fällt es dir wie Schuppen von den Augen. <i>„Na klar! Er muss sich wohl verirrt haben und jetzt findet er nicht mehr nach Hause.“</i>",
-                text08: "<i><b>„Wie heißt du?“ „Hast du dich verlaufen?“</i></b> fragst du ihn.",
+                text08: "<i><b>„Wie heißt du? Hast du dich verlaufen?“</i></b> fragst du ihn.",
                 text09: "Doch der Pinguin antwortet nicht.",
                 text10: "Du überlegst...<i>„Hmm…“</i>",
                 text11: "<i><b>„Weißt du was, ich werde dir helfen wieder nach Hause zu finden!“ „Und ich nennen dich…“</i></b>",

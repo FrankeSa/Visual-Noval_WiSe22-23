@@ -111,6 +111,20 @@ dialog[class="choices"] {
   background-color: rgba(190, 156, 156, 0);
 }
 
+
+dialog[type=inventory] {
+  font-family: 'Times New Roman', Times, serif;
+  color: #0baa00;
+
+}
+
+
+dialog[class=items] {
+  font-family: 'Times New Roman', Times, serif;
+  color: #aa0085;
+
+}
+
 meter {
   position: absolute;
   top: 3%;
@@ -121,8 +135,9 @@ meter {
 
 meter::-webkit-meter-bar {
   background: rgb(149, 230, 255);
-      }
+}
 
 meter[id="affectionMeter"]::-webkit-meter-optimum-value {
   background: linear-gradient(#0baa00, #0baa00);
 }
+
