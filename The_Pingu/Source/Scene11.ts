@@ -18,7 +18,7 @@ namespace SarahsNovel {
         let loopCount: number = 0;
         while (loopCount < 3) {
 
-            let dialogueElement = await ƒS.Menu.getInput(options, "items"); // Die choicesCSSClass wird in der CSS Datei dann angelegt und gestyled
+            let dialogueElement = await ƒS.Menu.getInput(options, "CSSequipment"); // Die choicesCSSClass wird in der CSS Datei dann angelegt und gestyled
 
             if (dialogueElement === options["umbrella"]) {
                 ƒS.Inventory.add(items.firstItem),
