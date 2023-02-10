@@ -6,7 +6,7 @@ namespace SarahsNovel {
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
 
 
-        await ƒS.Speech.tell(characters.narrator, "<i><b>„Ich hole gleich meinen Koffer, dort können wir alles reintun, was wir für Unterwegs brauchen.“</i></b>");
+        await ƒS.Speech.tell(characters.narrator, "<i><b>„Ich hole gleich meinen Koffer, dort können wir alles reintun, was wir für Unterwegs brauchen“</i></b>");
 
         let options = {
 

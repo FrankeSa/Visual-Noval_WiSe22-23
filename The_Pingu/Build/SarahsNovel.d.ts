@@ -135,6 +135,7 @@ declare namespace SarahsNovel {
                 reading: string;
                 idea: string;
                 talking: string;
+                sad: string;
             };
         };
         penguin: {
@@ -234,6 +235,7 @@ declare namespace SarahsNovel {
     function bigStarShining(): ƒS.AnimationDefinition;
     function littleStarShining(): ƒS.AnimationDefinition;
     function moveBackAnimation(): ƒS.AnimationDefinition;
+    function floatingLeftToRight(): ƒS.AnimationDefinition;
     function credits(): void;
 }
 declare namespace SarahsNovel {
@@ -286,6 +288,9 @@ declare namespace SarahsNovel {
 }
 declare namespace SarahsNovel {
     function Scene16(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene17(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene_1(): ƒS.SceneReturn;

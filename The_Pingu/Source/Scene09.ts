@@ -16,14 +16,14 @@ namespace SarahsNovel {
                 text06: "<i><b>„Hallo, kleine Taube. Weißt du, woher dieser Pinguin kommt?“</i></b> fragst du sie.",
                 text07: "Überrascht fragst du die Taube <i><b>„Warum hast du denn ein Loch in deinem Flügel?“</i></b>",
                 text08: "Ungläubig erwiderst du <i><b>„Aber warum sollte er auf dich schießen, du hast ihm ja nichts getan?“</i></b>",
-                text09: "<i><b>„Du armes kleines Geschöpf, das ist ja furchtbar.“</i></b> gibst du bedauernd zurück.",
+                text09: "<i><b>„Du armes kleines Geschöpf, das ist ja furchtbar“</i></b> gibst du bedauernd zurück.",
                 text10: "Du kramst in deiner Hosentasche und findest ein Pflaster, das du der Taube auf den Flügel klebst.",
                 text11: "<i><b>„Tut mir leid, aber ich habe gerade andere Sorgen“</i></b> erklärst du der Taube.",
                 text12: "Langsam wird es dunkel und du und " + characters.penguin.name + " macht euch auf den Weg nach Hause."
             },
             Taube: {
                 text01: "„Nein, das weiß ich leider nicht. Aber kannst du mir bitte helfen?",
-                text02: "„In meinem Flügel ist ein Loch und jetzt kann ich nicht mehr fliegen.“",
+                text02: "„In meinem Flügel ist ein Loch und jetzt kann ich nicht mehr fliegen“",
                 text03: "„Ein Mann hat mit einem Luftgewehr auf mich geschossen, als ich auf seinem Hof nach Essen gesucht habe.“",
                 text04: "„Das war vor drei Tagen und seitdem habe ich große Schmerzen.“",
                 text05: "„Die Menschen denken, dass wir Krankheiten verbreiten und sie verjagen uns, wegen unseren Hinterlassenschaften.“",

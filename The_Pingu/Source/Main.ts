@@ -157,7 +157,8 @@ namespace SarahsNovel {
       pose: {
         reading: "Images/Charaktere/Kind/kind_liest_buch.png",
         idea: "Images/Charaktere/Kind/kind_idee.png",
-        talking: "Images/Charaktere/Kind/kind_redet.png"
+        talking: "Images/Charaktere/Kind/kind_redet.png",
+        sad: "Images/Charaktere/Kind/kind_traurig.png"
       }
     },
     penguin: {
@@ -167,7 +168,7 @@ namespace SarahsNovel {
         front: "Images/Charaktere/Pinguin/pinguin.png",
         side: "Images/Charaktere/Pinguin/pinguin_seitlich.png",
         sad: "Images/Charaktere/Pinguin/pinguin_traurig.png",
-        happy: "Images/Charaktere/Pinguin/ruerckkehr_pinguin.png"
+        happy: "Images/Charaktere/Pinguin/pinguin_rueckkehr.png"
       }
     },
     Karl: {
@@ -271,8 +272,6 @@ namespace SarahsNovel {
     };
 
   }
-
-
   export function littleStarShining(): ƒS.AnimationDefinition {
     return {
       start: { translation: ƒS.positionPercent(66, 40), color: ƒS.Color.CSS("", 1) },
@@ -291,6 +290,17 @@ namespace SarahsNovel {
       duration: 2,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };
+  }
+
+  export function floatingLeftToRight(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positions.centerleft, color: ƒS.Color.CSS("", 1) },
+      end: { translation: ƒS.positions.centerright, color: ƒS.Color.CSS("", 0) },
+      duration: 6,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+
+    };
+
   }
 
 
@@ -368,22 +378,23 @@ namespace SarahsNovel {
     //****Szenen Hirarchie
 
     let scenes: ƒS.Scenes = [
-      
-      // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-      // { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
-      // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
-      // { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
-      // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
-      // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-      // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
-      // { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
-      // { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
-      // { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
-      // { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
-      // { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
-      // { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
+      { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
+      { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+      { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
+      { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+      { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
+      { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+      { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+      { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
+      { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
+      { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
+      { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
+      { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
+      { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
+      { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
       { id: "s15", scene: Scene15, name: "Am Südpol", next: "s16" },
-      { id: "s16", scene: Scene16, name: "HappyEnd", next: "s17" }
+      { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },
+      { id: "s17", scene: Scene17, name: "Happy End", next: "" }
 
 
     ];
