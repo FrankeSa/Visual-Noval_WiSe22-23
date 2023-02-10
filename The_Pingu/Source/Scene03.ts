@@ -16,6 +16,7 @@ namespace SarahsNovel {
         ƒS.Speech.hide();
         await ƒS.Location.show(locations.meetThePenguin);
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
+       
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
 
         await ƒS.Character.show(
@@ -47,7 +48,7 @@ namespace SarahsNovel {
                 // continue path here
                 console.log("Anfassen");
                 await ƒS.Character.animate(characters.penguin, characters.penguin.pose.side, moveBackAnimation());
-                ƒS.update();
+                // ƒS.update();
                 await ƒS.Speech.tell(characters.narrator, "Du versuchst ihn anzufassen aber der Pinguin weicht skeptisch zurück.");
                 break;
             case options.scareAway:
@@ -60,12 +61,12 @@ namespace SarahsNovel {
                 await ƒS.Speech.tell(characters.narrator, "Du beschließt den Pinguin zu ignorieren. Du schiebst dich an ihm vorbei und machst dich auf den Weg zur Schule.");
                 break;
         }
-        
+
         ƒS.Sound.fade(audio.nursery, 0, 1, true);
         ƒS.Character.hide(characters.penguin);
         ƒS.Speech.clear();
         ƒS.Speech.hide();
-        
+
 
 
 

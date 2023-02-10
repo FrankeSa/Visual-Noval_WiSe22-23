@@ -6,7 +6,7 @@ namespace SarahsNovel {
 
         await ƒS.Location.show(locations.schoolyard);
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
-
+        
         let text = {
             Erzähler: {
                 text01: "Auf dem Schulhof haben sich deine Freunde und Mitschüler um den Pinguin versammelt.",

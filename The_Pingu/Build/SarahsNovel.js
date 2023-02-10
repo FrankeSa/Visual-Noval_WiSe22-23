@@ -349,8 +349,8 @@ var SarahsNovel;
             // { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
             // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
             { id: "s03", scene: SarahsNovel.Scene03, name: "An der Haustür", next: "s05" },
-            { id: "s04", scene: SarahsNovel.Scene04, name: "Schulweg", next: "s05" },
-            // { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s11" },
+            // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+            { id: "s05", scene: SarahsNovel.Scene05, name: "Auf dem Schulhof", next: "s06" },
             // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
             // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
             // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
@@ -480,7 +480,7 @@ var SarahsNovel;
                 // continue path here
                 console.log("Anfassen");
                 await SarahsNovel.ƒS.Character.animate(SarahsNovel.characters.penguin, SarahsNovel.characters.penguin.pose.side, SarahsNovel.moveBackAnimation());
-                SarahsNovel.ƒS.update();
+                // ƒS.update();
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Du versuchst ihn anzufassen aber der Pinguin weicht skeptisch zurück.");
                 break;
             case options.scareAway:
