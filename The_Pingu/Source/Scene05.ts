@@ -26,12 +26,12 @@ namespace SarahsNovel {
         await ƒS.update(2);
         await ƒS.Character.hide(characters.speechBubble_wow),
             await ƒS.Character.show(
-                characters.speechBubble_sueß,
-                characters.speechBubble_sueß.pose.shining,
+                characters.speechBubbleSweet,
+                characters.speechBubbleSweet.pose.shining,
                 ƒS.positionPercent(75, 20)
             );
         await ƒS.update(2);
-        await ƒS.Character.hide(characters.speechBubble_sueß),
+        await ƒS.Character.hide(characters.speechBubbleSweet),
         await ƒS.update(2);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);

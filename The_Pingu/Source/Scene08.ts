@@ -30,10 +30,10 @@ namespace SarahsNovel {
 
 
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
-        await ƒS.Speech.tell(characters.Karl, text.Karl.text01);
+        await ƒS.Speech.tell(characters.karl, text.Karl.text01);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
-        await ƒS.Speech.tell(characters.Karl, text.Karl.text02);
-        await ƒS.Speech.tell(characters.Karl, text.Karl.text03);
+        await ƒS.Speech.tell(characters.karl, text.Karl.text02);
+        await ƒS.Speech.tell(characters.karl, text.Karl.text03);
 
         let options = {
 

@@ -148,7 +148,7 @@ declare namespace SarahsNovel {
                 happy: string;
             };
         };
-        Karl: {
+        karl: {
             name: string;
         };
         bigstar: {
@@ -172,7 +172,7 @@ declare namespace SarahsNovel {
                 shining: string;
             };
         };
-        speechBubble_sueß: {
+        speechBubbleSweet: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {

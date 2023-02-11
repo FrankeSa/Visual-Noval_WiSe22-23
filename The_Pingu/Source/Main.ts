@@ -128,7 +128,7 @@ namespace SarahsNovel {
     },
     happyEnd: {
       name: "Happy End",
-      background: "Images/Background/happy_end.png"
+      background: "Images/Background/childAndPenguin.png"
     },
     bgBrown: {
       name: "brown background",
@@ -155,23 +155,23 @@ namespace SarahsNovel {
       name: "Kind",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
-        reading: "Images/Charaktere/Kind/kind_liest_buch.png",
-        idea: "Images/Charaktere/Kind/kind_idee.png",
-        talking: "Images/Charaktere/Kind/kind_redet.png",
-        sad: "Images/Charaktere/Kind/kind_traurig.png"
+        reading: "Images/Characters/Child/childBookReading.png",
+        idea: "Images/Characters/Child/childIdea.png",
+        talking: "Images/Characters/Child/childTalking.png",
+        sad: "Images/Characters/Child/childSad.png"
       }
     },
     penguin: {
       name: "",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
-        front: "Images/Charaktere/Pinguin/pinguin.png",
-        side: "Images/Charaktere/Pinguin/pinguin_seitlich.png",
-        sad: "Images/Charaktere/Pinguin/pinguin_traurig.png",
-        happy: "Images/Charaktere/Pinguin/pinguin_rueckkehr.png"
+        front: "Images/Characters/Penguin/penguin.png",
+        side: "Images/Characters/Penguin/penguinAtTheSide.png",
+        sad: "Images/Characters/Penguin/penguinSad.png",
+        happy: "Images/Characters/Penguin/penguinUmbrella.png"
       }
     },
-    Karl: {
+    karl: {
       name: "Karl"
     },
 
@@ -179,56 +179,56 @@ namespace SarahsNovel {
       name: "big star",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
-        shining: "Images/Charaktere/Sonstige/big_star.png"
+        shining: "Images/Characters/Others/bigStar.png"
       }
     },
     littlestar: {
       name: "little star",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
-        shining: "Images/Charaktere/Sonstige/little_star.png"
+        shining: "Images/Characters/Others/littleStar.png"
       }
     },
     speechBubble_wow: {
       name: "Speech Bubble WOW",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
-        shining: "Images/Charaktere/Sonstige/sprechblase_wow.png"
+        shining: "Images/Characters/Others/speechBubbleWow.png"
       }
     },
-    speechBubble_sueß: {
+    speechBubbleSweet: {
       name: "Speech Bubble süß",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
-        shining: "Images/Charaktere/Sonstige/sprechblase_wie_suess.png"
+        shining: "Images/Characters/Others/speechBubbleSweet.png"
       }
     },
     littledove: {
       name: "littel dove",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
-        normal: "Images/Charaktere/Sonstige/kleine_taube.png"
+        normal: "Images/Characters/Others/littleDove.png"
       }
     },
     bigdove: {
       name: "Taube",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
-        injured: "Images/Charaktere/Sonstige/taube_verletzt.png"
+        injured: "Images/Characters/Others/doveInjured.png"
       }
     },
     doveWithPevement: {
       name: "",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
-        withPavement: "Images/Charaktere/Sonstige/taube_mit_pflaster.png"
+        withPavement: "Images/Characters/Others/doveWithPavement.png"
       }
     },
     iceFloe: {
       name: "ice floe",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
-        floating: "Images/Charaktere/Sonstige/eisberg.png"
+        floating: "Images/Characters/Others/iceberg.png"
       }
     }
 
@@ -245,19 +245,19 @@ namespace SarahsNovel {
     firstItem: {
       name: "Regenschirm ",
       description: "für stürmische Zeiten ",
-      image: "Images/Equipment/schirm.png",
+      image: "Images/Items/umbrella.png",
       static: true //wenn false dann kann das Item verwendet werden
     },
     secondItem: {
       name: "Taschenlampe ",
       description: "bringt Licht ins Dunkle ",
-      image: "Images/Equipment/taschenlampe.png",
+      image: "Images/Items/torch.png",
       static: true
     },
     thirdItem: {
       name: "Schal ",
       description: "hält schön warm ",
-      image: "Images/Equipment/schal.png",
+      image: "Images/Items/scarf.png",
       static: true
     }
   };
@@ -378,23 +378,23 @@ namespace SarahsNovel {
     //****Szenen Hirarchie
 
     let scenes: ƒS.Scenes = [
-      // { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
-      // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-      { id: "s03", scene: Scene03, name: "An der Haustür", next: "s05" },
-      // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+      { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
+      { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+      { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
+      { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
       { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
-      // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
-      // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-      // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
-      // { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
-      // { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
-      // { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
-      // { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
-      // { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
-      // { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
-      // { id: "s15", scene: Scene15, name: "Am Südpol", next: "s16" },
-      // { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },
-      // { id: "s17", scene: Scene17, name: "Happy End", next: "" }
+      { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+      { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+      { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
+      { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
+      { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
+      { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
+      { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
+      { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
+      { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
+      { id: "s15", scene: Scene15, name: "Am Südpol", next: "s16" },
+      { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },
+      { id: "s17", scene: Scene17, name: "Happy End", next: "" }
 
 
     ];
