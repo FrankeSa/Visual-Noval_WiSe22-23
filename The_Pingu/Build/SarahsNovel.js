@@ -63,75 +63,75 @@ var SarahsNovel;
     SarahsNovel.locations = {
         yourRoom: {
             name: "in your nursery",
-            background: "Images/Hintergruende/kinderzimmer.png"
+            background: "Images/Background/nursery.png"
         },
         getLunchbox: {
             name: "get your lunchbox from your Grandmother",
-            background: "Images/Hintergruende/oma_mit_kind_vesper.png"
+            background: "Images/Background/grandmotherAndchild.png"
         },
         meetThePenguin: {
             name: "you meet the penguin in front of your door",
-            background: "Images/Hintergruende/an_der_Haustuer.png"
+            background: "Images/Background/frontdoor.png"
         },
         wayToSchool: {
             name: "walk to school with penguin",
-            background: "Images/Hintergruende/schulweg.png"
+            background: "Images/Background/wayToSchool.png"
         },
         schoolyard: {
             name: "penguin on schoolyard",
-            background: "Images/Hintergruende/auf_dem_schulhof.png"
+            background: "Images/Background/schoolyard.png"
         },
         giveSandwich: {
             name: "you look in the night sky",
-            background: "Images/Hintergruende/pinguin_sandwich.png"
+            background: "Images/Background/penguinSad.png"
         },
         nightSky: {
             name: "you look in the night sky",
-            background: "Images/Hintergruende/nachthimmel.png"
+            background: "Images/Background/nightSky.png"
         },
         lafOffice: {
             name: "at the lost and found office",
-            background: "Images/Hintergruende/im_fundbuero.png"
+            background: "Images/Background/lafOffice.png"
         },
         badEnding: {
             name: "the penguin is captured",
-            background: "Images/Hintergruende/pinguin_im_kaefig.png"
+            background: "Images/Background/penguinInCage.png"
         },
         atThePark: {
             name: "you and the penguin at the park",
-            background: "Images/Hintergruende/im_park.png"
+            background: "Images/Background/park.png"
         },
         atTheHarbor: {
             name: "you and the penguin at the harbor",
-            background: "Images/Hintergruende/am_hafen.png"
+            background: "Images/Background/harbor.png"
         },
         packSuitcase: {
             name: "get ready for adventure",
-            background: "Images/Hintergruende/koffer_packen.png"
+            background: "Images/Background/packSuitcase.png"
         },
         atSee: {
             name: "you and the penguin on your way to the South Pole",
-            background: "Images/Hintergruende/meer.png"
+            background: "Images/Background/ocean.png"
         },
         bigWave: {
             name: "big Wave",
-            background: "Images/Hintergruende/große_welle.png"
+            background: "Images/Background/bigWave.png"
         },
         atSouthPole: {
             name: "SouthPole",
-            background: "Images/Hintergruende/am_suedpol.png"
+            background: "Images/Background/southPole.png"
         },
         happyEnd: {
             name: "Happy End",
-            background: "Images/Hintergruende/happy_end.png"
+            background: "Images/Background/happy_end.png"
         },
         bgBrown: {
             name: "brown background",
-            background: "Images/Hintergruende/bg_allgemein.png"
+            background: "Images/Background/bgBrown.png"
         },
         bgBlue: {
             name: "blue background",
-            background: "Images/Hintergruende/bg_rueckkehr_pinguin.png"
+            background: "Images/Background/bgBlue.png"
         }
     };
     SarahsNovel.characters = {
@@ -386,7 +386,7 @@ var SarahsNovel;
 var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene01() {
-        console.log("FudgeStory Template Sarah starting");
+        console.log("FudgeStory Scene01 Frontdoor starting");
         // ƒS.Sound.play(audio.nursery, 0.05, false);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.nursery, 0.07, false);

@@ -1,7 +1,7 @@
 namespace SarahsNovel {
   export async function Scene01(): ƒS.SceneReturn {
 
-    console.log("FudgeStory Template Sarah starting");
+    console.log("FudgeStory Scene01 Frontdoor starting");
     // ƒS.Sound.play(audio.nursery, 0.05, false);
     document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
     ƒS.Sound.play(audio.nursery, 0.07, false);
