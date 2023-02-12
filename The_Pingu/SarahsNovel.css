@@ -4,7 +4,7 @@ body {
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   overflow: hidden;
   font-family: Copperplate, Papyrus, fantasy;
 }
@@ -60,12 +60,18 @@ dialog[type=splash] {
   padding: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgb(190, 156, 156);
-  color: white;
   border: none;
   cursor: pointer;
   text-align: center;
+ background-image: url("/Images/Splash.png");
+ 
 }
+
+dialog[type=splash] p {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 content {
   top: 7%;
@@ -74,19 +80,18 @@ content {
   font-size: large;
 }
 
-/* dialog[type=splash]>img#FudgeStoryLogo {
+
+
+dialog[type=splash]>img#FudgeStoryLogo {
   width: 100%;
-} */
+}
 
 #FudgeStoryLogo {
   width: 80%;
+  margin: 0px;
 }
 
-div {
-  width: 80%;
-  background-color: rgb(27, 27, 27);
-  display: inline-block;
-}
+
 
 .gameMenuCSS {
   background-color: aqua;
@@ -115,15 +120,15 @@ dialog[class="choices"] {
 
 dialog[type=inventory] name {
   font-family: Arial, Helvetica, sans-serif;
- background-color: white;
+  background-color: white;
 }
 
 dialog[type=inventory] description {
   font-family: Arial, Helvetica, sans-serif;
- /* background-color: rgb(108, 12, 12); */
-margin-top: 10px;
+  /* background-color: rgb(108, 12, 12); */
+  margin-top: 10px;
 
-font-variant-position: inherit;
+  font-variant-position: inherit;
 }
 
 
@@ -140,14 +145,14 @@ dialog[type="inventory"] amount {
 
 
 dialog[type="inventory"]>ul>li {
-  list-style-type:none;
+  list-style-type: none;
   display: flex;
-  justify-content:space-between;
- 
+  justify-content: space-between;
+
 }
 
 dialog[type="inventory"]>ul>li img {
- margin-left: 15px;
+  margin-left: 15px;
 }
 
 

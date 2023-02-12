@@ -23,9 +23,9 @@ namespace SarahsNovel {
       edge: 2
     },
     crossingGeneral: {
-      duration: 4,
-      alpha: "Transitions/WipesAndOther/17.png",
-      edge: 1
+      duration: 2,
+      alpha: "Transitions/Others/023.png",
+      edge: 2
     },
     fadeSky: {
       duration: 4,

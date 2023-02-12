@@ -20,9 +20,9 @@ var SarahsNovel;
             edge: 2
         },
         crossingGeneral: {
-            duration: 4,
-            alpha: "Transitions/WipesAndOther/17.png",
-            edge: 1
+            duration: 2,
+            alpha: "Transitions/Others/023.png",
+            edge: 2
         },
         fadeSky: {
             duration: 4,
@@ -346,23 +346,23 @@ var SarahsNovel;
         hdlMenuBtn("Close");
         //****Szenen Hirarchie
         let scenes = [
-            { id: "s01", scene: SarahsNovel.Scene01, name: "Kinderzimmer", next: "s02" },
-            { id: "s02", scene: SarahsNovel.Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-            { id: "s03", scene: SarahsNovel.Scene03, name: "An der Haustür", next: "s04" },
-            { id: "s04", scene: SarahsNovel.Scene04, name: "Schulweg", next: "s05" },
+            // { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
+            // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+            { id: "s03", scene: SarahsNovel.Scene03, name: "An der Haustür", next: "s05" },
+            // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
             { id: "s05", scene: SarahsNovel.Scene05, name: "Auf dem Schulhof", next: "s06" },
-            { id: "s06", scene: SarahsNovel.Scene06, name: "Der traurige Pinguin", next: "s07" },
-            { id: "s07", scene: SarahsNovel.Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-            { id: "s08", scene: SarahsNovel.Scene08, name: "Im Fundbüro", next: "s09" },
-            { id: "s09", scene: SarahsNovel.Scene09, name: "Im Park", next: "s10" },
-            { id: "s10", scene: SarahsNovel.Scene10, name: "Kind liest Buch", next: "s11" },
-            { id: "s11", scene: SarahsNovel.Scene11, name: "Koffer packen", next: "s12" },
-            { id: "s12", scene: SarahsNovel.Scene12, name: "Am Hafen", next: "s13" },
-            { id: "s13", scene: SarahsNovel.Scene13, name: "Auf See", next: "s14" },
-            { id: "s14", scene: SarahsNovel.Scene14, name: "Große Welle", next: "s15" },
-            { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "s16" },
-            { id: "s16", scene: SarahsNovel.Scene16, name: "Rückkehr", next: "s17" },
-            { id: "s17", scene: SarahsNovel.Scene17, name: "Happy End", next: "" }
+            // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+            // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+            // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
+            // { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
+            // { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
+            // { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
+            // { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
+            // { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
+            // { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
+            // { id: "s15", scene: Scene15, name: "Am Südpol", next: "s16" },
+            // { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },
+            // { id: "s17", scene: Scene17, name: "Happy End", next: "" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         SarahsNovel.dataForSave = SarahsNovel.ƒS.Progress.setData(SarahsNovel.dataForSave, uiElement);
