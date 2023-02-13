@@ -63,7 +63,7 @@ dialog[type=splash] {
   border: none;
   cursor: pointer;
   text-align: center;
-  /* background-image: url("/Images/Splash.png"); */
+  background-image: url("/Images/Splash.png");
 
 }
 
