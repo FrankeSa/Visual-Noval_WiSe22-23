@@ -65,7 +65,7 @@ namespace SarahsNovel {
         dataForSave.namePingu = await ƒS.Speech.getInput();
         characters.penguin.name = dataForSave.namePingu;
 
-        await ƒS.Speech.tell(characters.narrator,  characters.penguin.name + " scheint den Namen zu mögen");
+        await ƒS.Speech.tell(characters.narrator,  characters.penguin.name + " scheint den Namen zu mögen.");
         ƒS.Sound.fade(audio.cityTraffic, 0, 1, true);
 
 

@@ -618,7 +618,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text11);
         SarahsNovel.dataForSave.namePingu = await SarahsNovel.ƒS.Speech.getInput();
         SarahsNovel.characters.penguin.name = SarahsNovel.dataForSave.namePingu;
-        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, SarahsNovel.characters.penguin.name + " scheint den Namen zu mögen");
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, SarahsNovel.characters.penguin.name + " scheint den Namen zu mögen.");
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.cityTraffic, 0, 1, true);
     }
     SarahsNovel.Scene06 = Scene06;
@@ -791,7 +791,7 @@ var SarahsNovel;
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text09);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text10);
                 SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.bigdove);
-                await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.doveWithPevement, SarahsNovel.characters.doveWithPevement.pose.withPavement, SarahsNovel.ƒS.positionPercent(45, 63));
+                await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.doveWithPevement, SarahsNovel.characters.doveWithPevement.pose.withPavement, SarahsNovel.ƒS.positionPercent(63, 45));
                 SarahsNovel.ƒS.update(1);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, "„Vielen Dank, das ist sehr nett von dir.“ Ich hoffe du findest das zu Hause deines Pinguins.");
                 SarahsNovel.dataForSave.affectionScore += 10;
