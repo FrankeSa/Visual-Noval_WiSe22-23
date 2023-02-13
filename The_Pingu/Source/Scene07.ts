@@ -14,7 +14,7 @@ namespace SarahsNovel {
                 text01: "Deine Oma war zwar sehr überrascht, dass du einen Pinguin mit nach Hause gebracht hast. Aber sie hat ihm sofort angesehen, dass ihn etwas bedrückt.",
                 text02: "Also war sie einverstanden, dass du ihm hilfst wieder nach Hause zu finden.",
                 text03: "Nachdem ihr zu Abend gegessen habt, richtest du dem Pinguin ein kleines Bettchen...",
-                text04: "und kuschelst dich danach in dein eigenes.",
+                text04: "...und kuschelst dich danach in dein eigenes.",
                 text05: "Die ganze Nacht grübelst du, wie du dem Pinguin helfen kannst. Aber dir will einfach nichts einfallen.",
                 text06: "Du weißt ja nicht einmal, wo sein zu Hause ist..."
 

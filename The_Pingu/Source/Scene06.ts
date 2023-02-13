@@ -21,8 +21,6 @@ namespace SarahsNovel {
                 text09: "Doch der Pinguin antwortet nicht.",
                 text10: "Du überlegst...<i>„Hmm…“</i>",
                 text11: "<i><b>„Weißt du was, ich werde dir helfen wieder nach Hause zu finden!“ „Und ich nennen dich…“</i></b>",
-                text12: "Doch",
-                text13: "antwortet nicht."
             }
         };
 
@@ -67,7 +65,7 @@ namespace SarahsNovel {
         dataForSave.namePingu = await ƒS.Speech.getInput();
         characters.penguin.name = dataForSave.namePingu;
 
-        await ƒS.Speech.tell(characters.narrator, "Doch " + characters.penguin.name + " antwortet nicht...");
+        await ƒS.Speech.tell(characters.narrator,  characters.penguin.name + " scheint den Namen zu mögen");
         ƒS.Sound.fade(audio.cityTraffic, 0, 1, true);
 
 

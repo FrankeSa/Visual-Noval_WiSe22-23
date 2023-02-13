@@ -8,7 +8,7 @@ namespace SarahsNovel {
 
         let text = {
             Erzähler: {
-                text01: "Am nächsten Morgen springst du aufgeregt aus dem Bett, schnappst dir den Koffer und zusammen mit " + characters.penguin.name + " hastet ihr runter zum Hafen.",
+                text01: "Aufgeregt schnappst du dir den Koffer und zusammen mit " + characters.penguin.name + " hastet ihr runter zum Hafen.",
                 text02: "Dort steht ein großes imposantes Schiff, welches bereit zur Abfahrt ist.",
                 text03: "<i><b>„Halloooo, könnt ihr uns bitte mitnehmen, wir wollen zum Südpol?“</i></b> rufst du so laut du nur kannst nach oben zu dem Schiffsdeck.",
                 text04: "Aber deine Rufe sind viel zu leise, als dass sie über das laute Schiffshorn hinweggehört werden würden.",

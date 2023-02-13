@@ -10,8 +10,8 @@ namespace SarahsNovel {
 
         let text = {
             Erzähler: {
-                text01: "<i><b>" + "„" + characters.penguin.name + "!!!“" + "</i></b>" + "rufst du überglücklich. Du umarmst den Pinguin so fest du kannst und auch er drückt kräftig zu.",
-                text02: "<i><b>„Ab jetzt musst du nicht mehr einsam sein, wir sind Freunde und du kommst mit mir nach Hause.“</i></b> flüsterst du ihm zu.",
+                text01: "<i><b>" + "„" + characters.penguin.name + "!!!“" + "</i></b>" + " rufst du überglücklich. Du umarmst den Pinguin so fest du kannst und auch er drückt kräftig zu.",
+                text02: "<i><b>„Ab jetzt musst du nicht mehr einsam sein, wir sind Freunde und du kommst mit mir nach Hause“</i></b> flüsterst du ihm zu.",
                 text03: "Als ihr euch aus der Umarmung löst, siehst du, dass der Pinguin zum ersten Mal glücklich und zufrieden aussieht.",
                 text04: "Von diesem Tag an seid ihr unzertrennlich.",
                 text05: "<i><b>„Happy End“</i></b>"

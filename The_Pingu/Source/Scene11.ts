@@ -2,7 +2,7 @@ namespace SarahsNovel {
     export async function Scene11(): ƒS.SceneReturn {
         // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
         await ƒS.Location.show(locations.packSuitcase);
-        // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
 
 
@@ -37,7 +37,7 @@ namespace SarahsNovel {
 
         }
 
-        await ƒS.Speech.tell(characters.narrator, "Du klatschst freudig in die Hände." + " <i><b>„Super, dann kann es ja losgehen.“</i></b>");
+        await ƒS.Speech.tell(characters.narrator, "Du klatschst freudig in die Hände." + " <i><b>„Super, dann kann es ja losgehen“</i></b>");
         ƒS.Speech.clear();
         ƒS.Speech.hide();
         // ƒS.Sound.fade(audio.playground, 0, 1, true); //Audio faded out to null
