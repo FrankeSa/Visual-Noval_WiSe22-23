@@ -23,8 +23,8 @@ namespace SarahsNovel {
       edge: 2
     },
     crossingGeneral: {
-      duration: 2,
-      alpha: "Transitions/Others/023.png",
+      duration: 4,
+      alpha: "Transitions/WipesAndOther/17.png",
       edge: 2
     },
     fadeSky: {
@@ -305,7 +305,7 @@ namespace SarahsNovel {
 
 
   export function credits(): void {
-    ƒS.Text.print("Hier könnten Ihre Credits stehen");
+    ƒS.Text.print("Alle Hintergründe und Charaktere sind gezeichnet von: <b>Sarah Franke</b><br>Die Visual Novel basiert auf der Geschichte von <b>Oliver Jeffers <i>„Lost and Found“</i></b></br>Musik und Soundeffekt sind von <b>pixabay.com</b>");
 
   }
 
@@ -392,7 +392,7 @@ namespace SarahsNovel {
       { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
       { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
       { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
-      { id: "s15", scene: Scene15, name: "Am Südpol", next: "s16" },
+      { id: "s15", scene: Scene15, name: "Am Südpol", next: "" },
       { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },
       { id: "s17", scene: Scene17, name: "Happy End", next: "" }
 

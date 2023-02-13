@@ -32,6 +32,7 @@ namespace SarahsNovel {
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text05);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text06);
+        dataForSave.affectionScore += 10;
         await ƒS.update(1);
         ƒS.Speech.clear();
         ƒS.Character.hide(characters.bigstar);

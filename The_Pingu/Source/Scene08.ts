@@ -68,10 +68,11 @@ namespace SarahsNovel {
                 dataForSave.affectionScore += 10;
                 break;
         }
-       
+        
+
         ƒS.Speech.clear();
         ƒS.Speech.hide();
-    
+
 
 
 

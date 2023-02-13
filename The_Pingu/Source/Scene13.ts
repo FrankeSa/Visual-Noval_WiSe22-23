@@ -52,9 +52,7 @@ namespace SarahsNovel {
                 dataForSave.affectionScore -= 10;
                 break;
         }
-        // if (dataForSave.affectionScore === 40) {
-        //     alert("Hallooo");
-        // }
+      
         ƒS.Speech.clear();
         ƒS.Speech.hide();
         ƒS.Sound.fade(audio.atSea, 0, 1, true); //Audio faded out to null

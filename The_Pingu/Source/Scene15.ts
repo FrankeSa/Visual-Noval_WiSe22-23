@@ -42,6 +42,11 @@ namespace SarahsNovel {
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text13);
         ƒS.Speech.clear();
         ƒS.Speech.hide();
+        if (dataForSave.affectionScore === 50) {
+            return Scene16();
+        }
+        ƒS.Text.print("Das ist das Ende verusch es nochmal für das Happy End");
+       
         // ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
 
 

@@ -28,6 +28,7 @@ namespace SarahsNovel {
     ƒS.Speech.clear();
     ƒS.Speech.hide();
     ƒS.Sound.fade(audio.nursery, 0, 1, true); //Audio faded out to null
+    
     // await ƒS.update();
 
   }

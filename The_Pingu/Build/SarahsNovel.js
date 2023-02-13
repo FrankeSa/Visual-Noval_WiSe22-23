@@ -20,8 +20,8 @@ var SarahsNovel;
             edge: 2
         },
         crossingGeneral: {
-            duration: 2,
-            alpha: "Transitions/Others/023.png",
+            duration: 4,
+            alpha: "Transitions/WipesAndOther/17.png",
             edge: 2
         },
         fadeSky: {
@@ -286,7 +286,7 @@ var SarahsNovel;
     }
     SarahsNovel.floatingLeftToRight = floatingLeftToRight;
     function credits() {
-        SarahsNovel.ƒS.Text.print("Hier könnten Ihre Credits stehen");
+        SarahsNovel.ƒS.Text.print("Alle Hintergründe und Charaktere sind gezeichnet von: <b>Sarah Franke</b><br>Die Visual Novel basiert auf der Geschichte von <b>Oliver Jeffers <i>„Lost and Found“</i></b></br>Musik und Soundeffekt sind von <b>pixabay.com</b>");
     }
     SarahsNovel.credits = credits;
     async function hdlMenuBtn(_option) {
@@ -360,7 +360,7 @@ var SarahsNovel;
             { id: "s12", scene: SarahsNovel.Scene12, name: "Am Hafen", next: "s13" },
             { id: "s13", scene: SarahsNovel.Scene13, name: "Auf See", next: "s14" },
             { id: "s14", scene: SarahsNovel.Scene14, name: "Große Welle", next: "s15" },
-            { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "s16" },
+            { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "" },
             { id: "s16", scene: SarahsNovel.Scene16, name: "Rückkehr", next: "s17" },
             { id: "s17", scene: SarahsNovel.Scene17, name: "Happy End", next: "" }
         ];
@@ -654,6 +654,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text05);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text06);
+        SarahsNovel.dataForSave.affectionScore += 10;
         await SarahsNovel.ƒS.update(1);
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.bigstar);
@@ -967,9 +968,6 @@ var SarahsNovel;
                 SarahsNovel.dataForSave.affectionScore -= 10;
                 break;
         }
-        // if (dataForSave.affectionScore === 40) {
-        //     alert("Hallooo");
-        // }
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.atSea, 0, 1, true); //Audio faded out to null
@@ -1041,6 +1039,10 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text13);
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
+        if (SarahsNovel.dataForSave.affectionScore === 50) {
+            return SarahsNovel.Scene16();
+        }
+        SarahsNovel.ƒS.Text.print("Das ist das Ende verusch es nochmal für das Happy End");
         // ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
     }
     SarahsNovel.Scene15 = Scene15;

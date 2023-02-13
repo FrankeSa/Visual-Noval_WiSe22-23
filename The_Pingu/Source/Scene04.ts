@@ -21,6 +21,7 @@ namespace SarahsNovel {
         ƒS.Speech.clear();
         ƒS.Speech.hide();
         ƒS.Sound.fade(audio.cityTraffic, 0, 1, true); //Audio faded out to null
+       
 
 
 

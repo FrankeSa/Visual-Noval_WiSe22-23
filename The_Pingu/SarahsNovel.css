@@ -97,20 +97,18 @@ dialog[type=splash]>img#FudgeStoryLogo {
   background-color: #0baa00;
 }
 
-.gameMenuCSS button{
-  margin: 2px;  
+.gameMenuCSS button {
+  margin: 2px;
   border-radius: 10px;
-  border-style:none;
+  border-style: none;
   background-color: rgb(5, 236, 55);
 }
 
-button:hover {
-margin: 2px;  
-border-radius: 10px;
-border-style:none;
-background-color: rgb(179, 12, 143);
-
-
+.gameMenuCSS button:hover {
+  margin: 2px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: rgb(179, 12, 143);
 }
 
 
@@ -160,7 +158,6 @@ dialog[type=inventory] description {
   font-family: Arial, Helvetica, sans-serif;
   /* background-color: rgb(108, 12, 12); */
   margin-top: 10px;
-
   font-variant-position: inherit;
 }
 
@@ -198,9 +195,9 @@ meter {
 }
 
 meter::-webkit-meter-bar {
-  background: rgb(149, 230, 255);
+  background: rgb(242, 144, 181);
 }
 
 meter[id="affectionMeter"]::-webkit-meter-optimum-value {
-  background: linear-gradient(#0baa00, #0baa00);
+  background: linear-gradient(rgb(83, 3, 33), rgb(83, 3, 33));
 }
