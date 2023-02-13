@@ -63,8 +63,8 @@ dialog[type=splash] {
   border: none;
   cursor: pointer;
   text-align: center;
- /* background-image: url("/Images/Splash.png"); */
- 
+  /* background-image: url("/Images/Splash.png"); */
+
 }
 
 dialog[type=splash] p {
@@ -80,8 +80,6 @@ content {
   font-size: large;
 }
 
-
-
 dialog[type=splash]>img#FudgeStoryLogo {
   width: 100%;
 }
@@ -91,24 +89,59 @@ dialog[type=splash]>img#FudgeStoryLogo {
   margin: 0px;
 }
 
-
-
 .gameMenuCSS {
-  background-color: aqua;
+
+  position: absolute;
+  top: 0px;
+  border-radius: 15px;
+  background-color: #0baa00;
 }
 
-input {
-  margin-left: 1%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.gameMenuCSS button{
+  margin: 2px;  
+  border-radius: 10px;
+  border-style:none;
+  background-color: rgb(5, 236, 55);
+}
+
+button:hover {
+margin: 2px;  
+border-radius: 10px;
+border-style:none;
+background-color: rgb(179, 12, 143);
+
+
+}
+
+
+
+content input {
+  width: 4vw;
+  height: 4vw;
+  position: fixed;
+  top: 50%;
+  left: 48vw;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 24px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #eedbaf;
+  border-radius: 25px;
+  /* border: none; */
+  border-color: #0baa00;
+}
+
+content input:focus {
+  left: 40vw;
+  width: 20vw;
   border: none;
-  border-bottom: 2px solid rgb(11, 212, 202);
-  outline: none;
 }
 
 dialog[class="choices"] button {
   margin: 2px;
   font-size: larger;
-
 }
 
 dialog[class="choices"] {
