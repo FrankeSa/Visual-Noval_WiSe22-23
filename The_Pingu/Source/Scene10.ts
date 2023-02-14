@@ -14,7 +14,7 @@ namespace SarahsNovel {
                 text04: "<i><b>„Nur...</i></b>",
                 text05: "<i><b>...wie sollen wir an den Südpol kommen???“</i></b> fragst du " + characters.penguin.name + ".",
                 text06: characters.penguin.name + " schaut ratlos zurück.",
-                text07: "<i><b>„Ich hab´s, wir fahren mit dem Boot zum Südpol!“</i></b> verkündest du."
+                text07: "<i><b>„Ich hab´s, wir fahren mit dem Schiff zum Südpol!“</i></b> verkündest du."
 
             }
 
