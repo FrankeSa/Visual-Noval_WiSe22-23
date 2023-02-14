@@ -49,6 +49,7 @@ namespace SarahsNovel {
                 console.log("in den Zoo geben");
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);
+                ƒS.Sound.play(audio.boltCutter, 0.4, false);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text05);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text06);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text07);

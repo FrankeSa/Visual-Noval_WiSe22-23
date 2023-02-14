@@ -51,6 +51,7 @@ declare namespace SarahsNovel {
         shipHorn: string;
         shortKiss: string;
         childYawning: string;
+        boltCutter: string;
     };
     let locations: {
         yourRoom: {

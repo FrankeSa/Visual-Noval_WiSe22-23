@@ -11,7 +11,8 @@ var SarahsNovel;
         save: "Save",
         load: "Load",
         close: "Close",
-        credits: "Credits"
+        credits: "Credits",
+        inventory: "Inventory"
     };
     SarahsNovel.transitions = {
         beginning: {
@@ -63,7 +64,8 @@ var SarahsNovel;
         //SFX
         shipHorn: "Audio/ship_horn.mp3",
         shortKiss: "Audio/short_kiss.mp3",
-        childYawning: "Audio/child_yawning.mp3"
+        childYawning: "Audio/child_yawning.mp3",
+        boltCutter: "Audio/bolt_cutter.mp3"
     };
     SarahsNovel.locations = {
         yourRoom: {
@@ -309,6 +311,9 @@ var SarahsNovel;
                 break;
             case inGameMenuBtn.credits:
                 credits();
+                break;
+            case inGameMenuBtn.inventory:
+                await SarahsNovel.ƒS.Inventory.open();
         }
     }
     // Menu Shortcuts
@@ -329,7 +334,7 @@ var SarahsNovel;
                 break;
             case SarahsNovel.ƒ.KEYBOARD_CODE.C:
                 console.log("Show Credits");
-                await credits();
+                credits();
                 break;
             case SarahsNovel.ƒ.KEYBOARD_CODE.M:
                 if (menuIsOpen) {
@@ -368,8 +373,8 @@ var SarahsNovel;
             { id: "s14", scene: SarahsNovel.Scene14, name: "Große Welle", next: "s15" },
             { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "Scene00" },
             { id: "s16", scene: SarahsNovel.Scene16, name: "Rückkehr", next: "s17" },
-            { id: "s17", scene: SarahsNovel.Scene17, name: "Happy End", next: "" },
-            { id: "s18", scene: SarahsNovel.Scene18, name: "Bad End", next: "" }
+            { id: "s17", scene: SarahsNovel.Scene17, name: "Happy End", next: "Scene00" },
+            { id: "s18", scene: SarahsNovel.Scene18, name: "Bad End", next: "Scene00" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         SarahsNovel.dataForSave = SarahsNovel.ƒS.Progress.setData(SarahsNovel.dataForSave, uiElement);
@@ -470,7 +475,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.meetThePenguin);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
-        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.penguin, SarahsNovel.characters.penguin.pose.side, SarahsNovel.ƒS.positionPercent(50, 72));
+        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.penguin, SarahsNovel.characters.penguin.pose.side, SarahsNovel.ƒS.positionPercent(50, 73));
         await SarahsNovel.ƒS.update(2);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false); // false die meta wird angezeigt, true sie wird nicht angezeigt.
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
@@ -646,7 +651,7 @@ var SarahsNovel;
                 text01: "Deine Oma war zwar sehr überrascht, dass du einen Pinguin mit nach Hause gebracht hast. Aber sie hat ihm sofort angesehen, dass ihn etwas bedrückt.",
                 text02: "Also war sie einverstanden, dass du ihm hilfst wieder nach Hause zu finden.",
                 text03: "Nachdem ihr zu Abend gegessen habt, richtest du dem Pinguin ein kleines Bettchen...",
-                text04: "...und kuschelst dich danach in dein eigenes.",
+                text04: "...und kuschelst dich anschließend in dein eigenes.",
                 text05: "Die ganze Nacht grübelst du, wie du dem Pinguin helfen kannst. Aber dir will einfach nichts einfallen.",
                 text06: "Du weißt ja nicht einmal, wo sein zu Hause ist..."
             }
@@ -712,6 +717,7 @@ var SarahsNovel;
                 console.log("in den Zoo geben");
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
+                SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.boltCutter, 0.4, false);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text05);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text06);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text07);
@@ -887,7 +893,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Du klatschst freudig in die Hände." + " <i><b>„Super, dann kann es ja losgehen“</i></b>");
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
-        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.adventureBegins, 0, 1, true); //Audio faded out to null
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.adventureBegins, 0, 0.09, true); //Audio faded out to null
         // await ƒS.Inventory.open(); 
     }
     SarahsNovel.Scene11 = Scene11;
@@ -1141,7 +1147,7 @@ var SarahsNovel;
         console.log("FudgeStory Scene18 starting");
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.officeAmbience, 0, 1, true);
-        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.badEnd, 0.6, false);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.badEnd, 0.5, false);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.badEnding);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.swirl.duration, SarahsNovel.transitions.swirl.alpha, SarahsNovel.transitions.swirl.edge);
         let text = {
@@ -1159,7 +1165,7 @@ var SarahsNovel;
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.badEnd, 0, 1, true);
-        SarahsNovel.ƒS.Text.print("Bad Ending. Versuche es gerne nochmal.");
+        SarahsNovel.ƒS.Text.print("Bad Ending. Versuche es gerne nochmal lade dazu das Spiel neu.");
     }
     SarahsNovel.Scene18 = Scene18;
 })(SarahsNovel || (SarahsNovel = {}));

@@ -12,7 +12,8 @@ namespace SarahsNovel {
     save: "Save",
     load: "Load",
     close: "Close",
-    credits: "Credits"
+    credits: "Credits",
+    inventory: "Inventory"
   };
 
   export let transitions = {
@@ -67,7 +68,8 @@ namespace SarahsNovel {
     //SFX
     shipHorn: "Audio/ship_horn.mp3",
     shortKiss: "Audio/short_kiss.mp3",
-    childYawning: "Audio/child_yawning.mp3"
+    childYawning: "Audio/child_yawning.mp3",
+    boltCutter: "Audio/bolt_cutter.mp3"
   };
 
   export let locations = {
@@ -329,6 +331,9 @@ namespace SarahsNovel {
         break;
       case inGameMenuBtn.credits:
         credits();
+        break;
+      case inGameMenuBtn.inventory:
+        await ƒS.Inventory.open();
     }
   }
 
@@ -352,7 +357,7 @@ namespace SarahsNovel {
         break;
       case ƒ.KEYBOARD_CODE.C:
         console.log("Show Credits");
-        await credits();
+        credits();
         break;
       case ƒ.KEYBOARD_CODE.M:
 
@@ -400,8 +405,8 @@ namespace SarahsNovel {
       { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
       { id: "s15", scene: Scene15, name: "Am Südpol", next: "Scene00" },
       { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },
-      { id: "s17", scene: Scene17, name: "Happy End", next: "" },
-      { id: "s18", scene: Scene18, name: "Bad End", next: "" }
+      { id: "s17", scene: Scene17, name: "Happy End", next: "Scene00" },
+      { id: "s18", scene: Scene18, name: "Bad End", next: "Scene00" }
 
 
     ];
