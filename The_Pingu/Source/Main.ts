@@ -61,8 +61,13 @@ namespace SarahsNovel {
     atSea: "Audio/waves.mp3",
     stormyWeather: "Audio/rain_and_thunder.mp3",
     articWind: "Audio/wind_artic_cold.mp3",
+    officeAmbience: "Audio/office_ambience.mp3",
+    badEnd: "Audio/bad_end.mp3",
+    adventureBegins: "Audio/call_to_adventure.mp3",
     //SFX
-    shipHorn: "Audio/ship_horn.mp3"
+    shipHorn: "Audio/ship_horn.mp3",
+    shortKiss: "Audio/short_kiss.mp3",
+    childYawning: "Audio/child_yawning.mp3"
   };
 
   export let locations = {
@@ -378,6 +383,7 @@ namespace SarahsNovel {
     //****Szenen Hirarchie
 
     let scenes: ƒS.Scenes = [
+      { id: "s00", scene: Scene00, name: "Leere Szene", next: "" },
       { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
       { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
       { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
@@ -392,9 +398,10 @@ namespace SarahsNovel {
       { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
       { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
       { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
-      { id: "s15", scene: Scene15, name: "Am Südpol", next: "" },
+      { id: "s15", scene: Scene15, name: "Am Südpol", next: "Scene00" },
       { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },
-      { id: "s17", scene: Scene17, name: "Happy End", next: "" }
+      { id: "s17", scene: Scene17, name: "Happy End", next: "" },
+      { id: "s18", scene: Scene18, name: "Bad End", next: "" }
 
 
     ];

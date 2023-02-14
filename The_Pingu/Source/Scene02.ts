@@ -22,7 +22,8 @@ namespace SarahsNovel {
         await ƒS.Location.show(locations.getLunchbox);
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
         await ƒS.Speech.tell(characters.grandmother, text.oma.text01);
-        await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
+        ƒS.Sound.play(audio.shortKiss, 1.3, false);
+        await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);      
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
         ƒS.Speech.clear();

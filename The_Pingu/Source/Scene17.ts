@@ -5,7 +5,7 @@ namespace SarahsNovel {
         ƒS.Sound.play(audio.atHome, 0.07, true);
 
         await ƒS.Location.show(locations.happyEnd);
-        // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
 
         let text = {

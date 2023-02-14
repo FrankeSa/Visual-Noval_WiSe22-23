@@ -22,7 +22,7 @@ namespace SarahsNovel {
         await ƒS.Character.show(
             characters.penguin,
             characters.penguin.pose.side,
-            ƒS.positionPercent(50, 74)
+            ƒS.positionPercent(50, 72)
         );
         await ƒS.update(2);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false); // false die meta wird angezeigt, true sie wird nicht angezeigt.

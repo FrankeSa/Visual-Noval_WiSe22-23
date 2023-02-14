@@ -2,6 +2,7 @@ namespace SarahsNovel {
     export async function Scene08(): ƒS.SceneReturn {
         console.log("FudgeStory Scene08 starting");
 
+        ƒS.Sound.play(audio.officeAmbience, 0.07, true);
         ƒS.Speech.hide();
         await ƒS.Location.show(locations.lafOffice);
         await ƒS.update(transitions.beginning.duration, transitions.beginning.alpha, transitions.beginning.edge);
@@ -72,6 +73,8 @@ namespace SarahsNovel {
 
         ƒS.Speech.clear();
         ƒS.Speech.hide();
+        ƒS.Sound.fade(audio.officeAmbience, 0, 1, true); //Audio faded out to null
+
 
 
 

@@ -4,7 +4,7 @@ namespace SarahsNovel {
         // ƒS.Sound.play(audio.articWind, 0.07, true);
 
         await ƒS.Location.show(locations.bgBlue);
-        // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await ƒS.update(transitions.wet.duration, transitions.wet.alpha, transitions.wet.edge);
 
 

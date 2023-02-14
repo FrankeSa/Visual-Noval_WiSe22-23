@@ -57,8 +57,13 @@ var SarahsNovel;
         atSea: "Audio/waves.mp3",
         stormyWeather: "Audio/rain_and_thunder.mp3",
         articWind: "Audio/wind_artic_cold.mp3",
+        officeAmbience: "Audio/office_ambience.mp3",
+        badEnd: "Audio/bad_end.mp3",
+        adventureBegins: "Audio/call_to_adventure.mp3",
         //SFX
-        shipHorn: "Audio/ship_horn.mp3"
+        shipHorn: "Audio/ship_horn.mp3",
+        shortKiss: "Audio/short_kiss.mp3",
+        childYawning: "Audio/child_yawning.mp3"
     };
     SarahsNovel.locations = {
         yourRoom: {
@@ -346,6 +351,7 @@ var SarahsNovel;
         hdlMenuBtn("Close");
         //****Szenen Hirarchie
         let scenes = [
+            { id: "s00", scene: SarahsNovel.Scene00, name: "Leere Szene", next: "" },
             { id: "s01", scene: SarahsNovel.Scene01, name: "Kinderzimmer", next: "s02" },
             { id: "s02", scene: SarahsNovel.Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
             { id: "s03", scene: SarahsNovel.Scene03, name: "An der Haustür", next: "s04" },
@@ -360,9 +366,10 @@ var SarahsNovel;
             { id: "s12", scene: SarahsNovel.Scene12, name: "Am Hafen", next: "s13" },
             { id: "s13", scene: SarahsNovel.Scene13, name: "Auf See", next: "s14" },
             { id: "s14", scene: SarahsNovel.Scene14, name: "Große Welle", next: "s15" },
-            { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "" },
+            { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "Scene00" },
             { id: "s16", scene: SarahsNovel.Scene16, name: "Rückkehr", next: "s17" },
-            { id: "s17", scene: SarahsNovel.Scene17, name: "Happy End", next: "" }
+            { id: "s17", scene: SarahsNovel.Scene17, name: "Happy End", next: "" },
+            { id: "s18", scene: SarahsNovel.Scene18, name: "Bad End", next: "" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         SarahsNovel.dataForSave = SarahsNovel.ƒS.Progress.setData(SarahsNovel.dataForSave, uiElement);
@@ -403,6 +410,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.yourRoom);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.childYawning, 0.09, false);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
@@ -433,6 +441,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.getLunchbox);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.grandmother, text.oma.text01);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.shortKiss, 1.3, false);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
@@ -461,7 +470,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.meetThePenguin);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
-        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.penguin, SarahsNovel.characters.penguin.pose.side, SarahsNovel.ƒS.positionPercent(50, 74));
+        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.penguin, SarahsNovel.characters.penguin.pose.side, SarahsNovel.ƒS.positionPercent(50, 72));
         await SarahsNovel.ƒS.update(2);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false); // false die meta wird angezeigt, true sie wird nicht angezeigt.
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
@@ -667,6 +676,7 @@ var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene08() {
         console.log("FudgeStory Scene08 starting");
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.officeAmbience, 0.07, true);
         SarahsNovel.ƒS.Speech.hide();
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.lafOffice);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
@@ -724,6 +734,7 @@ var SarahsNovel;
         }
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.officeAmbience, 0, 1, true); //Audio faded out to null
     }
     SarahsNovel.Scene08 = Scene08;
 })(SarahsNovel || (SarahsNovel = {}));
@@ -791,7 +802,7 @@ var SarahsNovel;
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text09);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text10);
                 SarahsNovel.ƒS.Character.hide(SarahsNovel.characters.bigdove);
-                await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.doveWithPevement, SarahsNovel.characters.doveWithPevement.pose.withPavement, SarahsNovel.ƒS.positionPercent(63, 45));
+                await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.doveWithPevement, SarahsNovel.characters.doveWithPevement.pose.withPavement, SarahsNovel.ƒS.positionPercent(45, 64));
                 SarahsNovel.ƒS.update(1);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.bigdove, "„Vielen Dank, das ist sehr nett von dir.“ Ich hoffe du findest das zu Hause deines Pinguins.");
                 SarahsNovel.dataForSave.affectionScore += 10;
@@ -812,7 +823,7 @@ var SarahsNovel;
 var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene10() {
-        // ƒS.Sound.play(audio.cityTraffic, 0.07, true);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.adventureBegins, 0.07, false);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.bgBrown);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
@@ -884,7 +895,7 @@ var SarahsNovel;
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Du klatschst freudig in die Hände." + " <i><b>„Super, dann kann es ja losgehen“</i></b>");
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
-        // ƒS.Sound.fade(audio.playground, 0, 1, true); //Audio faded out to null
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.adventureBegins, 0, 1, true); //Audio faded out to null
         // await ƒS.Inventory.open(); 
     }
     SarahsNovel.Scene11 = Scene11;
@@ -902,7 +913,7 @@ var SarahsNovel;
                 text02: "Dort steht ein großes imposantes Schiff, welches bereit zur Abfahrt ist.",
                 text03: "<i><b>„Halloooo, könnt ihr uns bitte mitnehmen, wir wollen zum Südpol?“</i></b> rufst du so laut du nur kannst nach oben zu dem Schiffsdeck.",
                 text04: "Aber deine Rufe sind viel zu leise, als dass sie über das laute Schiffshorn hinweggehört werden würden.",
-                text05: "Das Schiff fährt ohne euch ab.",
+                text05: "Und so fäht das Schiff ohne euch ab.",
                 text06: "<i><b>„Na gut, dann müssen wir eben mit unserem eigenen Boot zum Südpol rudern“</i></b> beschließt du.",
                 text07: "Doch " + SarahsNovel.characters.penguin.name + " scheint nicht begeister von deiner Idee..."
             }
@@ -927,7 +938,7 @@ var SarahsNovel;
     async function Scene13() {
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.atSea, 0.1, true);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.atSee);
-        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.wave.duration, SarahsNovel.transitions.wave.alpha, SarahsNovel.transitions.wave.edge);
         let text = {
             Erzähler: {
@@ -1001,7 +1012,7 @@ var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene15() {
         console.log("FudgeStory Scene15 starting");
-        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.articWind, 0.07, true);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.atSouthPole);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.wet.duration, SarahsNovel.transitions.wet.alpha, SarahsNovel.transitions.wet.edge);
@@ -1038,9 +1049,9 @@ var SarahsNovel;
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
         if (SarahsNovel.dataForSave.affectionScore === 50) {
-            return SarahsNovel.Scene16();
+            return "Scene16";
         }
-        SarahsNovel.ƒS.Text.print("Das ist das Ende verusch es nochmal für das Happy End");
+        SarahsNovel.ƒS.Text.print("Das ist das Ende. Verusuche es nocheinmal für das Happy End");
         // ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
     }
     SarahsNovel.Scene15 = Scene15;
@@ -1051,7 +1062,7 @@ var SarahsNovel;
         console.log("FudgeStory Scene16 starting");
         // ƒS.Sound.play(audio.articWind, 0.07, true);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.bgBlue);
-        // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.wet.duration, SarahsNovel.transitions.wet.alpha, SarahsNovel.transitions.wet.edge);
         await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.child, SarahsNovel.characters.child.pose.sad, SarahsNovel.ƒS.positionPercent(54, 70));
         SarahsNovel.ƒS.update(1.5);
@@ -1109,7 +1120,7 @@ var SarahsNovel;
         console.log("FudgeStory Scene17 starting");
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.atHome, 0.07, true);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.happyEnd);
-        // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
         let text = {
             Erzähler: {
@@ -1131,6 +1142,13 @@ var SarahsNovel;
         SarahsNovel.ƒS.Text.print("Du hast das Happy End erreicht. Herzlichen Glückwunsch, das Spiel ist zu Ende.");
     }
     SarahsNovel.Scene17 = Scene17;
+})(SarahsNovel || (SarahsNovel = {}));
+var SarahsNovel;
+(function (SarahsNovel) {
+    async function Scene18() {
+        //
+    }
+    SarahsNovel.Scene18 = Scene18;
 })(SarahsNovel || (SarahsNovel = {}));
 var SarahsNovel;
 (function (SarahsNovel) {

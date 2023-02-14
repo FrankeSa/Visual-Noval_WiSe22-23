@@ -21,6 +21,7 @@ namespace SarahsNovel {
     await ƒS.update(transitions.beginning.duration, transitions.beginning.alpha, transitions.beginning.edge);
 
     await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
+    ƒS.Sound.play(audio.childYawning, 0.09, false);
     await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
     await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
     await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);

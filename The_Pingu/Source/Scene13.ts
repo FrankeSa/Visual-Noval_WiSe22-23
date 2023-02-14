@@ -3,7 +3,7 @@ namespace SarahsNovel {
         ƒS.Sound.play(audio.atSea, 0.1, true);
 
         await ƒS.Location.show(locations.atSee);
-        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
         await ƒS.update(transitions.wave.duration, transitions.wave.alpha, transitions.wave.edge);
 
         let text = {

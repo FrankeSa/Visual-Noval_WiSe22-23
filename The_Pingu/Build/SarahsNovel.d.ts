@@ -45,7 +45,12 @@ declare namespace SarahsNovel {
         atSea: string;
         stormyWeather: string;
         articWind: string;
+        officeAmbience: string;
+        badEnd: string;
+        adventureBegins: string;
         shipHorn: string;
+        shortKiss: string;
+        childYawning: string;
     };
     let locations: {
         yourRoom: {
@@ -291,6 +296,9 @@ declare namespace SarahsNovel {
 }
 declare namespace SarahsNovel {
     function Scene17(): ƒS.SceneReturn;
+}
+declare namespace SarahsNovel {
+    function Scene18(): ƒS.SceneReturn;
 }
 declare namespace SarahsNovel {
     function Scene_1(): ƒS.SceneReturn;

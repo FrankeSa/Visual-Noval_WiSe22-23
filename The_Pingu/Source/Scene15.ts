@@ -2,7 +2,7 @@ namespace SarahsNovel {
     export async function Scene15(): ƒS.SceneReturn {
         console.log("FudgeStory Scene15 starting");
 
-        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = false);
         ƒS.Sound.play(audio.articWind, 0.07, true);
         await ƒS.Location.show(locations.atSouthPole);
         await ƒS.update(transitions.wet.duration, transitions.wet.alpha, transitions.wet.edge);
@@ -43,9 +43,9 @@ namespace SarahsNovel {
         ƒS.Speech.clear();
         ƒS.Speech.hide();
         if (dataForSave.affectionScore === 50) {
-            return Scene16();
+            return "Scene16";
         }
-        ƒS.Text.print("Das ist das Ende verusch es nochmal für das Happy End");
+        ƒS.Text.print("Das ist das Ende. Verusuche es nocheinmal für das Happy End");
        
         // ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
 

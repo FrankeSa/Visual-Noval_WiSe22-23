@@ -81,7 +81,7 @@ namespace SarahsNovel {
                 await ƒS.Character.show(
                     characters.doveWithPevement,
                     characters.doveWithPevement.pose.withPavement,
-                    ƒS.positionPercent(63, 45)
+                    ƒS.positionPercent(45, 64)
                 );
                 ƒS.update(1);
                 await ƒS.Speech.tell(characters.bigdove, "„Vielen Dank, das ist sehr nett von dir.“ Ich hoffe du findest das zu Hause deines Pinguins.");
