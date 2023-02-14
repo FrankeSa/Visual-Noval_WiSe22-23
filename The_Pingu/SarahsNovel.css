@@ -35,10 +35,11 @@ speech {
   padding-left: 5%;
   box-sizing: border-box;
   font-size: large;
+  visibility: hidden;
 
 }
 
-name {
+#nameBox {
   font-weight: bold;
   line-height: 100%;
   font-size: large;
@@ -52,6 +53,7 @@ name {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
+  /* visibility: hidden; */
 
 }
 
@@ -243,6 +245,7 @@ meter {
   right: 3%;
   width: 15%;
   height: 3%;
+  visibility: hidden;
 }
 
 meter::-webkit-meter-bar {

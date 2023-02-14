@@ -3,6 +3,8 @@ namespace SarahsNovel {
 
     console.log("FudgeStory Scene01 Frontdoor starting");
     // ƒS.Sound.play(audio.nursery, 0.05, false);
+    document.getElementById("affectionMeter").style.visibility = "inherit";
+    // document.getElementById("")
     document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
     ƒS.Sound.play(audio.nursery, 0.07, false);
 

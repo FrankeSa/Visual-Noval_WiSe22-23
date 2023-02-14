@@ -1,12 +1,13 @@
 namespace SarahsNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
-
+ 
   console.log("Scene_1 In deinem Zimmer is starting");
   // Menu
   let gameMenu: ƒS.Menu;
   let menuIsOpen: boolean = true;
   export let affectionScore: number;
+  
 
   let inGameMenuBtn = {
     save: "Save",

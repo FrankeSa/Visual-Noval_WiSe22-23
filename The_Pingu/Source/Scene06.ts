@@ -1,7 +1,6 @@
 namespace SarahsNovel {
     export async function Scene06(): ƒS.SceneReturn {
         console.log("FudgeStory Scene06 starting");
-
         ƒS.Sound.play(audio.cityTraffic, 0.07, true);
 
         ƒS.Speech.hide();
@@ -65,7 +64,7 @@ namespace SarahsNovel {
         dataForSave.namePingu = await ƒS.Speech.getInput();
         characters.penguin.name = dataForSave.namePingu;
 
-        await ƒS.Speech.tell(characters.narrator,  characters.penguin.name + " scheint den Namen zu mögen.");
+        await ƒS.Speech.tell(characters.narrator, characters.penguin.name + " scheint den Namen zu mögen.");
         ƒS.Sound.fade(audio.cityTraffic, 0, 1, true);
 
 

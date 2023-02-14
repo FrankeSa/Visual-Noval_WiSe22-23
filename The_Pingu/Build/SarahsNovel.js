@@ -400,6 +400,8 @@ var SarahsNovel;
     async function Scene01() {
         console.log("FudgeStory Scene01 Frontdoor starting");
         // ƒS.Sound.play(audio.nursery, 0.05, false);
+        document.getElementById("affectionMeter").style.visibility = "inherit";
+        // document.getElementById("")
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.nursery, 0.07, false);
         let text = {
@@ -833,7 +835,7 @@ var SarahsNovel;
                 text04: "<i><b>„Nur...</i></b>",
                 text05: "<i><b>...wie sollen wir an den Südpol kommen???“</i></b> fragst du " + SarahsNovel.characters.penguin.name + ".",
                 text06: SarahsNovel.characters.penguin.name + " schaut ratlos zurück.",
-                text07: "<i><b>„Ich hab´s, wir fahren mit dem Boot zum Südpol!“</i></b> verkündest du."
+                text07: "<i><b>„Ich hab´s, wir fahren mit dem Schiff zum Südpol!“</i></b> verkündest du."
             }
         };
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
@@ -1049,8 +1051,8 @@ var SarahsNovel;
         if (SarahsNovel.dataForSave.affectionScore === 50) {
             return "s16";
         }
-        SarahsNovel.ƒS.Text.print("Das ist das Ende. Verusuche es nocheinmal für das Happy End");
-        // ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
+        SarahsNovel.ƒS.Text.print("Das ist das Ende. Versuche es nocheinmal für das Happy End.");
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.articWind, 0, 1, true); //Audio faded out to null
     }
     SarahsNovel.Scene15 = Scene15;
 })(SarahsNovel || (SarahsNovel = {}));

@@ -46,9 +46,9 @@ namespace SarahsNovel {
             return "s16";
         }
 
-        ƒS.Text.print("Das ist das Ende. Verusuche es nocheinmal für das Happy End");
+        ƒS.Text.print("Das ist das Ende. Versuche es nocheinmal für das Happy End.");
         
-        // ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
+        ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
 
 
 
