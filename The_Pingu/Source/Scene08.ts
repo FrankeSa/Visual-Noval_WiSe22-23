@@ -17,10 +17,8 @@ namespace SarahsNovel {
                 text04: "Karl geht nach hinten und kommt mit einem großen Käfig wieder.",
                 text05: "Er packt den Pinguin und hebt ihn hoch.",
                 text06: characters.penguin.name + " strampelt mit den Füßchen und versucht verzweifelt sich aus seinem Griff zu befreien.",
-                text07: "Doch Karl ist viel stärker und mit einem kräftigen Ruck zwängt er" + characters.penguin.name + " schließlich in den Käfig",
-                text08: "Große Tränen kullern über das Gesicht des Pinguins.",
-                text09: "Trotz deines mulmigen Gefühls, sagst du dir, dass es das Richtige ist.",
-                text10: "<i>„Solche Tiere gehören nun mal in den Zoo.“"
+                text07: "Doch Karl ist viel stärker..."
+
             },
             Karl: {
                 text01: "„Einen Pinguin? Mein liebes Kind, keiner vermisst einen Pinguin.“",
@@ -54,13 +52,8 @@ namespace SarahsNovel {
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text05);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text06);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text07);
+                return "s18";
 
-                await ƒS.Location.show(locations.badEnding);
-                await ƒS.update(transitions.swirl.duration, transitions.swirl.alpha, transitions.swirl.edge);
-                await ƒS.Speech.tell(characters.narrator, text.Erzähler.text08);
-                await ƒS.Speech.tell(characters.narrator, text.Erzähler.text09);
-                await ƒS.Speech.tell(characters.narrator, text.Erzähler.text10);
-                ƒS.Text.print("Bad Ending! Probier es gerne nochmal von neuem.");
                 break;
             case options.no:
                 console.log("Nicht in den Zoo geben");
@@ -69,7 +62,7 @@ namespace SarahsNovel {
                 dataForSave.affectionScore += 10;
                 break;
         }
-        
+
 
         ƒS.Speech.clear();
         ƒS.Speech.hide();

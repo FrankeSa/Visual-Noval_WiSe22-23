@@ -689,10 +689,7 @@ var SarahsNovel;
                 text04: "Karl geht nach hinten und kommt mit einem großen Käfig wieder.",
                 text05: "Er packt den Pinguin und hebt ihn hoch.",
                 text06: SarahsNovel.characters.penguin.name + " strampelt mit den Füßchen und versucht verzweifelt sich aus seinem Griff zu befreien.",
-                text07: "Doch Karl ist viel stärker und mit einem kräftigen Ruck zwängt er" + SarahsNovel.characters.penguin.name + " schließlich in den Käfig",
-                text08: "Große Tränen kullern über das Gesicht des Pinguins.",
-                text09: "Trotz deines mulmigen Gefühls, sagst du dir, dass es das Richtige ist.",
-                text10: "<i>„Solche Tiere gehören nun mal in den Zoo.“"
+                text07: "Doch Karl ist viel stärker..."
             },
             Karl: {
                 text01: "„Einen Pinguin? Mein liebes Kind, keiner vermisst einen Pinguin.“",
@@ -718,12 +715,7 @@ var SarahsNovel;
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text05);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text06);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text07);
-                await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.badEnding);
-                await SarahsNovel.ƒS.update(SarahsNovel.transitions.swirl.duration, SarahsNovel.transitions.swirl.alpha, SarahsNovel.transitions.swirl.edge);
-                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text08);
-                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text09);
-                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text10);
-                SarahsNovel.ƒS.Text.print("Bad Ending! Probier es gerne nochmal von neuem.");
+                return "s18";
                 break;
             case options.no:
                 console.log("Nicht in den Zoo geben");
@@ -1049,7 +1041,7 @@ var SarahsNovel;
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
         if (SarahsNovel.dataForSave.affectionScore === 50) {
-            return "Scene16";
+            return "s16";
         }
         SarahsNovel.ƒS.Text.print("Das ist das Ende. Verusuche es nocheinmal für das Happy End");
         // ƒS.Sound.fade(audio.articWind, 0, 1, true); //Audio faded out to null
@@ -1146,7 +1138,28 @@ var SarahsNovel;
 var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene18() {
-        //
+        console.log("FudgeStory Scene18 starting");
+        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.officeAmbience, 0, 1, true);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.badEnd, 0.6, false);
+        await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.badEnding);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.swirl.duration, SarahsNovel.transitions.swirl.alpha, SarahsNovel.transitions.swirl.edge);
+        let text = {
+            Erzähler: {
+                text01: "...und mit einem kräftigen Ruck zwängt er " + SarahsNovel.characters.penguin.name + " schließlich in den Käfig.",
+                text02: "Große Tränen kullern über das Gesicht des Pinguins.",
+                text03: "Trotz deines mulmigen Gefühls, sagst du dir, dass es das Richtige ist.",
+                text04: "<i>„Solche Tiere gehören nun mal in den Zoo.“"
+            }
+        };
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
+        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
+        SarahsNovel.ƒS.Speech.clear();
+        SarahsNovel.ƒS.Speech.hide();
+        SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.badEnd, 0, 1, true);
+        SarahsNovel.ƒS.Text.print("Bad Ending. Versuche es gerne nochmal.");
     }
     SarahsNovel.Scene18 = Scene18;
 })(SarahsNovel || (SarahsNovel = {}));
