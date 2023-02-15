@@ -1093,13 +1093,13 @@ var SarahsNovel;
         // ƒS.Sound.play(audio.articWind, 0.07, true);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.bgBlue);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
-        await SarahsNovel.ƒS.update(SarahsNovel.transitions.wet.duration, SarahsNovel.transitions.wet.alpha, SarahsNovel.transitions.wet.edge);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
         await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.child, SarahsNovel.characters.child.pose.sad, SarahsNovel.ƒS.positionPercent(54, 70));
         SarahsNovel.ƒS.update(1.5);
         let text = {
             Erzähler: {
                 text01: "Die Eisscholle ist kaum mehr zu sehen, als dich das Gefühl von Einsamkeit beschleicht.",
-                text02: "<i> Ich vermisse " + SarahsNovel.characters.penguin.name + " jetzt schon.</i> geht dir durch den Kopf.",
+                text02: "<i> Ich vermisse " + SarahsNovel.characters.penguin.name + " jetzt schon</i> geht dir durch den Kopf.",
                 text03: "Du kommst ins Grübeln.",
                 text04: "... ... ...",
                 text05: "In Gedanken gehst du noch einmal alle Erlebnisse durch und dann wird es die Klar wie Kloßbrühe!",
@@ -1151,7 +1151,7 @@ var SarahsNovel;
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.atHome, 0.07, true);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.happyEnd);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
-        await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
         let text = {
             Erzähler: {
                 text01: "<i><b>" + "„" + SarahsNovel.characters.penguin.name + "!!!“" + "</i></b>" + " rufst du überglücklich. Du umarmst den Pinguin so fest du kannst und auch er drückt kräftig zu.",

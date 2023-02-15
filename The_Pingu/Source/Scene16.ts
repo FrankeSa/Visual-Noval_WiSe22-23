@@ -5,7 +5,7 @@ namespace SarahsNovel {
 
         await ƒS.Location.show(locations.bgBlue);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
-        await ƒS.update(transitions.wet.duration, transitions.wet.alpha, transitions.wet.edge);
+        await ƒS.update(transitions.beginning.duration, transitions.beginning.alpha, transitions.beginning.edge);
 
 
         await ƒS.Character.show(
@@ -18,7 +18,7 @@ namespace SarahsNovel {
         let text = {
             Erzähler: {
                 text01: "Die Eisscholle ist kaum mehr zu sehen, als dich das Gefühl von Einsamkeit beschleicht.",
-                text02: "<i> Ich vermisse " + characters.penguin.name + " jetzt schon.</i> geht dir durch den Kopf.",
+                text02: "<i> Ich vermisse " + characters.penguin.name + " jetzt schon</i> geht dir durch den Kopf.",
                 text03: "Du kommst ins Grübeln.",
                 text04: "... ... ...",
                 text05: "In Gedanken gehst du noch einmal alle Erlebnisse durch und dann wird es die Klar wie Kloßbrühe!",
