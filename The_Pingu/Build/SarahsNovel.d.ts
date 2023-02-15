@@ -303,6 +303,3 @@ declare namespace SarahsNovel {
 declare namespace SarahsNovel {
     function Scene18(): ƒS.SceneReturn;
 }
-declare namespace SarahsNovel {
-    function Scene_1(): ƒS.SceneReturn;
-}

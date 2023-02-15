@@ -6,7 +6,7 @@ namespace SarahsNovel {
             Erzähler: {
                 text01: "Doch nanu, wer steht da vor der Tür...? Verdutzt bleibst du stehen.",
                 text02: "Da steht doch tatsächlich ein Pinguin vor deiner Tür! Ungläubig reibst du dir die Augen.",
-                text03: "<i>Das kann doch nicht sein!</i>, denkst du dir. Doch als du die Augen wieder öffnest, blinzeln dir unmittelbar seine kleinen braunen Knopfaugen entgegen.",
+                text03: "<i>Das kann doch nicht sein!</i> denkst du dir. Doch als du die Augen wieder öffnest, blinzeln dir unmittelbar seine kleinen braunen Knopfaugen entgegen.",
                 text04: "So einen Pinguin hast du noch nie gesehen. Er sieht sehr flauschig aus.",
                 text05: "Sein Schnabel ist karottenfarben, er hat ein rundes Bäuchlein und ein kleines spitzes Schwänzchen.",
                 text06: "<i>Was soll ich mit ihm machen?</i> fragst du dich."
@@ -16,7 +16,7 @@ namespace SarahsNovel {
         ƒS.Speech.hide();
         await ƒS.Location.show(locations.meetThePenguin);
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
-       
+
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
 
         await ƒS.Character.show(
@@ -48,7 +48,7 @@ namespace SarahsNovel {
                 // continue path here
                 console.log("Anfassen");
                 await ƒS.Character.animate(characters.penguin, characters.penguin.pose.side, moveBackAnimation());
-                // ƒS.update();
+                ƒS.update();
                 await ƒS.Speech.tell(characters.narrator, "Vorsichtig versuchst du ihn anzufassen, doch der Pinguin weicht skeptisch zurück.");
                 break;
             case options.scareAway:

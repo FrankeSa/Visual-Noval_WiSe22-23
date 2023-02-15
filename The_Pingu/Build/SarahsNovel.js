@@ -384,20 +384,20 @@ var SarahsNovel;
         hdlMenuBtn("Close");
         //****Szenen Hirarchie
         let scenes = [
-            // // { id: "s00", scene: Scene00, name: "Leere Szene", next: "" },
-            // // { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
-            // // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-            // // { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
-            // // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
-            // // { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
-            // // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
-            // // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-            // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
-            // { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
-            // { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
-            // { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
-            // { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
-            // { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
+            { id: "s00", scene: SarahsNovel.Scene00, name: "Leere Szene", next: "" },
+            { id: "s01", scene: SarahsNovel.Scene01, name: "Kinderzimmer", next: "s02" },
+            { id: "s02", scene: SarahsNovel.Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+            { id: "s03", scene: SarahsNovel.Scene03, name: "An der Haustür", next: "s04" },
+            { id: "s04", scene: SarahsNovel.Scene04, name: "Schulweg", next: "s05" },
+            { id: "s05", scene: SarahsNovel.Scene05, name: "Auf dem Schulhof", next: "s06" },
+            { id: "s06", scene: SarahsNovel.Scene06, name: "Der traurige Pinguin", next: "s07" },
+            { id: "s07", scene: SarahsNovel.Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+            { id: "s08", scene: SarahsNovel.Scene08, name: "Im Fundbüro", next: "s09" },
+            { id: "s09", scene: SarahsNovel.Scene09, name: "Im Park", next: "s10" },
+            { id: "s10", scene: SarahsNovel.Scene10, name: "Kind liest Buch", next: "s11" },
+            { id: "s11", scene: SarahsNovel.Scene11, name: "Koffer packen", next: "s12" },
+            { id: "s12", scene: SarahsNovel.Scene12, name: "Am Hafen", next: "s13" },
+            { id: "s13", scene: SarahsNovel.Scene13, name: "Auf See", next: "s14" },
             { id: "s14", scene: SarahsNovel.Scene14, name: "Große Welle", next: "s15" },
             { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "Scene00" },
             { id: "s16", scene: SarahsNovel.Scene16, name: "Rückkehr", next: "s17" },
@@ -495,7 +495,7 @@ var SarahsNovel;
             Erzähler: {
                 text01: "Doch nanu, wer steht da vor der Tür...? Verdutzt bleibst du stehen.",
                 text02: "Da steht doch tatsächlich ein Pinguin vor deiner Tür! Ungläubig reibst du dir die Augen.",
-                text03: "<i>Das kann doch nicht sein!</i>, denkst du dir. Doch als du die Augen wieder öffnest, blinzeln dir unmittelbar seine kleinen braunen Knopfaugen entgegen.",
+                text03: "<i>Das kann doch nicht sein!</i> denkst du dir. Doch als du die Augen wieder öffnest, blinzeln dir unmittelbar seine kleinen braunen Knopfaugen entgegen.",
                 text04: "So einen Pinguin hast du noch nie gesehen. Er sieht sehr flauschig aus.",
                 text05: "Sein Schnabel ist karottenfarben, er hat ein rundes Bäuchlein und ein kleines spitzes Schwänzchen.",
                 text06: "<i>Was soll ich mit ihm machen?</i> fragst du dich."
@@ -524,7 +524,7 @@ var SarahsNovel;
                 // continue path here
                 console.log("Anfassen");
                 await SarahsNovel.ƒS.Character.animate(SarahsNovel.characters.penguin, SarahsNovel.characters.penguin.pose.side, SarahsNovel.moveBackAnimation());
-                // ƒS.update();
+                SarahsNovel.ƒS.update();
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, "Vorsichtig versuchst du ihn anzufassen, doch der Pinguin weicht skeptisch zurück.");
                 break;
             case options.scareAway:
@@ -1198,104 +1198,5 @@ var SarahsNovel;
         SarahsNovel.ƒS.Text.print("Bad Ending. Versuche es gerne nochmal, lade dazu das Spiel neu.");
     }
     SarahsNovel.Scene18 = Scene18;
-})(SarahsNovel || (SarahsNovel = {}));
-var SarahsNovel;
-(function (SarahsNovel) {
-    async function Scene_1() {
-        console.log("FudgeStory Template Sarah starting");
-        document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true); // false die meta wird angezeigt, true sie wird nicht angezeigt.
-        let text = {
-            Erzähler: {
-                text01: "Doch nanu! Wer steht dort vor der Tür? Verdutzt bleibst du stehen.",
-                text02: "Hallo",
-                text03: "Hoi"
-            }
-        };
-        await SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.nursery, 0.07, 0.1, false);
-        await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.yourRoom);
-        await SarahsNovel.ƒS.update(1);
-        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01 + SarahsNovel.dataForSave.namePingu);
-        // ƒS.Speech.setTickerDelays(70, 0);
-        // let signalDelay: ƒS.Signal = ƒS.Progress.defineSignal([() => ƒS.Progress.delay(3)]);
-        SarahsNovel.ƒS.Speech.hide();
-        await SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.shipHorn, 1);
-        // await ƒS.Character.show(characters.kind, characters.kind.pose.happy, ƒS.positionPercent(50, 74));
-        await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
-        await SarahsNovel.ƒS.update(1);
-        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01 + SarahsNovel.dataForSave.namePingu);
-        // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.right);
-        // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positionPercent(70, 100));
-        await SarahsNovel.ƒS.Character.show(SarahsNovel.characters.child, SarahsNovel.characters.child.pose.idea, SarahsNovel.ƒS.positionPercent(70, 100));
-        // signalDelay();
-        //******INVENTAR******** */
-        // ƒS.Inventory.add(items.firstItem);
-        // for (let i: number = 0; i < 5; i++) {
-        //   ƒS.Inventory.add(items.firstItem);
-        // }
-        SarahsNovel.dataForSave.namePingu = await SarahsNovel.ƒS.Speech.getInput();
-        SarahsNovel.characters.penguin.name = SarahsNovel.dataForSave.namePingu;
-        // await ƒS.Character.show(characters.aisake, characters.aisake.pose.happy, ƒS.positions.bottomcenter);
-        await SarahsNovel.ƒS.update(1); // Die Zahl in der Klammer zeigt an, wie schnell (in sek.) der Character erscheint 
-        SarahsNovel.ƒS.Speech.clear();
-        SarahsNovel.ƒS.Speech.hide();
-        let dialogue = {
-            isayYes: "Yes",
-            isaydNo: "No",
-            isayBla: "Bla",
-            isayOK: "Ok"
-        };
-        let dialogueElement = await SarahsNovel.ƒS.Menu.getInput(dialogue, "choices"); // Die choicesCSSClass wird in der CSS Datei dann angelegt und gestyled
-        //     //*******WHILE SCHLEIFE */
-        //     let loopCount: number = 0;
-        //     while (loopCount < 3) {
-        //       let dialogueElement = await ƒS.Menu.getInput(dialogue, "choicesCSSClass"); // Die choicesCSSClass wird in der CSS Datei dann angelegt und gestyled
-        //       if (dialogueElement === dialogue["isayYes"]) {
-        //         ƒS.Text.print("Hier könnten Ihre Credits stehen");
-        //         console.log("Erster Wahl JA");
-        //         delete dialogue.isayYes;
-        //       }
-        //       if (dialogueElement === dialogue["isaydNo"]) {
-        //         console.log("Zweite Wahl Nein");
-        //         delete dialogue.isaydNo;
-        //       }
-        //       loopCount++;
-        //     }
-        // //*****While SChleife zu Ende */
-        switch (dialogueElement) {
-            case dialogue.isayYes:
-                // continue path here
-                console.log("iSay Yes");
-                await SarahsNovel.ƒS.Character.animate(SarahsNovel.characters.child, SarahsNovel.characters.child.pose.idea, SarahsNovel.moveBackAnimation());
-                break;
-            case dialogue.isaydNo:
-                // continue path here
-                console.log("iSay No");
-                await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.child, "Dein Name ist also" + SarahsNovel.characters.penguin.name);
-                break;
-            case dialogue.isayBla:
-                // continue path here
-                console.log("iSay Bla");
-                SarahsNovel.dataForSave.affectionScore += 10;
-                break;
-            case dialogue.isayOK:
-                // continue path here
-                console.log("iSay OK");
-                SarahsNovel.ƒS.Text.print("Du hast OK gedrückt");
-                break;
-        }
-        if (SarahsNovel.dataForSave.affectionScore == 10) {
-            await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.getLunchbox);
-        }
-        console.log(SarahsNovel.dataForSave.affectionScore);
-    }
-    SarahsNovel.Scene_1 = Scene_1;
-    //ADD ITEMS
-    // ƒS.Inventory.add(items.firstItem);
-    // ƒS.Inventory.add(items.secondItem);
-    // ƒS.Inventory.add(items.thirdItem);
-    // // for (let i: number = 0; i < 5; i++) {
-    // //     ƒS.Inventory.add(items.firstItem);
-    // // }
-    // await ƒS.Inventory.open();
 })(SarahsNovel || (SarahsNovel = {}));
 //# sourceMappingURL=SarahsNovel.js.map
