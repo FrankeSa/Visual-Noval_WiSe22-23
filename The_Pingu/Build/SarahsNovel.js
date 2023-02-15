@@ -942,7 +942,7 @@ var SarahsNovel;
                 text02: "Dort steht ein großes imposantes Schiff, welches bereit zur Abfahrt ist.",
                 text03: "„Halloooo, könnt ihr uns bitte mitnehmen, wir wollen zum Südpol?“ rufst du so laut du nur kannst nach oben zu dem Schiffsdeck.",
                 text04: "Aber deine Rufe sind viel zu leise, als dass sie über das laute Schiffshorn hinweggehört werden würden.",
-                text05: "Und so fäht das Schiff ohne euch ab.",
+                text05: "Und so fährt das Schiff ohne euch ab.",
                 text06: "„Na gut, dann müssen wir eben mit unserem eigenen Boot zum Südpol rudern.“ beschließt du.",
                 text07: "Doch " + SarahsNovel.characters.penguin.name + " scheint nicht begeister von deiner Idee..."
             }
@@ -1015,7 +1015,7 @@ var SarahsNovel;
 var SarahsNovel;
 (function (SarahsNovel) {
     async function Scene14() {
-        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.stormyWeather, 1, true);
+        SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.stormyWeather, 0.9, true);
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.bigWave);
         // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.wave.duration, SarahsNovel.transitions.wave.alpha, SarahsNovel.transitions.wave.edge);
@@ -1031,6 +1031,7 @@ var SarahsNovel;
         SarahsNovel.horizontalShake();
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
+        SarahsNovel.horizontalShake();
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();

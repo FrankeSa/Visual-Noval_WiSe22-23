@@ -1,6 +1,6 @@
 namespace SarahsNovel {
     export async function Scene14(): ƒS.SceneReturn {
-        ƒS.Sound.play(audio.stormyWeather, 1, true);
+        ƒS.Sound.play(audio.stormyWeather, 0.9, true);
 
         await ƒS.Location.show(locations.bigWave);
         // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
@@ -20,6 +20,7 @@ namespace SarahsNovel {
         horizontalShake();
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
+        horizontalShake();
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);
         ƒS.Speech.clear();
         ƒS.Speech.hide();
