@@ -8,4 +8,4 @@ https://github.com/FrankeSa/vn_repo_sarah
 
 Link zum Konzept: Franke_Sarah_The_Pingu
 
-https://github.com/FrankeSa/vn_repo_sarah
+https://github.com/FrankeSa/vn_repo_sarah/blob/master/Franke_Sarah_The_Pingu.zip
