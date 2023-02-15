@@ -6,6 +6,6 @@ Link zum Repo:
 
 https://github.com/FrankeSa/vn_repo_sarah
 
-Link zum Konzept:
+Link zum Konzept: Franke_Sarah_The_Pingu
 
-https://github.com/FrankeSa/vn_repo_sarah/Franke_Sarah_The_Pingu.zip
+https://github.com/FrankeSa/vn_repo_sarah
