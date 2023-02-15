@@ -6,10 +6,10 @@ namespace SarahsNovel {
             Erzähler: {
                 text01: "Doch nanu, wer steht da vor der Tür...? Verdutzt bleibst du stehen.",
                 text02: "Da steht doch tatsächlich ein Pinguin vor deiner Tür! Ungläubig reibst du dir die Augen.",
-                text03: "<i>„Das kann doch nicht sein“</i>, denkst du dir. Doch als du die Augen wieder öffnest, blinzeln dir unmittelbar seine kleinen braunen Knopfaugen entgegen.",
+                text03: "<i>Das kann doch nicht sein!</i>, denkst du dir. Doch als du die Augen wieder öffnest, blinzeln dir unmittelbar seine kleinen braunen Knopfaugen entgegen.",
                 text04: "So einen Pinguin hast du noch nie gesehen. Er sieht sehr flauschig aus.",
                 text05: "Sein Schnabel ist karottenfarben, er hat ein rundes Bäuchlein und ein kleines spitzes Schwänzchen.",
-                text06: "<i>„Was soll ich mit ihm machen?“</i> fragst du dich."
+                text06: "<i>Was soll ich mit ihm machen?</i> fragst du dich."
             }
         };
 
@@ -49,12 +49,12 @@ namespace SarahsNovel {
                 console.log("Anfassen");
                 await ƒS.Character.animate(characters.penguin, characters.penguin.pose.side, moveBackAnimation());
                 // ƒS.update();
-                await ƒS.Speech.tell(characters.narrator, "Du versuchst ihn anzufassen aber der Pinguin weicht skeptisch zurück.");
+                await ƒS.Speech.tell(characters.narrator, "Vorsichtig versuchst du ihn anzufassen, doch der Pinguin weicht skeptisch zurück.");
                 break;
             case options.scareAway:
                 // continue path here
                 console.log("Verscheuchen");
-                await ƒS.Speech.tell(characters.narrator, "Du versuchst den Pinguin zu verscheuchen <b><i>„Kusch...Kusch!“</i></b> Doch der Pinguin weicht nicht von der Stelle.");
+                await ƒS.Speech.tell(characters.narrator, "Du versuchst den Pinguin zu verscheuchen <b>„Kusch...Kusch!“</b> Doch der Pinguin weicht nicht von der Stelle.");
                 break;
             case options.ignore:
                 // continue path here

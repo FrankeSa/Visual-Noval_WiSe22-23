@@ -16,7 +16,7 @@ namespace SarahsNovel {
                 text01: "...und mit einem kräftigen Ruck zwängt er " + characters.penguin.name + " schließlich in den Käfig.",
                 text02: "Große Tränen kullern über das Gesicht des Pinguins.",
                 text03: "Trotz deines mulmigen Gefühls, sagst du dir, dass es das Richtige ist.",
-                text04: "<i>„Solche Tiere gehören nun mal in den Zoo.“"
+                text04: "<i>Solche Tiere gehören nun mal in den Zoo.</i>"
             }
         };
 

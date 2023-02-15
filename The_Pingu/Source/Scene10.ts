@@ -1,7 +1,7 @@
 namespace SarahsNovel {
     export async function Scene10(): ƒS.SceneReturn {
        
-        ƒS.Sound.play(audio.adventureBegins, 0.07, false);
+        ƒS.Sound.play(audio.adventureBegins, 0.07, true);
         await ƒS.Location.show(locations.bgBrown);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await ƒS.update(transitions.beginning.duration, transitions.beginning.alpha, transitions.beginning.edge);
@@ -9,12 +9,12 @@ namespace SarahsNovel {
         let text = {
             Erzähler: {
                 text01: "Als du am nächsten Morgen aufwachst, fällt dein Blick wie zufällig auf dein Bücherregal.",
-                text02: "<i>„Natürlich!“</i> denkst du dir. <i>„Dieses Buch, habe ich ganz vergessen.“</i>",
-                text03: "<i><b>„Toll, jetzt wissen wir, woher du kommst!“</i></b> rufst du begeistert.",
-                text04: "<i><b>„Nur...</i></b>",
-                text05: "<i><b>...wie sollen wir an den Südpol kommen???“</i></b> fragst du " + characters.penguin.name + ".",
+                text02: "<i>Natürlich!</i> denkst du dir. <i>Dieses Buch, habe ich ganz vergessen.</i>",
+                text03: "„Toll, jetzt wissen wir, woher du kommst!“ rufst du begeistert.",
+                text04: "„Nur...",
+                text05: "...wie sollen wir an den Südpol kommen???“ fragst du " + characters.penguin.name + ".",
                 text06: characters.penguin.name + " schaut ratlos zurück.",
-                text07: "<i><b>„Ich hab´s, wir fahren mit dem Schiff zum Südpol!“</i></b> verkündest du."
+                text07: "„Ich hab´s, wir fahren mit dem Schiff zum Südpol!“ verkündest du."
 
             }
 

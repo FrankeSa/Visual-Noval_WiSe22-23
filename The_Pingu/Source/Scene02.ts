@@ -6,8 +6,8 @@ namespace SarahsNovel {
         let text = {
             Erzähler: {
                 text01: "Deine Oma küsst dich, wie jeden Morgen, liebevoll auf die Stirn.",
-                text02: "Sie überreicht dir deine Brotbox, in der sich ein ganz besonders und mit viel Liebe zubereitetes Sandwich befindet.",
-                text03: "Du nimmst sie entgegen und mit einem kurzen <b><i>„Hab dich lieb, Oma“</i></b> drehst du dich um und öffnest die Haustür."
+                text02: "Sie überreicht dir deine Brot Box, in der sich ein ganz besonders und mit viel Liebe zubereitetes Sandwich befindet.",
+                text03: "Du nimmst sie entgegen und mit einem kurzen „Hab dich lieb, Oma“ drehst du dich um und öffnest die Haustür."
             },
             oma: {
                 text01: "Guten Morgen, mein Schatz. Hier ist deine Brotbox. Ich wünsche dir viel Spaß in der Schule."

@@ -21,7 +21,7 @@ namespace SarahsNovel {
 
             },
             Karl: {
-                text01: "„Einen Pinguin? Mein liebes Kind, keiner vermisst einen Pinguin.“",
+                text01: "„Einen Pinguin?“ „Mein liebes Kind, keiner vermisst einen Pinguin.“",
                 text02: "„Nun, vermutlich gehört er in irgendeinen Zoo.“ „Ich denke, dort ist er am besten aufgehoben.“",
                 text03: "„Soll ich ihn für dich in einen Zoo bringen?“"
             }
@@ -59,7 +59,7 @@ namespace SarahsNovel {
             case options.no:
                 console.log("Nicht in den Zoo geben");
                 await ƒS.Speech.tell(characters.narrator, "Ohne zu zögern lehnst du ab.");
-                await ƒS.Speech.tell(characters.narrator, "Dir ist klar, dass " + characters.penguin.name + "´s zu Hause auf garkeinen Fall ein Zoo sein kann.");
+                await ƒS.Speech.tell(characters.narrator, "Dir ist klar, dass " + characters.penguin.name + "´s zu Hause auf gar keinen Fall ein Zoo sein kann.");
                 dataForSave.affectionScore += 10;
                 break;
         }

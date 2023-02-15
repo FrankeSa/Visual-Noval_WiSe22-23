@@ -9,18 +9,18 @@ namespace SarahsNovel {
 
         let text = {
             Erzähler: {
-                text01: "<i><b>„Sie nur wir sind da!“</i></b> rufst du begeistert und reißt die Arme hoch. <i><b>„Wir sind am Südpol angekommen!    “</i></b>",
+                text01: "„Sie nur wir sind da!“ rufst du begeistert und reißt die Arme hoch. „Wir sind am Südpol angekommen!“",
                 text02: "Doch als ihr die Eisscholle erreicht habt, sieht " + characters.penguin.name + " wieder traurig aus.",
                 text03: "Gemeinsam klettert ihr aus dem Boot und etwas verlegen steht ihr euch gegenüber.",
                 text04: "Du schaust dich um…. hier ist weit und breit kein anderes Lebewesen. Es sieht ziemlich verlassen aus.",
                 text05: "Ein paar einsame Eisschollen driften vorbei.",
                 text06: "Vermutlich haben sie sich aufgrund der Erderwärmung abgelöst und sind nun dazu verdammt umher zu irren, bis sie sich vollständig aufgelöst haben.",
-                text07: "<i><b>„Alsooo, ich denke nun ist es an der Zeit Lebewohl zu sagen“</i></b> brichst du die Stille. ",
-                text08: " Schweren Herzens drehst du dich um und ohne eine Reaktion des Pinguins abzuwarten, kletterst du zurück ins Boot und ruderst davon.",
+                text07: "„Alsooo, ich denke nun ist es an der Zeit Lebewohl zu sagen“ brichst du die Stille. ",
+                text08: "Schweren Herzens drehst du dich um und ohne eine Reaktion des Pinguins abzuwarten, kletterst du zurück ins Boot und ruderst davon.",
                 text10: "Als du dich ein letztes Mal umdrehst, siehst du, dass der Pinguin immer noch am gleichen Fleck steht und dir nachschaut.",
                 text11: "Er sieht trauriger aus als je zuvor...",
                 text12: "Du hast ihn nach Hause gebracht, wie du es versprochen hast...",
-                text13: "<i>„Aber, warum ist der Pinguin so traurig?“</i> fragst du dich während er kleiner und kleiner wird..."
+                text13: "<i>Aber, warum ist der Pinguin so traurig?</i> fragst du dich während er kleiner und kleiner wird..."
 
             }
         };

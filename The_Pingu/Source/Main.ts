@@ -293,8 +293,8 @@ namespace SarahsNovel {
 
   export function moveBackAnimation(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(50, 74) },
-      end: { translation: ƒS.positionPercent(49, 74) },
+      start: { translation: ƒS.positionPercent(50, 73) },
+      end: { translation: ƒS.positionPercent(49, 73) },
       duration: 2,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };

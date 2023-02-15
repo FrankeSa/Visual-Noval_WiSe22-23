@@ -2,7 +2,7 @@ namespace SarahsNovel {
     export async function Scene04(): ƒS.SceneReturn {
         console.log("FudgeStory Scene04 starting");
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
-        ƒS.Sound.play(audio.cityTraffic, 0.07, false);
+        ƒS.Sound.play(audio.cityTraffic, 0.07, true);
         ƒS.Speech.hide();
         await ƒS.Location.show(locations.wayToSchool);
         await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);

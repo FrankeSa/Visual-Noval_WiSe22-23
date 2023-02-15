@@ -13,13 +13,13 @@ namespace SarahsNovel {
                 text02: "Kurz bevor du wieder zu Hause angekommen bist, bleibst du stehen.",
                 text03: "Der Pinguin stoppt ebenfalls...",
                 text04: "Plötzlich fällt dir auf, dass er irgedwie müde und auch traurig aussieht.",
-                text05: "<i>„Vielleicht hat er hunger?“</i> überlegst du.",
+                text05: "<i>Vielleicht hat er Hunger?</i> überlegst du.",
                 text06: "Du hast noch etwas von deinem Sandwich übrig, das du ihm anbieten könntest.",
-                text07: "Dann fällt es dir wie Schuppen von den Augen. <i>„Na klar! Er muss sich wohl verirrt haben und jetzt findet er nicht mehr nach Hause.“</i>",
-                text08: "<i><b>„Wie heißt du? Hast du dich verlaufen?“</i></b> fragst du ihn.",
+                text07: "Dann fällt es dir wie Schuppen von den Augen. <i>Na klar! Er muss sich wohl verirrt haben und jetzt findet er nicht mehr nach Hause.</i>",
+                text08: "„Wie heißt du?“ “Hast du dich verlaufen?“ fragst du ihn.",
                 text09: "Doch der Pinguin antwortet nicht.",
-                text10: "Du überlegst...<i>„Hmm…“</i>",
-                text11: "<i><b>„Weißt du was, ich werde dir helfen wieder nach Hause zu finden!“ „Und ich nennen dich…“</i></b>",
+                text10: "Du überlegst...<i>Hmm...</i>",
+                text11: "„Weißt du was, ich werde dir helfen wieder nach Hause zu finden!“ „Und ich nennen dich...“"
             }
         };
 
@@ -43,8 +43,8 @@ namespace SarahsNovel {
             case options.giveSandwich:
                 // continue path here
                 console.log("Sandwich geben");
-                await ƒS.Speech.tell(characters.narrator, "Du kramst deine Brotbox hervor und streckst dem Pinguin das Sandwich hin.");
-                await ƒS.Speech.tell(characters.narrator, "Der Pinguin nimmt es dankbar entgegen und schlingt es gierig hinunter.");
+                await ƒS.Speech.tell(characters.narrator, "Du kramst deine Brot Box hervor und streckst dem Pinguin das Sandwich entgegen.");
+                await ƒS.Speech.tell(characters.narrator, "Der Pinguin nimmt es dankbar an und schlingt es gierig hinunter.");
                 dataForSave.affectionScore += 10;
                 await ƒS.Speech.tell(characters.narrator, "Doch er sieht immer noch traurig aus.");
                 break;

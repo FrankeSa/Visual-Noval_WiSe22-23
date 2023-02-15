@@ -18,10 +18,10 @@ namespace SarahsNovel {
         let text = {
             Erzähler: {
                 text01: "Die Eisscholle ist kaum mehr zu sehen, als dich das Gefühl von Einsamkeit beschleicht.",
-                text02: "„Ich vermisse " + characters.penguin.name + " jetzt schon“ geht dir durch den Kopf. ",
+                text02: "<i> Ich vermisse " + characters.penguin.name + " jetzt schon.</i> geht dir durch den Kopf.",
                 text03: "Du kommst ins Grübeln.",
                 text04: "... ... ...",
-                text05: "In Gedanken gehst du nochmal alle Erlebnisse durch und dann wird es die Klar wie Kloßbrühe!",
+                text05: "In Gedanken gehst du noch einmal alle Erlebnisse durch und dann wird es die Klar wie Kloßbrühe!",
                 text06: "</i>„ " + characters.penguin.name + "</i>" + " hat sich nicht verirrt! " + "</i>" + characters.penguin.name + "</i>" + " ist einfach nur einsam!“",
                 text07: "Du begreifst, dass du einen großen Fehler gemacht hast und beginnst sofort das Boot zu wenden und zurück zu rudern.",
                 text08: "Aufgeregt hoffst du, dass es nicht zu spät ist und du den Pinguin wiederfinden wirst.",
