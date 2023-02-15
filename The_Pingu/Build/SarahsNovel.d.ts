@@ -242,6 +242,8 @@ declare namespace SarahsNovel {
     function littleStarShining(): ƒS.AnimationDefinition;
     function moveBackAnimation(): ƒS.AnimationDefinition;
     function floatingLeftToRight(): ƒS.AnimationDefinition;
+    function horizontalShake(): Promise<void>;
+    function verticalShake(): Promise<void>;
     function credits(): void;
 }
 declare namespace SarahsNovel {

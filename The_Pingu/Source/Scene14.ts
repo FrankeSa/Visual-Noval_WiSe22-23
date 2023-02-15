@@ -5,7 +5,8 @@ namespace SarahsNovel {
         await ƒS.Location.show(locations.bigWave);
         // document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
         await ƒS.update(transitions.wave.duration, transitions.wave.alpha, transitions.wave.edge);
-
+        
+      
         let text = {
             Erzähler: {
                 text01: "Ihr kämpft euch durch große Wellen und schlechtes raues Wetter. Immer wieder muss sich der Pinguin am Boot festhalten, um nicht hinaus zu fallen.",
@@ -16,6 +17,7 @@ namespace SarahsNovel {
         };
 
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text01);
+        horizontalShake();
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text02);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text03);
         await ƒS.Speech.tell(characters.narrator, text.Erzähler.text04);

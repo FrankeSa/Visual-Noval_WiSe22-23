@@ -1,20 +1,20 @@
 namespace SarahsNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
- 
+
   console.log("Scene_1 In deinem Zimmer is starting");
   // Menu
   let gameMenu: ƒS.Menu;
   let menuIsOpen: boolean = true;
   export let affectionScore: number;
-  
+
 
   let inGameMenuBtn = {
     save: "Save",
     load: "Load",
-    close: "Close",
+    inventory: "Inventory",
     credits: "Credits",
-    inventory: "Inventory"
+    close: "Close Menu"
   };
 
   export let transitions = {
@@ -312,6 +312,37 @@ namespace SarahsNovel {
   }
 
 
+  export async function horizontalShake(): Promise<void> {
+    let scene: HTMLElement = <HTMLElement>document.getElementsByTagName("scene")[0];
+
+    for (let i: number = 0; i < 4; i++) {
+      if (i % 2 == 0) {
+        scene.style.transform = `translateX(20px)`;
+      }
+      else {
+        scene.style.transform = `translateX(-20px)`;
+      }
+      await new Promise(resolve => setTimeout(resolve, 80));
+    }
+    scene.style.transform = `translateX(0px)`;
+  }
+
+  export async function verticalShake(): Promise<void> {
+    let scene: HTMLElement = <HTMLElement>document.getElementsByTagName("scene")[0];
+
+    for (let i: number = 0; i < 18; i++) {
+      if (i % 2 == 0) {
+        scene.style.transform = `translateY(20px)`;
+      }
+      else {
+        scene.style.transform = `translateY(-20px)`;
+      }
+      await new Promise(resolve => setTimeout(resolve, 40));
+    }
+    scene.style.transform = `translateY(0px)`;
+  }
+
+
   export function credits(): void {
     ƒS.Text.print("Alle Hintergründe und Charaktere sind gezeichnet von: <b>Sarah Franke</b><br>Die Visual Novel basiert auf der Geschichte von <b>Oliver Jeffers <i>„Lost and Found“</i></b></br>Musik und Soundeffekt sind von <b>pixabay.com</b>");
 
@@ -389,20 +420,20 @@ namespace SarahsNovel {
     //****Szenen Hirarchie
 
     let scenes: ƒS.Scenes = [
-      { id: "s00", scene: Scene00, name: "Leere Szene", next: "" },
-      { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
-      { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-      { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
-      { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
-      { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
-      { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
-      { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-      { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
-      { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
-      { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
-      { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
-      { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
-      { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
+      // // { id: "s00", scene: Scene00, name: "Leere Szene", next: "" },
+      // // { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
+      // // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+      // // { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
+      // // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+      // // { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
+      // // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+      // // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+      // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
+      // { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
+      // { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
+      // { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
+      // { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
+      // { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
       { id: "s14", scene: Scene14, name: "Große Welle", next: "s15" },
       { id: "s15", scene: Scene15, name: "Am Südpol", next: "Scene00" },
       { id: "s16", scene: Scene16, name: "Rückkehr", next: "s17" },

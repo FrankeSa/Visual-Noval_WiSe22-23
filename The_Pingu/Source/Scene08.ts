@@ -17,7 +17,7 @@ namespace SarahsNovel {
                 text04: "Karl geht nach hinten und kommt mit einem großen Käfig wieder.",
                 text05: "Er packt den Pinguin und hebt ihn hoch.",
                 text06: characters.penguin.name + " strampelt mit den Füßchen und versucht verzweifelt sich aus seinem Griff zu befreien.",
-                text07: "Doch Karl ist viel stärker..."
+                text07: "Doch Karl ist viel stärker und mit einem kräftigen Ruck zwängt er " + characters.penguin.name + " schließlich in den Käfig."
 
             },
             Karl: {
@@ -52,6 +52,7 @@ namespace SarahsNovel {
                 ƒS.Sound.play(audio.boltCutter, 0.4, false);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text05);
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text06);
+                verticalShake();
                 await ƒS.Speech.tell(characters.narrator, text.Erzähler.text07);
                 return "s18";
 

@@ -10,9 +10,9 @@ var SarahsNovel;
     let inGameMenuBtn = {
         save: "Save",
         load: "Load",
-        close: "Close",
+        inventory: "Inventory",
         credits: "Credits",
-        inventory: "Inventory"
+        close: "Close Menu"
     };
     SarahsNovel.transitions = {
         beginning: {
@@ -292,6 +292,34 @@ var SarahsNovel;
         };
     }
     SarahsNovel.floatingLeftToRight = floatingLeftToRight;
+    async function horizontalShake() {
+        let scene = document.getElementsByTagName("scene")[0];
+        for (let i = 0; i < 4; i++) {
+            if (i % 2 == 0) {
+                scene.style.transform = `translateX(20px)`;
+            }
+            else {
+                scene.style.transform = `translateX(-20px)`;
+            }
+            await new Promise(resolve => setTimeout(resolve, 80));
+        }
+        scene.style.transform = `translateX(0px)`;
+    }
+    SarahsNovel.horizontalShake = horizontalShake;
+    async function verticalShake() {
+        let scene = document.getElementsByTagName("scene")[0];
+        for (let i = 0; i < 18; i++) {
+            if (i % 2 == 0) {
+                scene.style.transform = `translateY(20px)`;
+            }
+            else {
+                scene.style.transform = `translateY(-20px)`;
+            }
+            await new Promise(resolve => setTimeout(resolve, 40));
+        }
+        scene.style.transform = `translateY(0px)`;
+    }
+    SarahsNovel.verticalShake = verticalShake;
     function credits() {
         SarahsNovel.ƒS.Text.print("Alle Hintergründe und Charaktere sind gezeichnet von: <b>Sarah Franke</b><br>Die Visual Novel basiert auf der Geschichte von <b>Oliver Jeffers <i>„Lost and Found“</i></b></br>Musik und Soundeffekt sind von <b>pixabay.com</b>");
     }
@@ -356,20 +384,20 @@ var SarahsNovel;
         hdlMenuBtn("Close");
         //****Szenen Hirarchie
         let scenes = [
-            { id: "s00", scene: SarahsNovel.Scene00, name: "Leere Szene", next: "" },
-            { id: "s01", scene: SarahsNovel.Scene01, name: "Kinderzimmer", next: "s02" },
-            { id: "s02", scene: SarahsNovel.Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
-            { id: "s03", scene: SarahsNovel.Scene03, name: "An der Haustür", next: "s04" },
-            { id: "s04", scene: SarahsNovel.Scene04, name: "Schulweg", next: "s05" },
-            { id: "s05", scene: SarahsNovel.Scene05, name: "Auf dem Schulhof", next: "s06" },
-            { id: "s06", scene: SarahsNovel.Scene06, name: "Der traurige Pinguin", next: "s07" },
-            { id: "s07", scene: SarahsNovel.Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
-            { id: "s08", scene: SarahsNovel.Scene08, name: "Im Fundbüro", next: "s09" },
-            { id: "s09", scene: SarahsNovel.Scene09, name: "Im Park", next: "s10" },
-            { id: "s10", scene: SarahsNovel.Scene10, name: "Kind liest Buch", next: "s11" },
-            { id: "s11", scene: SarahsNovel.Scene11, name: "Koffer packen", next: "s12" },
-            { id: "s12", scene: SarahsNovel.Scene12, name: "Am Hafen", next: "s13" },
-            { id: "s13", scene: SarahsNovel.Scene13, name: "Auf See", next: "s14" },
+            // // { id: "s00", scene: Scene00, name: "Leere Szene", next: "" },
+            // // { id: "s01", scene: Scene01, name: "Kinderzimmer", next: "s02" },
+            // // { id: "s02", scene: Scene02, name: "Oma überreicht dir deine Brotbox", next: "s03" },
+            // // { id: "s03", scene: Scene03, name: "An der Haustür", next: "s04" },
+            // // { id: "s04", scene: Scene04, name: "Schulweg", next: "s05" },
+            // // { id: "s05", scene: Scene05, name: "Auf dem Schulhof", next: "s06" },
+            // // { id: "s06", scene: Scene06, name: "Der traurige Pinguin", next: "s07" },
+            // // { id: "s07", scene: Scene07, name: "Blick in den Sternenhimmel", next: "s08" },
+            // { id: "s08", scene: Scene08, name: "Im Fundbüro", next: "s09" },
+            // { id: "s09", scene: Scene09, name: "Im Park", next: "s10" },
+            // { id: "s10", scene: Scene10, name: "Kind liest Buch", next: "s11" },
+            // { id: "s11", scene: Scene11, name: "Koffer packen", next: "s12" },
+            // { id: "s12", scene: Scene12, name: "Am Hafen", next: "s13" },
+            // { id: "s13", scene: Scene13, name: "Auf See", next: "s14" },
             { id: "s14", scene: SarahsNovel.Scene14, name: "Große Welle", next: "s15" },
             { id: "s15", scene: SarahsNovel.Scene15, name: "Am Südpol", next: "Scene00" },
             { id: "s16", scene: SarahsNovel.Scene16, name: "Rückkehr", next: "s17" },
@@ -696,7 +724,7 @@ var SarahsNovel;
                 text04: "Karl geht nach hinten und kommt mit einem großen Käfig wieder.",
                 text05: "Er packt den Pinguin und hebt ihn hoch.",
                 text06: SarahsNovel.characters.penguin.name + " strampelt mit den Füßchen und versucht verzweifelt sich aus seinem Griff zu befreien.",
-                text07: "Doch Karl ist viel stärker..."
+                text07: "Doch Karl ist viel stärker und mit einem kräftigen Ruck zwängt er " + SarahsNovel.characters.penguin.name + " schließlich in den Käfig."
             },
             Karl: {
                 text01: "„Einen Pinguin?“ „Mein liebes Kind, keiner vermisst einen Pinguin.“",
@@ -722,6 +750,7 @@ var SarahsNovel;
                 SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.boltCutter, 0.4, false);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text05);
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text06);
+                SarahsNovel.verticalShake();
                 await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text07);
                 return "s18";
                 break;
@@ -999,6 +1028,7 @@ var SarahsNovel;
             }
         };
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
+        SarahsNovel.horizontalShake();
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
@@ -1154,20 +1184,18 @@ var SarahsNovel;
         await SarahsNovel.ƒS.update(SarahsNovel.transitions.swirl.duration, SarahsNovel.transitions.swirl.alpha, SarahsNovel.transitions.swirl.edge);
         let text = {
             Erzähler: {
-                text01: "...und mit einem kräftigen Ruck zwängt er " + SarahsNovel.characters.penguin.name + " schließlich in den Käfig.",
-                text02: "Große Tränen kullern über das Gesicht des Pinguins.",
-                text03: "Trotz deines mulmigen Gefühls, sagst du dir, dass es das Richtige ist.",
-                text04: "<i>Solche Tiere gehören nun mal in den Zoo.</i>"
+                text01: "Große Tränen kullern über das Gesicht des Pinguins.",
+                text02: "Trotz deines mulmigen Gefühls, sagst du dir, dass es das Richtige ist.",
+                text03: "<i>Solche Tiere gehören nun mal in den Zoo.</i>"
             }
         };
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text01);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text02);
         await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text03);
-        await SarahsNovel.ƒS.Speech.tell(SarahsNovel.characters.narrator, text.Erzähler.text04);
         SarahsNovel.ƒS.Speech.clear();
         SarahsNovel.ƒS.Speech.hide();
         SarahsNovel.ƒS.Sound.fade(SarahsNovel.audio.badEnd, 0, 1, true);
-        SarahsNovel.ƒS.Text.print("Bad Ending. Versuche es gerne nochmal lade dazu das Spiel neu.");
+        SarahsNovel.ƒS.Text.print("Bad Ending. Versuche es gerne nochmal, lade dazu das Spiel neu.");
     }
     SarahsNovel.Scene18 = Scene18;
 })(SarahsNovel || (SarahsNovel = {}));
