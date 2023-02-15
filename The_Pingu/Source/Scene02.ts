@@ -10,7 +10,7 @@ namespace SarahsNovel {
                 text03: "Du nimmst sie entgegen und mit einem kurzen „Hab dich lieb, Oma“ drehst du dich um und öffnest die Haustür."
             },
             oma: {
-                text01: "Guten Morgen, mein Schatz. Hier ist deine Brotbox. Ich wünsche dir viel Spaß in der Schule."
+                text01: "Guten Morgen, mein Schatz. Hier ist deine Brot Box. Ich wünsche dir viel Spaß in der Schule."
             }
 
         };
