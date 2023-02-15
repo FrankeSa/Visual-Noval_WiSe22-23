@@ -552,7 +552,7 @@ var SarahsNovel;
         SarahsNovel.ƒS.Sound.play(SarahsNovel.audio.cityTraffic, 0.07, true);
         SarahsNovel.ƒS.Speech.hide();
         await SarahsNovel.ƒS.Location.show(SarahsNovel.locations.wayToSchool);
-        await SarahsNovel.ƒS.update(SarahsNovel.transitions.crossingGeneral.duration, SarahsNovel.transitions.crossingGeneral.alpha, SarahsNovel.transitions.crossingGeneral.edge);
+        await SarahsNovel.ƒS.update(SarahsNovel.transitions.beginning.duration, SarahsNovel.transitions.beginning.alpha, SarahsNovel.transitions.beginning.edge);
         let text = {
             Erzähler: {
                 text01: "Du läufst los und als ein bisschen Abstand zwischen euch ist, setzt sich der Pinguin ebenfalls in Bewegung und tapst dir hinterher.",
