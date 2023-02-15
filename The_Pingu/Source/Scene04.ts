@@ -5,7 +5,7 @@ namespace SarahsNovel {
         ƒS.Sound.play(audio.cityTraffic, 0.07, true);
         ƒS.Speech.hide();
         await ƒS.Location.show(locations.wayToSchool);
-        await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
+        await ƒS.update(transitions.beginning.duration, transitions.beginning.alpha, transitions.beginning.edge);
 
         let text = {
             Erzähler: {

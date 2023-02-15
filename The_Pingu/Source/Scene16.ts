@@ -5,7 +5,7 @@ namespace SarahsNovel {
 
         await ƒS.Location.show(locations.bgBlue);
         document.getElementsByName("affectionScore").forEach(meterStuff => meterStuff.hidden = true);
-        await ƒS.update(transitions.crossingGeneral.duration, transitions.crossingGeneral.alpha, transitions.crossingGeneral.edge);
+        await ƒS.update(transitions.beginning.duration, transitions.beginning.alpha, transitions.beginning.edge);
 
 
         await ƒS.Character.show(
